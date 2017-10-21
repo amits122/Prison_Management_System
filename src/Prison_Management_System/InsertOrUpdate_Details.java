@@ -5,7 +5,7 @@
  */
 package Prison_Management_System;
 import java.sql.DriverManager;
-import  com.mysql.jdbc.Connection;
+import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.Statement;
 import javax.swing.JOptionPane;
 
