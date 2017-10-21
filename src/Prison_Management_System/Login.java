@@ -4,6 +4,9 @@
  * and open the template in the editor.
  */
 package Prison_Management_System;
+import java.sql.DriverManager;
+import  com.mysql.jdbc.Connection;
+import com.mysql.jdbc.Statement;
 
 /**
  *
@@ -26,7 +29,6 @@ public class Login extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        java.awt.GridBagConstraints gridBagConstraints;
 
         Login = new javax.swing.JButton();
         Reset = new javax.swing.JButton();
@@ -35,11 +37,11 @@ public class Login extends javax.swing.JFrame {
         Password = new javax.swing.JLabel();
         usr_name = new javax.swing.JTextField();
         pass_field = new javax.swing.JPasswordField();
+        msg1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Login");
         setBackground(new java.awt.Color(255, 255, 255));
-        getContentPane().setLayout(new java.awt.GridBagLayout());
 
         Login.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Prison_Management_System/Images/send-secure.png"))); // NOI18N
         Login.setText("Login");
@@ -48,13 +50,6 @@ public class Login extends javax.swing.JFrame {
                 LoginActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(31, 61, 60, 0);
-        getContentPane().add(Login, gridBagConstraints);
 
         Reset.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Prison_Management_System/Images/lock-reset.png"))); // NOI18N
         Reset.setText("Reset");
@@ -63,12 +58,6 @@ public class Login extends javax.swing.JFrame {
                 ResetActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(31, 10, 60, 0);
-        getContentPane().add(Reset, gridBagConstraints);
 
         Exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Prison_Management_System/Images/cancel.png"))); // NOI18N
         Exit.setText("Exit");
@@ -77,66 +66,107 @@ public class Login extends javax.swing.JFrame {
                 ExitActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(31, 6, 60, 65);
-        getContentPane().add(Exit, gridBagConstraints);
 
         Username.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Prison_Management_System/Images/account-location.png"))); // NOI18N
         Username.setText("Username");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(55, 65, 0, 0);
-        getContentPane().add(Username, gridBagConstraints);
 
         Password.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Prison_Management_System/Images/textbox-password.png"))); // NOI18N
         Password.setText("Password");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 65, 0, 0);
-        getContentPane().add(Password, gridBagConstraints);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.ipadx = 122;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(57, 56, 0, 65);
-        getContentPane().add(usr_name, gridBagConstraints);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.ipadx = 122;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(20, 56, 0, 65);
-        getContentPane().add(pass_field, gridBagConstraints);
+
+        usr_name.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                usr_nameFocusGained(evt);
+            }
+        });
+
+        pass_field.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                pass_fieldFocusGained(evt);
+            }
+        });
+
+        msg1.setForeground(new java.awt.Color(255, 0, 51));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addComponent(Login)
+                        .addGap(10, 10, 10)
+                        .addComponent(Reset)
+                        .addGap(6, 6, 6)
+                        .addComponent(Exit))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(48, 48, 48)
+                        .addComponent(Password)
+                        .addGap(63, 63, 63)
+                        .addComponent(pass_field, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(48, 48, 48)
+                        .addComponent(Username)
+                        .addGap(61, 61, 61)
+                        .addComponent(usr_name, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(158, 158, 158)
+                        .addComponent(msg1)))
+                .addContainerGap(55, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(55, 55, 55)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Username)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(2, 2, 2)
+                        .addComponent(usr_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(msg1, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Password)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(pass_field)
+                        .addGap(2, 2, 2)))
+                .addGap(31, 31, 31)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Login)
+                    .addComponent(Reset)
+                    .addComponent(Exit))
+                .addContainerGap(56, Short.MAX_VALUE))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginActionPerformed
-            // TODO add your handling code here:
+        if(usr_name.getText().equals("") || pass_field.getPassword().equals("")){
+            msg1.setText("Please enter username or password");
+        }            // TODO add your handling code here:
     }//GEN-LAST:event_LoginActionPerformed
 
     private void ResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetActionPerformed
         usr_name.setText("");
         pass_field.setText("");
+        msg1.setText("");
     // TODO add your handling code here:
     }//GEN-LAST:event_ResetActionPerformed
 
     private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
         System.exit(0);        // TODO add your handling code here:
     }//GEN-LAST:event_ExitActionPerformed
+
+    private void usr_nameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_usr_nameFocusGained
+        msg1.setText("");         // TODO add your handling code here:
+    }//GEN-LAST:event_usr_nameFocusGained
+
+    private void pass_fieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_pass_fieldFocusGained
+        msg1.setText("");         // TODO add your handling code here:
+    }//GEN-LAST:event_pass_fieldFocusGained
 
     /**
      * @param args the command line arguments
@@ -180,6 +210,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel Password;
     private javax.swing.JButton Reset;
     private javax.swing.JLabel Username;
+    private javax.swing.JLabel msg1;
     private javax.swing.JPasswordField pass_field;
     private javax.swing.JTextField usr_name;
     // End of variables declaration//GEN-END:variables
