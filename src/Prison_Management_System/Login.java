@@ -4,9 +4,10 @@
  * and open the template in the editor.
  */
 package Prison_Management_System;
-import java.sql.DriverManager;
-import  com.mysql.jdbc.Connection;
+import java.sql.*;
+import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.Statement;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -37,7 +38,6 @@ public class Login extends javax.swing.JFrame {
         Password = new javax.swing.JLabel();
         usr_name = new javax.swing.JTextField();
         pass_field = new javax.swing.JPasswordField();
-        msg1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Login");
@@ -85,8 +85,6 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        msg1.setForeground(new java.awt.Color(255, 0, 51));
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -109,10 +107,7 @@ public class Login extends javax.swing.JFrame {
                         .addGap(48, 48, 48)
                         .addComponent(Username)
                         .addGap(61, 61, 61)
-                        .addComponent(usr_name, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(158, 158, 158)
-                        .addComponent(msg1)))
+                        .addComponent(usr_name, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(55, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -124,9 +119,7 @@ public class Login extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(2, 2, 2)
                         .addComponent(usr_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(msg1, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
+                .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(Password)
                     .addGroup(layout.createSequentialGroup()
@@ -144,15 +137,58 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginActionPerformed
-        if(usr_name.getText().equals("") || pass_field.getPassword().equals("")){
-            msg1.setText("Please enter username or password");
-        }            // TODO add your handling code here:
+        String username = usr_name.getText();
+        String password = String.valueOf(pass_field.getPassword());
+        String dbusername;
+        String dbpassword;
+        int access = 0, flag = 0;
+        if(username.equals("") || password.equals("")){
+            JOptionPane.showMessageDialog(null, "Please enter username or password");
+        }
+        else{
+            try{
+                Class.forName("java.sql.DriverManager");
+                Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
+                PreparedStatement stmt = con.prepareStatement("SELECT * FROM USERS");
+                ResultSet rs = stmt.executeQuery();
+                while(rs.next()){
+                    dbusername = rs.getString("username");
+                    dbpassword = rs.getString("password");
+                    access = Integer.parseInt(rs.getString("access"));
+                    if(dbusername.equals(username)){
+                        flag = 1;
+                        if(dbpassword.equals(password)){
+                            flag = 2;
+                        }
+                        else
+                            JOptionPane.showMessageDialog(null, "Wrong Email or Password");
+                        break;
+                    }
+
+                }
+                if(flag == 0)
+                    JOptionPane.showMessageDialog(null, "Not existing");
+                else if(flag == 2){
+                    if(access == 1)
+                        new AdministratorHome().setVisible(true);
+                    else if(access == 2)
+                        new PrisonManagerHome().setVisible(true);
+                    else
+                        new OthersHome().setVisible(true);
+                    this.dispose();
+                }
+            }
+            catch(Exception e){
+                JOptionPane.showMessageDialog(this, e.getMessage());
+            }
+        }
+          
+// TODO add your handling code here:
     }//GEN-LAST:event_LoginActionPerformed
 
     private void ResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetActionPerformed
         usr_name.setText("");
         pass_field.setText("");
-        msg1.setText("");
     // TODO add your handling code here:
     }//GEN-LAST:event_ResetActionPerformed
 
@@ -161,11 +197,11 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_ExitActionPerformed
 
     private void usr_nameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_usr_nameFocusGained
-        msg1.setText("");         // TODO add your handling code here:
+              // TODO add your handling code here:
     }//GEN-LAST:event_usr_nameFocusGained
 
     private void pass_fieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_pass_fieldFocusGained
-        msg1.setText("");         // TODO add your handling code here:
+             // TODO add your handling code here:
     }//GEN-LAST:event_pass_fieldFocusGained
 
     /**
@@ -210,7 +246,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel Password;
     private javax.swing.JButton Reset;
     private javax.swing.JLabel Username;
-    private javax.swing.JLabel msg1;
     private javax.swing.JPasswordField pass_field;
     private javax.swing.JTextField usr_name;
     // End of variables declaration//GEN-END:variables

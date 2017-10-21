@@ -49,10 +49,6 @@
                       <EmptySpace min="61" pref="61" max="-2" attributes="0"/>
                       <Component id="usr_name" min="-2" pref="128" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="158" max="-2" attributes="0"/>
-                      <Component id="msg1" min="-2" max="-2" attributes="0"/>
-                  </Group>
               </Group>
               <EmptySpace pref="55" max="32767" attributes="0"/>
           </Group>
@@ -69,9 +65,7 @@
                       <Component id="usr_name" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="msg1" min="-2" pref="16" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="Password" min="-2" max="-2" attributes="0"/>
                   <Group type="102" attributes="0">
@@ -149,13 +143,6 @@
       <Events>
         <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="pass_fieldFocusGained"/>
       </Events>
-    </Component>
-    <Component class="javax.swing.JLabel" name="msg1">
-      <Properties>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="33" green="0" red="ff" type="rgb"/>
-        </Property>
-      </Properties>
     </Component>
   </SubComponents>
 </Form>
