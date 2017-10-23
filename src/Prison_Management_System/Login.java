@@ -174,7 +174,7 @@ public class Login extends javax.swing.JFrame {
                     else if(access == 2)
                         new PrisonManagerHome().setVisible(true);
                     else
-                        new OthersHome().setVisible(true);
+                        new Search().setVisible(true);
                     this.dispose();
                 }
             }
