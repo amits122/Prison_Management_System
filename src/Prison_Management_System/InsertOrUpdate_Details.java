@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Prison_Management_System;
+import static Prison_Management_System.Login.username;
 import java.sql.DriverManager;
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.Statement;
@@ -147,15 +148,23 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
         Submit_Visitor = new javax.swing.JButton();
         jLabel46 = new javax.swing.JLabel();
         Exit_Time = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        jPanel10 = new javax.swing.JPanel();
+        jLabel26 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jPanel11 = new javax.swing.JPanel();
+        jLabel47 = new javax.swing.JLabel();
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
+
+        jPanel9.setBackground(new java.awt.Color(255, 255, 255));
+
+        jPanel2.setBackground(new java.awt.Color(204, 255, 255));
 
         jLabel6.setText("Court_ID");
 
@@ -241,6 +250,8 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("Court", jPanel2);
+
+        jPanel1.setBackground(new java.awt.Color(204, 255, 255));
 
         jLabel2.setText("Type");
 
@@ -367,6 +378,8 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Case", jPanel1);
 
+        jPanel4.setBackground(new java.awt.Color(204, 255, 255));
+
         jLabel23.setText("Prison_ID");
 
         jLabel24.setText("Location");
@@ -449,6 +462,8 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
         Jurisdiction.getAccessibleContext().setAccessibleDescription("");
 
         jTabbedPane1.addTab("Prison", jPanel4);
+
+        jPanel5.setBackground(new java.awt.Color(204, 255, 255));
 
         jLabel27.setText("Staff_ID");
 
@@ -579,6 +594,8 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Staff", jPanel5);
 
+        jPanel3.setBackground(new java.awt.Color(204, 255, 255));
+
         jLabel14.setText("Inmate_ID");
 
         jLabel15.setText("Name");
@@ -607,6 +624,8 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                 Start_DateActionPerformed(evt);
             }
         });
+
+        Inmate_DoB.setToolTipText("YYYY-MM-DD");
 
         Case_ID_Inmate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -710,6 +729,8 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Inmate", jPanel3);
 
+        jPanel6.setBackground(new java.awt.Color(204, 255, 255));
+
         jLabel33.setText("Job_ID");
 
         jLabel34.setText("Description");
@@ -780,6 +801,8 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("Job_Info", jPanel6);
+
+        jPanel8.setBackground(new java.awt.Color(204, 255, 255));
 
         jLabel41.setText("Job_ID");
 
@@ -891,6 +914,8 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("Job", jPanel8);
+
+        jPanel7.setBackground(new java.awt.Color(204, 255, 255));
 
         jLabel35.setText("Name");
 
@@ -1022,9 +1047,23 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Visitor", jPanel7);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel1.setText("Insert Details");
+        jPanel10.setBackground(new java.awt.Color(51, 51, 255));
+        jPanel10.setPreferredSize(new java.awt.Dimension(370, 236));
 
+        jLabel26.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel26.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel26.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel26.setText("Insert Details");
+
+        jButton1.setBackground(new java.awt.Color(255, 255, 255));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Prison_Management_System/Images/logout.png"))); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setBackground(new java.awt.Color(255, 255, 255));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Prison_Management_System/Images/back.png"))); // NOI18N
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1032,47 +1071,73 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Prison_Management_System/Images/logout.png"))); // NOI18N
-        jButton1.setText("Logout");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(64, 64, 64)
+                .addComponent(jLabel26)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(18, 18, 18))
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton2)
+                    .addComponent(jLabel26)
+                    .addComponent(jButton1))
+                .addContainerGap(26, Short.MAX_VALUE))
+        );
+
+        jPanel11.setBackground(new java.awt.Color(255, 51, 51));
+        jPanel11.setPreferredSize(new java.awt.Dimension(370, 236));
+
+        jLabel47.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel47.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel47.setText("© Copyright 2017");
+
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addGap(157, 157, 157)
+                .addComponent(jLabel47)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
+                .addContainerGap(44, Short.MAX_VALUE)
+                .addComponent(jLabel47)
+                .addGap(39, 39, 39))
+        );
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, 431, Short.MAX_VALUE)
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addComponent(jTabbedPane1)
-                        .addContainerGap())
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel1)
-                        .addGap(75, 75, 75)
-                        .addComponent(jButton1)
-                        .addGap(23, 23, 23))))
+                .addComponent(jTabbedPane1)
+                .addContainerGap())
+            .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, 431, Short.MAX_VALUE)
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel9Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton1))
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addComponent(jButton2)))
-                .addGap(18, 18, 18)
+                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -1083,7 +1148,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -1164,6 +1229,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
     private void Submit_CaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Submit_CaseActionPerformed
         int CaseID = Integer.parseInt(Case_ID.getText());
         String CaseType = Type.getText();
+        //Check Type = civil or criminal
         String CaseVerdict = Verdict.getText();
         String VerdictDate = Verdict_Date.getText();
         int CourtID = Integer.parseInt(Court_ID_Case.getText());
@@ -1194,6 +1260,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
         String CourtAddress = Address.getText();
         String ChiefJustice = Chief_Justice.getText();
         String CourtLevel = Level.getText();
+        //Check level constraint here
         String JuryMembers = Jury.getText();
         try{
             Class.forName("java.sql.DriverManager");
@@ -1278,6 +1345,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
         int JobID = Integer.parseInt(Job_ID_Feedback.getText());
         int InmateID = Integer.parseInt(Inmate_ID_Feedback.getText());
         String WorkShift = Shift.getText();
+        //CHECK(Shift = 'morning' OR Shift = 'afternoon' OR Shift = 'evening' OR Shift = 'night')
         int HoursCompleted = Integer.parseInt(Hours_Completed.getText());
         String InmateFeedback = Feedback.getText();
         try{
@@ -1501,6 +1569,9 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             Statement stmt = (Statement)con.createStatement();
             String query = "UPDATE JOB_DESC SET Description = '"+JobDesc+"' WHERE Job_ID = '"+JobID+"';";
             stmt.executeUpdate(query);
+            String line1 = "Updated Job Description" + JobDesc + "where Job_ID " + JobID; 
+            String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";
+            stmt.executeUpdate(logger);
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(this, e.getMessage());
@@ -1526,6 +1597,16 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
     }//GEN-LAST:event_Update_JobActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        try{
+            Class.forName("java.sql.DriverManager");
+            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
+            Statement stmt = (Statement)con.createStatement();
+            String logger = "INSERT INTO LOG (User, Operation) VALUES('"+username+"',' Logout');";
+            stmt.executeUpdate(logger);
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(this, e.getMessage());
+        }
         new Login().setVisible(true);
         this.dispose();
         // TODO add your handling code here:
@@ -1641,7 +1722,6 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
     private javax.swing.JTextField Visitor_Name;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -1659,6 +1739,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
@@ -1681,12 +1762,15 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
