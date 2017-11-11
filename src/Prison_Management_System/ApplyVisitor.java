@@ -90,9 +90,9 @@ public class ApplyVisitor extends javax.swing.JFrame {
             .addGroup(jPanel12Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48)
+                .addGap(85, 85, 85)
                 .addComponent(jLabel28)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 128, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
                 .addComponent(jButton8)
                 .addGap(18, 18, 18))
         );
@@ -102,8 +102,8 @@ public class ApplyVisitor extends javax.swing.JFrame {
                 .addGap(21, 21, 21)
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jButton2)
-                    .addComponent(jLabel28)
-                    .addComponent(jButton8))
+                    .addComponent(jButton8)
+                    .addComponent(jLabel28, javax.swing.GroupLayout.Alignment.LEADING))
                 .addContainerGap(26, Short.MAX_VALUE))
         );
 
@@ -189,6 +189,7 @@ public class ApplyVisitor extends javax.swing.JFrame {
             }
         });
 
+        Submit_Visitor.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Submit_Visitor.setText("Insert");
         Submit_Visitor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -335,7 +336,7 @@ public class ApplyVisitor extends javax.swing.JFrame {
             Class.forName("java.sql.DriverManager");
             Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
             Statement stmt = (Statement)con.createStatement();
-            String query = "INSERT INTO VISITOR(Name, Contact_Number,Inmate_ID, Relationship, Entry_time, Exit_Time) VALUES('"+VisitorName+"','"+Contact+"','"+InmateID+"','"+VisitorRelationship+"','"+VisitorPurpose+"','"+EntryTime+"','"+ExitTime+"');";
+            String query = "INSERT INTO VISITOR(Name, Contact_Number,Inmate_ID, Relationship, Purpose, Entry_time, Exit_Time) VALUES('"+VisitorName+"','"+Contact+"','"+InmateID+"','"+VisitorRelationship+"','"+VisitorPurpose+"','"+EntryTime+"','"+ExitTime+"');";
             stmt.executeUpdate(query);
             String line1 = "Inserted to Visitor" + VisitorName + ", " + Contact + ", " + InmateID + ", " + VisitorRelationship + ", " + VisitorPurpose + ", " + EntryTime + ", " + ExitTime;
             String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";

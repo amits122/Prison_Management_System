@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package Prison_Management_System;
-import javax.swing.table.*;
 import java.sql.*;
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.Statement;
@@ -15,38 +14,26 @@ import javax.swing.JOptionPane;
  */
 public class Approve extends javax.swing.JFrame {
 
-    ResultSet mainRs;
+    ResultSet mainRs = null;
     
     public void fetch(){
         try{
             Class.forName("java.sql.DriverManager");
             Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
             Statement mainStmt = (Statement)con.createStatement();
-            String mainQuery = "SELECT * FROM VISITOR WHERE Accept != 1;";
+            String mainQuery = "SELECT * FROM VISITOR WHERE Accept = 3;";
             mainRs = mainStmt.executeQuery(mainQuery);
-                Visitor_Name.setText(mainRs.getString("Name"));
-                Contact_Number.setText(mainRs.getString("Contact_Number"));
-                Inmate_ID_Visitor.setText(mainRs.getString("Inmate_ID"));
-                Relationship.setText(mainRs.getString("Relationship"));
-                Purpose.setText(mainRs.getString("Purpose"));
-                Entry_Time.setText(mainRs.getString("Entry_Time"));
-                Exit_Time.setText(mainRs.getString("Exit_Time"));
-            
-        }
-        catch(Exception e){
-            JOptionPane.showMessageDialog(this, e.getMessage());
-        }
-    }
-    public void refresh(){
-        try{
-            mainRs.next();            
+            if(mainRs.next() == false)
+                throw new ArithmeticException("No pending requests"); 
+            mainRs.first();
             Visitor_Name.setText(mainRs.getString("Name"));
             Contact_Number.setText(mainRs.getString("Contact_Number"));
             Inmate_ID_Visitor.setText(mainRs.getString("Inmate_ID"));
             Relationship.setText(mainRs.getString("Relationship"));
             Purpose.setText(mainRs.getString("Purpose"));
             Entry_Time.setText(mainRs.getString("Entry_Time"));
-            Exit_Time.setText(mainRs.getString("Exit_Time"));            
+            Exit_Time.setText(mainRs.getString("Exit_Time"));
+            
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(this, e.getMessage());
@@ -92,7 +79,6 @@ public class Approve extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -235,6 +221,7 @@ public class Approve extends javax.swing.JFrame {
             }
         });
 
+        jButton3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton3.setText("Approve");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -242,6 +229,7 @@ public class Approve extends javax.swing.JFrame {
             }
         });
 
+        jButton4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton4.setText("Disapprove");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -249,17 +237,11 @@ public class Approve extends javax.swing.JFrame {
             }
         });
 
+        jButton5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton5.setText("Refresh");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
-            }
-        });
-
-        jButton1.setText("Hold");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
             }
         });
 
@@ -269,35 +251,33 @@ public class Approve extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
             .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel40)
-                    .addComponent(jLabel39)
-                    .addComponent(jLabel38)
-                    .addComponent(jLabel37)
-                    .addComponent(jLabel36)
-                    .addComponent(jLabel35)
-                    .addComponent(jLabel46))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton5)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton3)
+                        .addGap(18, 18, 18)
                         .addComponent(jButton4))
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel40)
+                            .addComponent(jLabel39)
+                            .addComponent(jLabel38)
+                            .addComponent(jLabel37)
+                            .addComponent(jLabel36)
+                            .addComponent(jLabel35)
+                            .addComponent(jLabel46))
                         .addGap(33, 33, 33)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton1))
                             .addComponent(Exit_Time, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Entry_Time)
                             .addComponent(Purpose)
                             .addComponent(Relationship)
                             .addComponent(Inmate_ID_Visitor)
                             .addComponent(Contact_Number)
-                            .addComponent(Visitor_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton3))))
+                            .addComponent(Visitor_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -335,12 +315,9 @@ public class Approve extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton3)
-                    .addComponent(jButton4))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
+                    .addComponent(jButton4)
                     .addComponent(jButton5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -352,9 +329,7 @@ public class Approve extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -409,7 +384,6 @@ public class Approve extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         fetch();
-        refresh();
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
 
@@ -418,12 +392,12 @@ public class Approve extends javax.swing.JFrame {
         Class.forName("java.sql.DriverManager");
         Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
         Statement stmt = (Statement)con.createStatement();
-        String query = "INSERT INTO VISITOR(Accept) VALUES('1');";
+        String query = "UPDATE VISITOR SET Accept = 1 WHERE Name = '"+Visitor_Name.getText() + "'AND Contact_Number = '" + Contact_Number.getText() + "';";
         stmt.executeUpdate(query);
         String line1 = "Approved Visitor" + Visitor_Name.getText() + ", " + Contact_Number.getText() + ", " + Inmate_ID_Visitor.getText() + ", " + Relationship.getText() + ", " + Purpose.getText() + ", " + Entry_Time.getText() + ", " + Exit_Time.getText(); 
         String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";
         stmt.executeUpdate(logger);
-        refresh();
+        fetch();
     }
     catch(Exception e){
         JOptionPane.showMessageDialog(this, e.getMessage());
@@ -431,26 +405,22 @@ public class Approve extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        refresh();
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
     try{
         Class.forName("java.sql.DriverManager");
         Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
         Statement stmt = (Statement)con.createStatement();
-        String query = "INSERT INTO VISITOR(Accept) VALUES('0');";
+        String query = "UPDATE VISITOR SET Accept = 0 WHERE Name = '"+Visitor_Name.getText() + "'AND Contact_Number = '" + Contact_Number.getText() + "';";
         stmt.executeUpdate(query);
         String line1 = "Approved Visitor" + Visitor_Name.getText() + ", " + Contact_Number.getText() + ", " + Inmate_ID_Visitor.getText() + ", " + Relationship.getText() + ", " + Purpose.getText() + ", " + Entry_Time.getText() + ", " + Exit_Time.getText(); 
         String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";
         stmt.executeUpdate(logger);
-        refresh();
+        fetch();
     }
     catch(Exception e){
         JOptionPane.showMessageDialog(this, e.getMessage());
-    }        // TODO add your handling code here:
+    }      
+    // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
@@ -496,7 +466,6 @@ public class Approve extends javax.swing.JFrame {
     private javax.swing.JTextField Purpose;
     private javax.swing.JTextField Relationship;
     private javax.swing.JTextField Visitor_Name;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
