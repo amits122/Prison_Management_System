@@ -1295,9 +1295,9 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             Class.forName("java.sql.DriverManager");
             Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
             Statement stmt = (Statement)con.createStatement();
-            String query = "INSERT INTO VISITOR VALUES('"+VisitorName+"','"+Contact+"','"+InmateID+"','"+VisitorRelationship+"','"+VisitorPurpose+"','"+EntryTime+"','"+ExitTime+"');";
+            String query = "INSERT INTO VISITOR(Name, Contact_Number,Inmate_ID, Relationship, Entry_time, Exit_Time) VALUES('"+VisitorName+"','"+Contact+"','"+InmateID+"','"+VisitorRelationship+"','"+VisitorPurpose+"','"+EntryTime+"','"+ExitTime+"');";
             stmt.executeUpdate(query);
-            String line1 = "Inserted to Visitors" + VisitorName + ", " + Contact + ", " + InmateID + ", " + VisitorRelationship + ", " + VisitorPurpose + ", " + EntryTime + ", " + ExitTime; 
+            String line1 = "Inserted to Visitor" + VisitorName + ", " + Contact + ", " + InmateID + ", " + VisitorRelationship + ", " + VisitorPurpose + ", " + EntryTime + ", " + ExitTime; 
             String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";
             stmt.executeUpdate(logger);
         }
@@ -1459,6 +1459,9 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             stmt.executeUpdate(query);
             query = "DELETE FROM COURT_JURY WHERE Court_ID = '"+CourtID+"';";
             stmt.executeUpdate(query);
+            String line1 = "Updated Court & Jury" + CourtID + ", " + CourtAddress + ", " + ChiefJustice + ", " + CourtLevel + ", " + JuryMembers; 
+            String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";
+            stmt.executeUpdate(logger);
             String JuryArr[] = JuryMembers.split(",");
             for(String temp: JuryArr){
                 query = "INSERT INTO COURT_JURY VALUES('"+CourtID+"','"+temp.trim()+"');";
@@ -1485,6 +1488,9 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             stmt.executeUpdate(query);
             query = "DELETE FROM CASE_CHARGES WHERE CASE_ID = '"+CaseID+"';";
             stmt.executeUpdate(query);
+            String line1 = "Updated Case & Charges" + CaseID + ", " + CaseType + ", " + CaseVerdict + ", " + VerdictDate + ", " + CourtID + ", " + CaseCharges; 
+            String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";
+            stmt.executeUpdate(logger);
             String ChargeArr[] = CaseCharges.split(",");
             for(String temp: ChargeArr){
                 query = "INSERT INTO CASE_CHARGES VALUES('"+CaseID+"','"+temp.trim()+"');";
@@ -1506,6 +1512,9 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             Statement stmt = (Statement)con.createStatement();
             String query = "UPDATE PRISON SET Location = '"+Location+"', Jurisdiction = '"+PrisonJurisdiction+"' WHERE Prison_ID = '"+PrisonID+"';";
             stmt.executeUpdate(query);
+            String line1 = "Updated Prison" + PrisonID + ", " + Location + ", " + PrisonJurisdiction; 
+            String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";
+            stmt.executeUpdate(logger);
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(this, e.getMessage());
@@ -1525,6 +1534,9 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             Statement stmt = (Statement)con.createStatement();
             String query = "UPDATE STAFF SET Name = '"+StaffName+"', Date_Of_Birth = '"+StaffDateOfBirth+"', Address = '"+StaffAddress+"', Designation = '"+StaffDesignation+"', Salary = '"+StaffSalary+"' WHERE Staff_ID = '"+StaffID+"';";
             stmt.executeUpdate(query);
+            String line1 = "Updated Staff" + StaffID + ", " + StaffName + ", " + StaffDateOfBirth + ", " + StaffAddress + ", " + StaffDesignation + ", " + StaffSalary; 
+            String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";
+            stmt.executeUpdate(logger);
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(this, e.getMessage());
@@ -1547,6 +1559,9 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             Statement stmt = (Statement)con.createStatement();
             String query = "UPDATE INMATE SET Name = '"+InmateName+"', Date_Of_Birth = '"+InmateDateOfBirth+"', Start_Date = '"+StartDate+"', Release_Date = '"+ReleaseDate+"', Case_ID = '"+InmateCaseID+"', Prison_ID = '"+InmatePrisonID+"', Supervisor_Staff_ID = '"+InmateSupervisorID+"' WHERE Inmate_ID = '"+InmateID+"';";
             stmt.executeUpdate(query);
+            String line1 = "Updated Inmate" + InmateID + ", " + InmateName + ", " + InmateAlias + ", " + InmateDateOfBirth + ", " + StartDate + ", " + ReleaseDate + ", " + InmateCaseID + ", " + InmatePrisonID + ", " + InmateSupervisorID; 
+            String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";
+            stmt.executeUpdate(logger);
             query = "DELETE FROM INMATE_ALIAS WHERE INMATE_ID = '"+InmateID+"';";
             stmt.executeUpdate(query);
             String Aliases[] = InmateAlias.split(",");
@@ -1590,6 +1605,9 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             Statement stmt = (Statement)con.createStatement();
             String query = "UPDATE JOB SET Shift = '"+WorkShift+"', Hours_Completed = '"+HoursCompleted+"', Feedback = '"+InmateFeedback+"' WHERE Job_ID = '"+JobID+"' AND Inmate_ID = '"+InmateID+"';";
             stmt.executeUpdate(query);
+            String line1 = "Updated Job" + JobID + ", " + InmateID + ", " + WorkShift + ", " + HoursCompleted + ", " + InmateFeedback; 
+            String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";
+            stmt.executeUpdate(logger);
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(this, e.getMessage());
