@@ -74,6 +74,10 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
         Jurisdiction = new javax.swing.JTextField();
         Submit_Prison = new javax.swing.JButton();
         Update_Prison = new javax.swing.JButton();
+        Blocks = new javax.swing.JTextField();
+        jLabel48 = new javax.swing.JLabel();
+        jLabel49 = new javax.swing.JLabel();
+        No_Of_Cells = new javax.swing.JTextField();
         jPanel5 = new javax.swing.JPanel();
         jLabel27 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
@@ -110,6 +114,10 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
         Supervisor_Staff_ID = new javax.swing.JTextField();
         Submit_Inmate = new javax.swing.JButton();
         Update_Inmate = new javax.swing.JButton();
+        Blocks_Inmate = new javax.swing.JTextField();
+        Cells_Inmate = new javax.swing.JTextField();
+        jLabel50 = new javax.swing.JLabel();
+        jLabel51 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jLabel33 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
@@ -217,7 +225,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                     .addComponent(Jury, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Court_ID, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Address, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(69, Short.MAX_VALUE))
+                .addContainerGap(75, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -246,7 +254,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Submit_Court)
                     .addComponent(Update_Court))
-                .addContainerGap(183, Short.MAX_VALUE))
+                .addContainerGap(259, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Court", jPanel2);
@@ -338,7 +346,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                                     .addComponent(Verdict))
                                 .addComponent(Verdict_Date, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel8))
-                        .addContainerGap(55, Short.MAX_VALUE))))
+                        .addContainerGap(61, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -373,7 +381,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Submit_Case)
                     .addComponent(Update_Case))
-                .addContainerGap(147, Short.MAX_VALUE))
+                .addContainerGap(223, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Case", jPanel1);
@@ -386,7 +394,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
 
         jLabel25.setText("Jurisdiction");
 
-        Prison_ID.setToolTipText("Ignore on Insertion");
+        Prison_ID.setToolTipText("");
 
         Jurisdiction.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -408,6 +416,24 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             }
         });
 
+        Blocks.setToolTipText("(Enter multiple values separated by comma.)");
+        Blocks.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BlocksActionPerformed(evt);
+            }
+        });
+
+        jLabel48.setText("Blocks");
+
+        jLabel49.setText("No_Of_Cells");
+
+        No_Of_Cells.setToolTipText("(Enter multiple values separated by comma.)");
+        No_Of_Cells.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                No_Of_CellsActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -424,15 +450,23 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                             .addComponent(Prison_Location)
                             .addComponent(Prison_ID)))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel25)
-                        .addGap(49, 49, 49)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel25)
+                            .addComponent(jLabel48)
+                            .addComponent(jLabel49, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                                 .addComponent(Submit_Prison)
-                                .addGap(18, 18, 18)
+                                .addGap(44, 44, 44)
                                 .addComponent(Update_Prison)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(Jurisdiction))))
+                                .addGap(13, 13, 13))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGap(43, 43, 43)
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(No_Of_Cells, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(Blocks, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(Jurisdiction))))))
                 .addGap(102, 102, 102))
         );
         jPanel4Layout.setVerticalGroup(
@@ -452,9 +486,17 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                     .addComponent(Jurisdiction))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel48)
+                    .addComponent(Blocks))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel49)
+                    .addComponent(No_Of_Cells))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Submit_Prison)
                     .addComponent(Update_Prison))
-                .addContainerGap(255, Short.MAX_VALUE))
+                .addGap(184, 184, 184))
         );
 
         Prison_ID.getAccessibleContext().setAccessibleDescription("");
@@ -556,7 +598,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                             .addComponent(Staff_Name, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Staff_Salary)
                             .addComponent(Staff_ID))))
-                .addContainerGap(80, Short.MAX_VALUE))
+                .addContainerGap(86, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -589,7 +631,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Submit_Staff)
                     .addComponent(Update_Staff, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(146, Short.MAX_VALUE))
+                .addContainerGap(222, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Staff", jPanel5);
@@ -647,6 +689,24 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             }
         });
 
+        Blocks_Inmate.setToolTipText("(Enter multiple values separated by comma.)");
+        Blocks_Inmate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Blocks_InmateActionPerformed(evt);
+            }
+        });
+
+        Cells_Inmate.setToolTipText("(Enter multiple values separated by comma.)");
+        Cells_Inmate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Cells_InmateActionPerformed(evt);
+            }
+        });
+
+        jLabel50.setText("Cell_No");
+
+        jLabel51.setText("Block");
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -654,32 +714,42 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(38, 38, 38)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel22)
-                    .addComponent(jLabel21)
-                    .addComponent(jLabel20)
-                    .addComponent(jLabel19)
-                    .addComponent(jLabel18)
-                    .addComponent(jLabel17)
-                    .addComponent(jLabel16)
-                    .addComponent(jLabel15)
-                    .addComponent(jLabel14))
-                .addGap(41, 41, 41)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(Submit_Inmate)
-                        .addGap(18, 18, 18)
-                        .addComponent(Update_Inmate))
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(Supervisor_Staff_ID, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                        .addComponent(Prison_ID_Inmate, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(Case_ID_Inmate, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(Release_Date, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(Start_Date, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(Inmate_DoB, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(Alias, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(Inmate_Name, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(Inmate_ID, javax.swing.GroupLayout.Alignment.LEADING)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel51)
+                            .addComponent(jLabel50))
+                        .addGap(103, 103, 103)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Blocks_Inmate)
+                            .addComponent(Cells_Inmate)))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel22)
+                            .addComponent(jLabel21)
+                            .addComponent(jLabel20)
+                            .addComponent(jLabel19)
+                            .addComponent(jLabel18)
+                            .addComponent(jLabel17)
+                            .addComponent(jLabel16)
+                            .addComponent(jLabel15)
+                            .addComponent(jLabel14))
+                        .addGap(41, 41, 41)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(Prison_ID_Inmate, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                                .addComponent(Case_ID_Inmate, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(Release_Date, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(Start_Date, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(Inmate_DoB, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(Alias, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(Inmate_Name, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(Inmate_ID, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(Supervisor_Staff_ID))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(Submit_Inmate)
+                                .addGap(18, 18, 18)
+                                .addComponent(Update_Inmate)))))
+                .addGap(35, 35, 35))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -722,9 +792,17 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                     .addComponent(Supervisor_Staff_ID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel51)
+                    .addComponent(Blocks_Inmate))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel50)
+                    .addComponent(Cells_Inmate))
+                .addGap(26, 26, 26)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Submit_Inmate)
                     .addComponent(Update_Inmate))
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addGap(22, 22, 22))
         );
 
         jTabbedPane1.addTab("Inmate", jPanel3);
@@ -778,7 +856,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                     .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(Job_ID)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)))
-                .addContainerGap(77, Short.MAX_VALUE))
+                .addContainerGap(83, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -792,7 +870,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addComponent(jLabel34)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 257, Short.MAX_VALUE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Submit_Job_Desc)
@@ -879,7 +957,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                     .addComponent(Inmate_ID_Feedback)
                     .addComponent(Job_ID_Feedback)
                     .addComponent(jScrollPane3))
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -905,7 +983,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addComponent(jLabel45)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE))
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Submit_Job)
@@ -1007,7 +1085,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                         .addComponent(Inmate_ID_Visitor, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(Contact_Number, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(Visitor_Name, javax.swing.GroupLayout.Alignment.LEADING)))
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1042,7 +1120,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                     .addComponent(Exit_Time, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(Submit_Visitor)
-                .addContainerGap(108, Short.MAX_VALUE))
+                .addContainerGap(184, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Visitor", jPanel7);
@@ -1123,20 +1201,20 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, 431, Short.MAX_VALUE)
+            .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, 437, Short.MAX_VALUE)
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jTabbedPane1)
                 .addContainerGap())
-            .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, 431, Short.MAX_VALUE)
+            .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, 437, Short.MAX_VALUE)
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jTabbedPane1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -1148,7 +1226,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -1376,17 +1454,34 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
     }//GEN-LAST:event_ChargesActionPerformed
 
     private void Submit_PrisonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Submit_PrisonActionPerformed
+        int PrisonID = Integer.parseInt(Prison_ID.getText());
         String Location = Prison_Location.getText();
         String PrisonJurisdiction = Jurisdiction.getText();
+        String BlocksX = Blocks.getText();
+        String NoOfCells = No_Of_Cells.getText();     
         try{
             Class.forName("java.sql.DriverManager");
             Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
             Statement stmt = (Statement)con.createStatement();
-            String query = "INSERT INTO PRISON (Location, Jurisdiction) VALUES('"+Location+"','"+PrisonJurisdiction+"');";
-            stmt.executeUpdate(query);
-            String line1 = "Inserted to Prison" + Location + ", " + PrisonJurisdiction;
-            String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";
-            stmt.executeUpdate(logger);
+            String Block[] = BlocksX.split(",");
+            String Cells[] = NoOfCells.split(",");
+            if(Block.length != Cells.length){
+                JOptionPane.showMessageDialog(null, "Not Equal");
+            }
+            else{
+                String query = "INSERT INTO PRISON VALUES('"+PrisonID+"','"+Location+"','"+PrisonJurisdiction+"');";
+                stmt.executeUpdate(query);
+                for(int i = 0; i < Block.length; i++){
+                    for(int j = 0; j < Integer.parseInt(Cells[i]); j++){
+                        query = "INSERT INTO PRISON_BLOCKS VALUES('"+PrisonID+"','"+Block[i]+"','"+j+"');";
+                        stmt.executeUpdate(query);
+                    }
+                }
+                String line1 = "Inserted to Prison" + PrisonID + ", " + Location + ", " + PrisonJurisdiction+ ", " + BlocksX+ ", " + NoOfCells;
+                String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";
+                stmt.executeUpdate(logger);            
+            }    
+
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(this, e.getMessage());
@@ -1425,13 +1520,15 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
         int InmateCaseID = Integer.parseInt(Case_ID_Inmate.getText());
         int InmatePrisonID = Integer.parseInt(Prison_ID_Inmate.getText());
         int InmateSupervisorID = Integer.parseInt(Supervisor_Staff_ID.getText());
+        String Block = Blocks_Inmate.getText();
+        String CellNo = Cells_Inmate.getText();
         try{
             Class.forName("java.sql.DriverManager");
             Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
             Statement stmt = (Statement)con.createStatement();
-            String query = "INSERT INTO INMATE VALUES('"+InmateID+"','"+InmateName+"','"+InmateDateOfBirth+"','"+StartDate+"','"+ReleaseDate+"','"+InmateCaseID+"','"+InmatePrisonID+"','"+InmateSupervisorID+"');";
+            String query = "INSERT INTO INMATE VALUES('"+InmateID+"','"+InmateName+"','"+InmateDateOfBirth+"','"+StartDate+"','"+ReleaseDate+"','"+InmateCaseID+"','"+InmatePrisonID+"','"+InmateSupervisorID+"','"+Block+"','"+CellNo+"');";
             stmt.executeUpdate(query);
-            String line1 = "Inserted to Inmate" + InmateID + ", " + InmateName + ", " + InmateAlias + ", " + InmateDateOfBirth + ", " + StartDate + ", " + ReleaseDate + ", " + InmateCaseID + ", " + InmatePrisonID + ", " + InmateSupervisorID;
+            String line1 = "Inserted to Inmate" + InmateID + ", " + InmateName + ", " + InmateAlias + ", " + InmateDateOfBirth + ", " + StartDate + ", " + ReleaseDate + ", " + InmateCaseID + ", " + InmatePrisonID + ", " + InmateSupervisorID+ ", " + Block + ", " + CellNo;
             String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";
             stmt.executeUpdate(logger);
             String Aliases[] = InmateAlias.split(",");
@@ -1643,6 +1740,22 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void BlocksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BlocksActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BlocksActionPerformed
+
+    private void No_Of_CellsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_No_Of_CellsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_No_Of_CellsActionPerformed
+
+    private void Blocks_InmateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Blocks_InmateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Blocks_InmateActionPerformed
+
+    private void Cells_InmateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cells_InmateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Cells_InmateActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1682,8 +1795,11 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Address;
     private javax.swing.JTextField Alias;
+    private javax.swing.JTextField Blocks;
+    private javax.swing.JTextField Blocks_Inmate;
     private javax.swing.JTextField Case_ID;
     private javax.swing.JTextField Case_ID_Inmate;
+    private javax.swing.JTextField Cells_Inmate;
     private javax.swing.JTextField Charges;
     private javax.swing.JTextField Chief_Justice;
     private javax.swing.JTextField Contact_Number;
@@ -1704,6 +1820,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
     private javax.swing.JTextField Jurisdiction;
     private javax.swing.JTextField Jury;
     private javax.swing.JTextField Level;
+    private javax.swing.JTextField No_Of_Cells;
     private javax.swing.JTextField Prison_ID;
     private javax.swing.JTextField Prison_ID_Inmate;
     private javax.swing.JTextField Prison_Location;
@@ -1781,7 +1898,11 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
