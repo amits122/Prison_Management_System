@@ -5,6 +5,11 @@
  */
 package Prison_Management_System;
 import javax.swing.JOptionPane;
+import javax.swing.table.*;
+import java.sql.*;
+import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.Statement;
+import javax.swing.JOptionPane;
 /**
  *
  * @author amits
@@ -34,6 +39,21 @@ public class ApplyVisitor extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jPanel13 = new javax.swing.JPanel();
         jLabel47 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        Visitor_Name = new javax.swing.JTextField();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        jLabel46 = new javax.swing.JLabel();
+        Contact_Number = new javax.swing.JTextField();
+        Inmate_ID_Visitor = new javax.swing.JTextField();
+        Relationship = new javax.swing.JTextField();
+        Purpose = new javax.swing.JTextField();
+        Entry_Time = new javax.swing.JTextField();
+        Exit_Time = new javax.swing.JTextField();
+        Submit_Visitor = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -111,19 +131,140 @@ public class ApplyVisitor extends javax.swing.JFrame {
                 .addContainerGap(46, Short.MAX_VALUE))
         );
 
+        jLabel35.setText("Name");
+
+        Visitor_Name.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Visitor_NameActionPerformed(evt);
+            }
+        });
+
+        jLabel36.setText("Contact_Number");
+
+        jLabel37.setText("Inmate_ID");
+
+        jLabel38.setText("Relationship");
+
+        jLabel39.setText("Purpose");
+
+        jLabel40.setText("Entry_time");
+
+        jLabel46.setText("Exit_time");
+
+        Contact_Number.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Contact_NumberActionPerformed(evt);
+            }
+        });
+
+        Inmate_ID_Visitor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Inmate_ID_VisitorActionPerformed(evt);
+            }
+        });
+
+        Relationship.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RelationshipActionPerformed(evt);
+            }
+        });
+
+        Purpose.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PurposeActionPerformed(evt);
+            }
+        });
+
+        Entry_Time.setToolTipText("YYYY-MM-DD HH:MM:SS");
+        Entry_Time.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Entry_TimeActionPerformed(evt);
+            }
+        });
+
+        Exit_Time.setToolTipText("YYYY-MM-DD HH:MM:SS");
+        Exit_Time.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Exit_TimeActionPerformed(evt);
+            }
+        });
+
+        Submit_Visitor.setText("Insert");
+        Submit_Visitor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Submit_VisitorActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, 381, Short.MAX_VALUE)
             .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, 381, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(33, 33, 33)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel40)
+                        .addComponent(jLabel39)
+                        .addComponent(jLabel38)
+                        .addComponent(jLabel37)
+                        .addComponent(jLabel36)
+                        .addComponent(jLabel35)
+                        .addComponent(jLabel46))
+                    .addGap(33, 33, 33)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(Exit_Time, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Submit_Visitor)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(Entry_Time, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                            .addComponent(Purpose, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Relationship, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Inmate_ID_Visitor, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Contact_Number, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Visitor_Name, javax.swing.GroupLayout.Alignment.LEADING)))
+                    .addContainerGap(34, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(214, 214, 214)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 388, Short.MAX_VALUE)
                 .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(139, 139, 139)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel35)
+                        .addComponent(Visitor_Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(18, 18, 18)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel36)
+                        .addComponent(Contact_Number, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(18, 18, 18)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel37)
+                        .addComponent(Inmate_ID_Visitor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(18, 18, 18)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel38)
+                        .addComponent(Relationship, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(18, 18, 18)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel39)
+                        .addComponent(Purpose, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(18, 18, 18)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel40)
+                        .addComponent(Entry_Time, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(18, 18, 18)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel46)
+                        .addComponent(Exit_Time, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(18, 18, 18)
+                    .addComponent(Submit_Visitor)
+                    .addContainerGap(140, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -134,7 +275,9 @@ public class ApplyVisitor extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -151,6 +294,57 @@ public class ApplyVisitor extends javax.swing.JFrame {
         this.dispose();
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void Visitor_NameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Visitor_NameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Visitor_NameActionPerformed
+
+    private void Contact_NumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Contact_NumberActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Contact_NumberActionPerformed
+
+    private void Inmate_ID_VisitorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Inmate_ID_VisitorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Inmate_ID_VisitorActionPerformed
+
+    private void RelationshipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RelationshipActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RelationshipActionPerformed
+
+    private void PurposeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PurposeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PurposeActionPerformed
+
+    private void Entry_TimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Entry_TimeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Entry_TimeActionPerformed
+
+    private void Exit_TimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Exit_TimeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Exit_TimeActionPerformed
+
+    private void Submit_VisitorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Submit_VisitorActionPerformed
+        String VisitorName = Visitor_Name.getText();
+        String Contact = Contact_Number.getText();
+        int InmateID = Integer.parseInt(Inmate_ID_Visitor.getText());
+        String VisitorRelationship = Relationship.getText();
+        String VisitorPurpose = Purpose.getText();
+        String EntryTime = Entry_Time.getText();
+        String ExitTime = Exit_Time.getText();
+        try{
+            Class.forName("java.sql.DriverManager");
+            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
+            Statement stmt = (Statement)con.createStatement();
+            String query = "INSERT INTO VISITOR(Name, Contact_Number,Inmate_ID, Relationship, Entry_time, Exit_Time) VALUES('"+VisitorName+"','"+Contact+"','"+InmateID+"','"+VisitorRelationship+"','"+VisitorPurpose+"','"+EntryTime+"','"+ExitTime+"');";
+            stmt.executeUpdate(query);
+            String line1 = "Inserted to Visitor" + VisitorName + ", " + Contact + ", " + InmateID + ", " + VisitorRelationship + ", " + VisitorPurpose + ", " + EntryTime + ", " + ExitTime;
+            String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";
+            stmt.executeUpdate(logger);
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(this, e.getMessage());
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_Submit_VisitorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -188,9 +382,24 @@ public class ApplyVisitor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField Contact_Number;
+    private javax.swing.JTextField Entry_Time;
+    private javax.swing.JTextField Exit_Time;
+    private javax.swing.JTextField Inmate_ID_Visitor;
+    private javax.swing.JTextField Purpose;
+    private javax.swing.JTextField Relationship;
+    private javax.swing.JButton Submit_Visitor;
+    private javax.swing.JTextField Visitor_Name;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel47;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel12;
