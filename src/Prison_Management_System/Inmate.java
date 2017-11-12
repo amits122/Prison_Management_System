@@ -84,7 +84,7 @@ public class Inmate extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Inmate_ID", "Name", "Alias", "DateOfBirth", "Start", "Release", "Case_ID", "Prison_ID", "Supervisor_Staff_ID"
+                "Inmate_ID", "Name", "Alias", "DateOfBirth", "Start", "Release", "Case_ID", "Prison_ID", "Block", "Cell", "Supervisor_Staff_ID"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -147,10 +147,10 @@ public class Inmate extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 680, Short.MAX_VALUE)
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(305, 305, 305)
                 .addComponent(jButton1)
-                .addGap(303, 303, 303))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -201,6 +201,8 @@ public class Inmate extends javax.swing.JFrame {
                 String Release = mainRs.getString("Release_Date");
                 String Case = mainRs.getString("Case_ID");
                 String Prison = mainRs.getString("Prison_ID");
+                String Block = mainRs.getString("Block");
+                String Cell = mainRs.getString("Cell_Num");
                 String Supervisor = mainRs.getString("Supervisor_Staff_ID");
                 String Alias = "";
                 String subQuery = "SELECT * FROM INMATE_ALIAS WHERE INMATE_ID = " + IID + ";";
@@ -211,7 +213,7 @@ public class Inmate extends javax.swing.JFrame {
                     else
                         Alias = Alias + ", " + subRs.getString("Charges");
                 }
-                model.addRow(new Object[] {IID, Name, Alias, DOB, Start, Release, Case, Prison, Supervisor});
+                model.addRow(new Object[] {IID, Name, Alias, DOB, Start, Release, Case, Prison, Block, Cell, Supervisor});
             }
         }
         catch(Exception e){

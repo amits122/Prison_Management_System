@@ -156,6 +156,8 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
         Submit_Visitor = new javax.swing.JButton();
         jLabel46 = new javax.swing.JLabel();
         Exit_Time = new javax.swing.JTextField();
+        Visit_Date = new javax.swing.JTextField();
+        jLabel52 = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
         jLabel26 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
@@ -499,7 +501,6 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                 .addGap(184, 184, 184))
         );
 
-        Prison_ID.getAccessibleContext().setAccessibleDescription("");
         Prison_Location.getAccessibleContext().setAccessibleDescription("");
         Jurisdiction.getAccessibleContext().setAccessibleDescription("");
 
@@ -1060,6 +1061,14 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             }
         });
 
+        Visit_Date.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Visit_DateActionPerformed(evt);
+            }
+        });
+
+        jLabel52.setText("Date");
+
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
@@ -1073,7 +1082,8 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                     .addComponent(jLabel37)
                     .addComponent(jLabel36)
                     .addComponent(jLabel35)
-                    .addComponent(jLabel46))
+                    .addComponent(jLabel46)
+                    .addComponent(jLabel52))
                 .addGap(33, 33, 33)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Exit_Time, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1084,7 +1094,8 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                         .addComponent(Relationship, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(Inmate_ID_Visitor, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(Contact_Number, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(Visitor_Name, javax.swing.GroupLayout.Alignment.LEADING)))
+                        .addComponent(Visitor_Name, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(Visit_Date, javax.swing.GroupLayout.Alignment.LEADING)))
                 .addContainerGap(55, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
@@ -1112,15 +1123,19 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                     .addComponent(Purpose, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel52)
+                    .addComponent(Visit_Date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel40)
                     .addComponent(Entry_Time, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel46)
                     .addComponent(Exit_Time, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(73, 73, 73)
                 .addComponent(Submit_Visitor)
-                .addContainerGap(184, Short.MAX_VALUE))
+                .addContainerGap(91, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Visitor", jPanel7);
@@ -1367,15 +1382,16 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
         int InmateID = Integer.parseInt(Inmate_ID_Visitor.getText());
         String VisitorRelationship = Relationship.getText();
         String VisitorPurpose = Purpose.getText();
+        String Date = Visit_Date.getText();
         String EntryTime = Entry_Time.getText();
         String ExitTime = Exit_Time.getText();
         try{
             Class.forName("java.sql.DriverManager");
             Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
             Statement stmt = (Statement)con.createStatement();
-            String query = "INSERT INTO VISITOR(Name, Contact_Number,Inmate_ID, Relationship, Entry_time, Exit_Time) VALUES('"+VisitorName+"','"+Contact+"','"+InmateID+"','"+VisitorRelationship+"','"+VisitorPurpose+"','"+EntryTime+"','"+ExitTime+"');";
+            String query = "INSERT INTO VISITOR(Name, Contact_Number,Inmate_ID, Relationship, Date, Entry_time, Exit_Time) VALUES('"+VisitorName+"','"+Contact+"','"+InmateID+"','"+VisitorRelationship+"','"+VisitorPurpose+"','"+Date+"',"+EntryTime+"','"+ExitTime+"');";
             stmt.executeUpdate(query);
-            String line1 = "Inserted to Visitor" + VisitorName + ", " + Contact + ", " + InmateID + ", " + VisitorRelationship + ", " + VisitorPurpose + ", " + EntryTime + ", " + ExitTime; 
+            String line1 = "Inserted to Visitor" + VisitorName + ", " + Contact + ", " + InmateID + ", " + VisitorRelationship + ", " + VisitorPurpose + ", " + Date + ", " + EntryTime + ", " + ExitTime; 
             String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";
             stmt.executeUpdate(logger);
         }
@@ -1466,13 +1482,13 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             String Block[] = BlocksX.split(",");
             String Cells[] = NoOfCells.split(",");
             if(Block.length != Cells.length){
-                JOptionPane.showMessageDialog(null, "Not Equal");
+                JOptionPane.showMessageDialog(null, "Blocks do not correspont to cell size");
             }
             else{
                 String query = "INSERT INTO PRISON VALUES('"+PrisonID+"','"+Location+"','"+PrisonJurisdiction+"');";
                 stmt.executeUpdate(query);
                 for(int i = 0; i < Block.length; i++){
-                    for(int j = 0; j < Integer.parseInt(Cells[i]); j++){
+                    for(int j = 1; j <= Integer.parseInt(Cells[i]); j++){
                         query = "INSERT INTO PRISON_BLOCKS VALUES('"+PrisonID+"','"+Block[i]+"','"+j+"');";
                         stmt.executeUpdate(query);
                     }
@@ -1481,7 +1497,6 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                 String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";
                 stmt.executeUpdate(logger);            
             }    
-
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(this, e.getMessage());
@@ -1519,16 +1534,16 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
         String ReleaseDate = Release_Date.getText();
         int InmateCaseID = Integer.parseInt(Case_ID_Inmate.getText());
         int InmatePrisonID = Integer.parseInt(Prison_ID_Inmate.getText());
-        int InmateSupervisorID = Integer.parseInt(Supervisor_Staff_ID.getText());
         String Block = Blocks_Inmate.getText();
-        String CellNo = Cells_Inmate.getText();
+        int CellNo = Integer.parseInt(Cells_Inmate.getText());
+        int InmateSupervisorID = Integer.parseInt(Supervisor_Staff_ID.getText());
         try{
             Class.forName("java.sql.DriverManager");
             Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
             Statement stmt = (Statement)con.createStatement();
-            String query = "INSERT INTO INMATE VALUES('"+InmateID+"','"+InmateName+"','"+InmateDateOfBirth+"','"+StartDate+"','"+ReleaseDate+"','"+InmateCaseID+"','"+InmatePrisonID+"','"+InmateSupervisorID+"','"+Block+"','"+CellNo+"');";
+            String query = "INSERT INTO INMATE VALUES('"+InmateID+"','"+InmateName+"','"+InmateDateOfBirth+"','"+StartDate+"','"+ReleaseDate+"','"+InmateCaseID+"','"+InmatePrisonID+"','"+Block+"','"+CellNo+"','"+InmateSupervisorID+"');";
             stmt.executeUpdate(query);
-            String line1 = "Inserted to Inmate" + InmateID + ", " + InmateName + ", " + InmateAlias + ", " + InmateDateOfBirth + ", " + StartDate + ", " + ReleaseDate + ", " + InmateCaseID + ", " + InmatePrisonID + ", " + InmateSupervisorID+ ", " + Block + ", " + CellNo;
+            String line1 = "Inserted to Inmate" + InmateID + ", " + InmateName + ", " + InmateAlias + ", " + InmateDateOfBirth + ", " + StartDate + ", " + ReleaseDate + ", " + InmateCaseID + ", " + InmatePrisonID + ", " + Block + ", " + CellNo + ", " + InmateSupervisorID;
             String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";
             stmt.executeUpdate(logger);
             String Aliases[] = InmateAlias.split(",");
@@ -1603,15 +1618,32 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
         int PrisonID = Integer.parseInt(Prison_ID.getText());
         String Location = Prison_Location.getText();
         String PrisonJurisdiction = Jurisdiction.getText();
+        String BlocksX = Blocks.getText();
+        String NoOfCells = No_Of_Cells.getText();
+        String Block[] = BlocksX.split(",");
+        String Cells[] = NoOfCells.split(",");
         try{
             Class.forName("java.sql.DriverManager");
             Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
             Statement stmt = (Statement)con.createStatement();
-            String query = "UPDATE PRISON SET Location = '"+Location+"', Jurisdiction = '"+PrisonJurisdiction+"' WHERE Prison_ID = '"+PrisonID+"';";
-            stmt.executeUpdate(query);
-            String line1 = "Updated Prison" + PrisonID + ", " + Location + ", " + PrisonJurisdiction; 
-            String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";
-            stmt.executeUpdate(logger);
+            if(Block.length != Cells.length){
+                JOptionPane.showMessageDialog(null, "Blocks do not correspont to cell size");
+            }
+            else{
+                String query = "UPDATE PRISON SET Location = '"+Location+"', Jurisdiction = '"+PrisonJurisdiction+"' WHERE Prison_ID = '"+PrisonID+"';";
+                stmt.executeUpdate(query);
+                query = "DELETE FROM PRISON_BLOCKS WHERE Prison_ID = '"+PrisonID+"';";
+                stmt.executeUpdate(query);
+                for(int i = 0; i < Block.length; i++){
+                    for(int j = 1; j <= Integer.parseInt(Cells[i]); j++){
+                        query = "INSERT INTO PRISON_BLOCKS VALUES('"+PrisonID+"','"+Block[i]+"','"+j+"');";
+                        stmt.executeUpdate(query);
+                    }
+                }
+                String line1 = "Updated Prison" + PrisonID + ", " + Location + ", " + PrisonJurisdiction+ ", " + BlocksX+ ", " + NoOfCells; 
+                String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";
+                stmt.executeUpdate(logger);
+            }
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(this, e.getMessage());
@@ -1649,14 +1681,16 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
         String ReleaseDate = Release_Date.getText();
         int InmateCaseID = Integer.parseInt(Case_ID_Inmate.getText());
         int InmatePrisonID = Integer.parseInt(Prison_ID_Inmate.getText());
+        String Block = Blocks_Inmate.getText();
+        int CellNo = Integer.parseInt(Cells_Inmate.getText());
         int InmateSupervisorID = Integer.parseInt(Supervisor_Staff_ID.getText());
         try{
             Class.forName("java.sql.DriverManager");
             Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
             Statement stmt = (Statement)con.createStatement();
-            String query = "UPDATE INMATE SET Name = '"+InmateName+"', Date_Of_Birth = '"+InmateDateOfBirth+"', Start_Date = '"+StartDate+"', Release_Date = '"+ReleaseDate+"', Case_ID = '"+InmateCaseID+"', Prison_ID = '"+InmatePrisonID+"', Supervisor_Staff_ID = '"+InmateSupervisorID+"' WHERE Inmate_ID = '"+InmateID+"';";
+            String query = "UPDATE INMATE SET Name = '"+InmateName+"', Date_Of_Birth = '"+InmateDateOfBirth+"', Start_Date = '"+StartDate+"', Release_Date = '"+ReleaseDate+"', Case_ID = '"+InmateCaseID+"', Prison_ID = '"+InmatePrisonID+"',Block = '"+Block+"', Cell_Num = '"+CellNo+"', Supervisor_Staff_ID = '"+InmateSupervisorID+"' WHERE Inmate_ID = '"+InmateID+"';";
             stmt.executeUpdate(query);
-            String line1 = "Updated Inmate" + InmateID + ", " + InmateName + ", " + InmateAlias + ", " + InmateDateOfBirth + ", " + StartDate + ", " + ReleaseDate + ", " + InmateCaseID + ", " + InmatePrisonID + ", " + InmateSupervisorID; 
+            String line1 = "Updated Inmate" + InmateID + ", " + InmateName + ", " + InmateAlias + ", " + InmateDateOfBirth + ", " + StartDate + ", " + ReleaseDate + ", " + InmateCaseID + ", " + InmatePrisonID + ", " + Block + ", " + CellNo + ", " + InmateSupervisorID; 
             String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";
             stmt.executeUpdate(logger);
             query = "DELETE FROM INMATE_ALIAS WHERE INMATE_ID = '"+InmateID+"';";
@@ -1756,6 +1790,10 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Cells_InmateActionPerformed
 
+    private void Visit_DateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Visit_DateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Visit_DateActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1854,6 +1892,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
     private javax.swing.JButton Update_Staff;
     private javax.swing.JTextField Verdict;
     private javax.swing.JTextField Verdict_Date;
+    private javax.swing.JTextField Visit_Date;
     private javax.swing.JTextField Visitor_Name;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -1903,6 +1942,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;

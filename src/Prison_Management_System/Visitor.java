@@ -84,7 +84,7 @@ public class Visitor extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Name", "Contact", "InmateID", "Relationship", "Purpose", "EntryTime", "ExitTime", "Approved"
+                "Name", "Contact", "InmateID", "Relationship", "Purpose", "Date", "EntryTime", "ExitTime", "Approved", "Comment"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -120,7 +120,7 @@ public class Visitor extends javax.swing.JFrame {
             .addGroup(jPanel12Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
+                .addGap(47, 47, 47)
                 .addComponent(jLabel28)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton8)
@@ -198,10 +198,12 @@ public class Visitor extends javax.swing.JFrame {
                 String IID = mainRs.getString("Inmate_ID");
                 String Relationship = mainRs.getString("Relationship");
                 String Purpose = mainRs.getString("Purpose");
+                String Date = mainRs.getString("Date");
                 String Entry_Time = mainRs.getString("Entry_Time");
                 String Exit_Time = mainRs.getString("Exit_Time");
                 String Accept = mainRs.getString("Exit_Time");
-                model.addRow(new Object[] {Name, Contact_Number, IID, Relationship, Purpose, Entry_Time, Exit_Time, Accept });
+                String Comment = mainRs.getString("Comment");
+                model.addRow(new Object[] {Name, Contact_Number, IID, Relationship, Purpose, Date, Entry_Time, Exit_Time, Accept, Comment });
             }
         }
         catch(Exception e){

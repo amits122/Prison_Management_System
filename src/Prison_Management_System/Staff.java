@@ -85,7 +85,7 @@ public class Staff extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Staff_ID", "Name", "DateOfBirth", "Address", "Designation", "Salary"
+                "Staff_ID", "Name", "DateOfBirth", "Address", "Designation", "Shift", "Salary"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -170,11 +170,11 @@ public class Staff extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -199,8 +199,9 @@ public class Staff extends javax.swing.JFrame {
                 String DOB = mainRs.getString("Date_Of_Birth");
                 String Addr = mainRs.getString("Address");
                 String Designation = mainRs.getString("Designation");
+                String Shift = mainRs.getString("Shift");
                 String Salary = mainRs.getString("Salary");
-                model.addRow(new Object[] {SID, Name, DOB, Addr, Designation, Salary});
+                model.addRow(new Object[] {SID, Name, DOB, Addr, Designation, Shift, Salary});
             }
         }
         catch(Exception e){
