@@ -72,6 +72,7 @@ public class Prison extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Prison_Management_System/Images/refresh.png"))); // NOI18N
         jButton1.setText("Refresh");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,7 +85,7 @@ public class Prison extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Prison_ID", "Location", "Jurisdiction"
+                "Prison_ID", "Location", "Jurisdiction", "Number of Cells"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -145,12 +146,10 @@ public class Prison extends javax.swing.JFrame {
             .addComponent(jPanel12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 480, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 480, Short.MAX_VALUE))
                 .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(199, 199, 199)
-                .addComponent(jButton1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -190,14 +189,15 @@ public class Prison extends javax.swing.JFrame {
             Class.forName("java.sql.DriverManager");
             Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
             Statement mainStmt = (Statement)con.createStatement();
-            String mainQuery = "SELECT * FROM PRISON;";
+            String mainQuery = "select Prison_ID, Location, Jurisdiction,count(*) AS Num_Of_Cells from prison natural join prison_blocks group by Prison_ID;";
             ResultSet mainRs = mainStmt.executeQuery(mainQuery);
             while(mainRs.next()){
                 String PID = mainRs.getString("Prison_ID");
                 String Location = mainRs.getString("Location");
                 String Jurisdiction = mainRs.getString("Jurisdiction");
+                String NoOfCells = mainRs.getString("Num_Of_Cells");
                 //put cell no & privileges
-                model.addRow(new Object[] {PID, Location, Jurisdiction});
+                model.addRow(new Object[] {PID, Location, Jurisdiction, NoOfCells});
             }
         }
         catch(Exception e){
