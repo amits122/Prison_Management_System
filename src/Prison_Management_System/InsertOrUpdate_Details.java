@@ -114,10 +114,10 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
         Supervisor_Staff_ID = new javax.swing.JTextField();
         Submit_Inmate = new javax.swing.JButton();
         Update_Inmate = new javax.swing.JButton();
-        Blocks_Inmate = new javax.swing.JTextField();
-        Cells_Inmate = new javax.swing.JTextField();
         jLabel50 = new javax.swing.JLabel();
         jLabel51 = new javax.swing.JLabel();
+        Blocks_Inmate = new javax.swing.JTextField();
+        Cells_Inmate = new javax.swing.JTextField();
         jPanel6 = new javax.swing.JPanel();
         jLabel33 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
@@ -190,6 +190,8 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
 
         Level.setToolTipText("Supreme/High/District/Sessions/Tribunal");
 
+        Submit_Court.setBackground(new java.awt.Color(255, 255, 255));
+        Submit_Court.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Submit_Court.setText("Insert");
         Submit_Court.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -197,6 +199,8 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             }
         });
 
+        Update_Court.setBackground(new java.awt.Color(255, 255, 255));
+        Update_Court.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Update_Court.setText("Update");
         Update_Court.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -208,31 +212,31 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel9)
-                    .addComponent(jLabel12)
-                    .addComponent(jLabel11)
-                    .addComponent(jLabel10))
-                .addGap(32, 32, 32)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(64, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(Submit_Court)
-                        .addGap(18, 18, 18)
-                        .addComponent(Update_Court))
-                    .addComponent(Chief_Justice, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Level, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Jury, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Court_ID, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Address, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(75, Short.MAX_VALUE))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel11)
+                            .addComponent(jLabel10))
+                        .addGap(32, 32, 32)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Chief_Justice, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                            .addComponent(Level, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                            .addComponent(Court_ID, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                            .addComponent(Address, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                            .addComponent(Jury, javax.swing.GroupLayout.Alignment.TRAILING)))
+                    .addComponent(Submit_Court, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Update_Court, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(54, 54, 54))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
+                .addGap(165, 165, 165)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(Court_ID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -253,10 +257,10 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                     .addComponent(jLabel12)
                     .addComponent(Jury, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Submit_Court)
-                    .addComponent(Update_Court))
-                .addContainerGap(259, Short.MAX_VALUE))
+                .addComponent(Submit_Court)
+                .addGap(18, 18, 18)
+                .addComponent(Update_Court)
+                .addContainerGap(209, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Court", jPanel2);
@@ -293,6 +297,8 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
 
         jLabel7.setText("Charges");
 
+        Submit_Case.setBackground(new java.awt.Color(255, 255, 255));
+        Submit_Case.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Submit_Case.setText("Insert");
         Submit_Case.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -309,6 +315,8 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
 
         jLabel13.setText("Case_ID");
 
+        Update_Case.setBackground(new java.awt.Color(255, 255, 255));
+        Update_Case.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Update_Case.setText("Update");
         Update_Case.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -321,69 +329,73 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(38, 38, 38)
+                .addGap(53, 53, 53)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel13)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel3))
-                .addGap(51, 51, 51)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(Court_ID_Case, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(Submit_Case)
-                                .addGap(18, 18, 18)
-                                .addComponent(Update_Case))
-                            .addComponent(Charges, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(Case_ID, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(Type, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                                    .addComponent(Verdict))
-                                .addComponent(Verdict_Date, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel8))
-                        .addContainerGap(61, Short.MAX_VALUE))))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel5)
+                                .addComponent(jLabel4))
+                            .addGap(44, 44, 44)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(Charges)
+                                .addComponent(Court_ID_Case, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Submit_Case, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Update_Case, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(Verdict_Date, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel13)
+                                .addComponent(jLabel2)
+                                .addComponent(jLabel3))
+                            .addGap(65, 65, 65)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(Case_ID)
+                                .addComponent(Type)
+                                .addComponent(Verdict, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel8)
+                .addContainerGap(57, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel13)
-                    .addComponent(Case_ID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(190, 190, 190)
+                        .addComponent(jLabel8))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(155, 155, 155)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel13)
+                            .addComponent(Case_ID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(Type, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(Verdict, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4)
+                            .addComponent(Verdict_Date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(Court_ID_Case, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel7)
+                            .addComponent(Charges, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(27, 27, 27)
+                .addComponent(Submit_Case)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(Type, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(Verdict, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(Verdict_Date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(Court_ID_Case, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(3, 3, 3)
-                .addComponent(jLabel8)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(Charges, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Submit_Case)
-                    .addComponent(Update_Case))
-                .addContainerGap(223, Short.MAX_VALUE))
+                .addComponent(Update_Case)
+                .addContainerGap(172, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Case", jPanel1);
@@ -404,6 +416,8 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             }
         });
 
+        Submit_Prison.setBackground(new java.awt.Color(255, 255, 255));
+        Submit_Prison.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Submit_Prison.setText("Insert");
         Submit_Prison.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -411,6 +425,8 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             }
         });
 
+        Update_Prison.setBackground(new java.awt.Color(255, 255, 255));
+        Update_Prison.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Update_Prison.setText("Update");
         Update_Prison.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -441,40 +457,34 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel23)
-                            .addComponent(jLabel24))
-                        .addGap(56, 56, 56)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Prison_Location)
-                            .addComponent(Prison_ID)))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel25)
                             .addComponent(jLabel48)
                             .addComponent(jLabel49, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGap(43, 43, 43)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(No_Of_Cells, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                            .addComponent(Jurisdiction, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(Blocks, javax.swing.GroupLayout.Alignment.TRAILING)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
-                                .addComponent(Submit_Prison)
-                                .addGap(44, 44, 44)
-                                .addComponent(Update_Prison)
-                                .addGap(13, 13, 13))
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGap(43, 43, 43)
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(No_Of_Cells, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(Blocks, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(Jurisdiction))))))
-                .addGap(102, 102, 102))
+                            .addComponent(jLabel23)
+                            .addComponent(jLabel24))
+                        .addGap(56, 56, 56)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Prison_Location, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                            .addComponent(Prison_ID)))
+                    .addComponent(Update_Prison, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Submit_Prison, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(74, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
+                .addGap(150, 150, 150)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel23)
                     .addComponent(Prison_ID))
@@ -494,11 +504,11 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel49)
                     .addComponent(No_Of_Cells))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Submit_Prison)
-                    .addComponent(Update_Prison))
-                .addGap(184, 184, 184))
+                .addGap(18, 18, 18)
+                .addComponent(Submit_Prison)
+                .addGap(18, 18, 18)
+                .addComponent(Update_Prison)
+                .addGap(224, 224, 224))
         );
 
         Prison_Location.getAccessibleContext().setAccessibleDescription("");
@@ -552,6 +562,8 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             }
         });
 
+        Submit_Staff.setBackground(new java.awt.Color(255, 255, 255));
+        Submit_Staff.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Submit_Staff.setText("Insert");
         Submit_Staff.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -565,6 +577,8 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             }
         });
 
+        Update_Staff.setBackground(new java.awt.Color(255, 255, 255));
+        Update_Staff.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Update_Staff.setText("Update");
         Update_Staff.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -577,8 +591,8 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(51, 51, 51)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel28)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -589,22 +603,20 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                             .addComponent(jLabel27))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(Staff_Designation, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                            .addComponent(Staff_Designation, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Staff_Address, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
-                                .addComponent(Submit_Staff)
-                                .addGap(18, 18, 18)
-                                .addComponent(Update_Staff))
                             .addComponent(Staff_DoB, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Staff_Name, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Staff_Salary)
-                            .addComponent(Staff_ID))))
-                .addContainerGap(86, Short.MAX_VALUE))
+                            .addComponent(Staff_ID, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(Update_Staff, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Submit_Staff, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(82, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
+                .addGap(149, 149, 149)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel27)
                     .addComponent(Staff_ID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -629,10 +641,10 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                     .addComponent(jLabel32)
                     .addComponent(Staff_Salary, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Submit_Staff)
-                    .addComponent(Update_Staff, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(222, Short.MAX_VALUE))
+                .addComponent(Submit_Staff)
+                .addGap(18, 18, 18)
+                .addComponent(Update_Staff)
+                .addContainerGap(190, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Staff", jPanel5);
@@ -661,6 +673,12 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
 
         Alias.setToolTipText("(Enter multiple values separated by comma.)");
 
+        Inmate_Name.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Inmate_NameActionPerformed(evt);
+            }
+        });
+
         Start_Date.setToolTipText("YYYY-MM-DD");
         Start_Date.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -676,6 +694,8 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             }
         });
 
+        Submit_Inmate.setBackground(new java.awt.Color(255, 255, 255));
+        Submit_Inmate.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Submit_Inmate.setText("Insert");
         Submit_Inmate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -683,24 +703,12 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             }
         });
 
+        Update_Inmate.setBackground(new java.awt.Color(255, 255, 255));
+        Update_Inmate.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Update_Inmate.setText("Update");
         Update_Inmate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Update_InmateActionPerformed(evt);
-            }
-        });
-
-        Blocks_Inmate.setToolTipText("(Enter multiple values separated by comma.)");
-        Blocks_Inmate.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Blocks_InmateActionPerformed(evt);
-            }
-        });
-
-        Cells_Inmate.setToolTipText("(Enter multiple values separated by comma.)");
-        Cells_Inmate.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Cells_InmateActionPerformed(evt);
             }
         });
 
@@ -714,15 +722,8 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(38, 38, 38)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel51)
-                            .addComponent(jLabel50))
-                        .addGap(103, 103, 103)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Blocks_Inmate)
-                            .addComponent(Cells_Inmate)))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Submit_Inmate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel22)
@@ -733,24 +734,24 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                             .addComponent(jLabel17)
                             .addComponent(jLabel16)
                             .addComponent(jLabel15)
-                            .addComponent(jLabel14))
+                            .addComponent(jLabel14)
+                            .addComponent(jLabel51)
+                            .addComponent(jLabel50))
                         .addGap(41, 41, 41)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(Prison_ID_Inmate, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                                .addComponent(Case_ID_Inmate, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(Release_Date, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(Start_Date, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(Inmate_DoB, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(Alias, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(Inmate_Name, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(Inmate_ID, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(Supervisor_Staff_ID))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(Submit_Inmate)
-                                .addGap(18, 18, 18)
-                                .addComponent(Update_Inmate)))))
-                .addGap(35, 35, 35))
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Blocks_Inmate)
+                            .addComponent(Prison_ID_Inmate, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                            .addComponent(Case_ID_Inmate)
+                            .addComponent(Release_Date)
+                            .addComponent(Start_Date)
+                            .addComponent(Inmate_DoB)
+                            .addComponent(Alias)
+                            .addComponent(Inmate_Name)
+                            .addComponent(Supervisor_Staff_ID)
+                            .addComponent(Cells_Inmate)
+                            .addComponent(Inmate_ID)))
+                    .addComponent(Update_Inmate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -794,16 +795,16 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel51)
-                    .addComponent(Blocks_Inmate))
+                    .addComponent(Blocks_Inmate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel50)
-                    .addComponent(Cells_Inmate))
-                .addGap(26, 26, 26)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Submit_Inmate)
-                    .addComponent(Update_Inmate))
-                .addGap(22, 22, 22))
+                    .addComponent(Cells_Inmate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(Submit_Inmate)
+                .addGap(18, 18, 18)
+                .addComponent(Update_Inmate)
+                .addContainerGap())
         );
 
         jTabbedPane1.addTab("Inmate", jPanel3);
@@ -825,6 +826,8 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
         Job_Description.setRows(5);
         jScrollPane2.setViewportView(Job_Description);
 
+        Submit_Job_Desc.setBackground(new java.awt.Color(255, 255, 255));
+        Submit_Job_Desc.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Submit_Job_Desc.setText("Insert");
         Submit_Job_Desc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -832,6 +835,8 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             }
         });
 
+        Update_Job_Info.setBackground(new java.awt.Color(255, 255, 255));
+        Update_Job_Info.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Update_Job_Info.setText("Update");
         Update_Job_Info.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -845,19 +850,18 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGap(39, 39, 39)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel33)
-                    .addComponent(jLabel34))
-                .addGap(37, 37, 37)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(Submit_Job_Desc)
-                        .addGap(18, 18, 18)
-                        .addComponent(Update_Job_Info))
-                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(Job_ID)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)))
-                .addContainerGap(83, Short.MAX_VALUE))
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel33)
+                            .addComponent(jLabel34))
+                        .addGap(37, 37, 37)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Job_ID, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                            .addComponent(jScrollPane2)))
+                    .addComponent(Submit_Job_Desc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Update_Job_Info, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(91, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -871,12 +875,12 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addComponent(jLabel34)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 469, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Submit_Job_Desc)
-                    .addComponent(Update_Job_Info))
-                .addGap(62, 62, 62))
+                .addComponent(Submit_Job_Desc)
+                .addGap(18, 18, 18)
+                .addComponent(Update_Job_Info)
+                .addGap(21, 21, 21))
         );
 
         jTabbedPane1.addTab("Job_Info", jPanel6);
@@ -917,6 +921,8 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             }
         });
 
+        Submit_Job.setBackground(new java.awt.Color(255, 255, 255));
+        Submit_Job.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Submit_Job.setText("Insert");
         Submit_Job.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -928,6 +934,8 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
         Feedback.setRows(5);
         jScrollPane3.setViewportView(Feedback);
 
+        Update_Job.setBackground(new java.awt.Color(255, 255, 255));
+        Update_Job.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Update_Job.setText("Update");
         Update_Job.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -940,25 +948,25 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGap(47, 47, 47)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel45)
-                    .addComponent(jLabel44)
-                    .addComponent(jLabel43)
-                    .addComponent(jLabel42)
-                    .addComponent(jLabel41))
-                .addGap(31, 31, 31)
+                .addGap(29, 29, 29)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Submit_Job, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addComponent(Submit_Job)
-                        .addGap(18, 18, 18)
-                        .addComponent(Update_Job))
-                    .addComponent(Hours_Completed, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                    .addComponent(Shift)
-                    .addComponent(Inmate_ID_Feedback)
-                    .addComponent(Job_ID_Feedback)
-                    .addComponent(jScrollPane3))
-                .addContainerGap(49, Short.MAX_VALUE))
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel45)
+                            .addComponent(jLabel44)
+                            .addComponent(jLabel43)
+                            .addComponent(jLabel42)
+                            .addComponent(jLabel41))
+                        .addGap(31, 31, 31)
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Hours_Completed)
+                            .addComponent(Shift)
+                            .addComponent(Inmate_ID_Feedback)
+                            .addComponent(Job_ID_Feedback)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(Update_Job, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(75, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -981,15 +989,13 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                     .addComponent(Hours_Completed, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addComponent(jLabel45)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE))
+                    .addComponent(jLabel45)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Submit_Job)
-                    .addComponent(Update_Job))
-                .addGap(28, 28, 28))
+                .addComponent(Submit_Job)
+                .addGap(18, 18, 18)
+                .addComponent(Update_Job)
+                .addContainerGap(102, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Job", jPanel8);
@@ -1038,14 +1044,16 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             }
         });
 
-        Entry_Time.setToolTipText("YYYY-MM-DD HH:MM:SS");
+        Entry_Time.setToolTipText("HH:MM:SS");
         Entry_Time.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Entry_TimeActionPerformed(evt);
             }
         });
 
-        Submit_Visitor.setText("Insert");
+        Submit_Visitor.setBackground(new java.awt.Color(255, 255, 255));
+        Submit_Visitor.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Submit_Visitor.setText("Apply");
         Submit_Visitor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Submit_VisitorActionPerformed(evt);
@@ -1054,13 +1062,14 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
 
         jLabel46.setText("Exit_time");
 
-        Exit_Time.setToolTipText("YYYY-MM-DD HH:MM:SS");
+        Exit_Time.setToolTipText("HH:MM:SS");
         Exit_Time.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Exit_TimeActionPerformed(evt);
             }
         });
 
+        Visit_Date.setToolTipText("YYYY-MM-DD");
         Visit_Date.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Visit_DateActionPerformed(evt);
@@ -1074,34 +1083,35 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel40)
-                    .addComponent(jLabel39)
-                    .addComponent(jLabel38)
-                    .addComponent(jLabel37)
-                    .addComponent(jLabel36)
-                    .addComponent(jLabel35)
-                    .addComponent(jLabel46)
-                    .addComponent(jLabel52))
-                .addGap(33, 33, 33)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Exit_Time, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Submit_Visitor)
-                    .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(Entry_Time, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                        .addComponent(Purpose, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(Relationship, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(Inmate_ID_Visitor, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(Contact_Number, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(Visitor_Name, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(Visit_Date, javax.swing.GroupLayout.Alignment.LEADING)))
-                .addContainerGap(55, Short.MAX_VALUE))
+                .addGap(48, 48, 48)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Submit_Visitor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel40)
+                            .addComponent(jLabel39)
+                            .addComponent(jLabel38)
+                            .addComponent(jLabel37)
+                            .addComponent(jLabel36)
+                            .addComponent(jLabel35)
+                            .addComponent(jLabel46)
+                            .addComponent(jLabel52))
+                        .addGap(33, 33, 33)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Exit_Time)
+                            .addComponent(Entry_Time)
+                            .addComponent(Purpose)
+                            .addComponent(Relationship)
+                            .addComponent(Inmate_ID_Visitor)
+                            .addComponent(Contact_Number)
+                            .addComponent(Visitor_Name)
+                            .addComponent(Visit_Date, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
+                .addGap(140, 140, 140)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel35)
                     .addComponent(Visitor_Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1133,9 +1143,9 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel46)
                     .addComponent(Exit_Time, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(73, 73, 73)
+                .addGap(18, 18, 18)
                 .addComponent(Submit_Visitor)
-                .addContainerGap(91, Short.MAX_VALUE))
+                .addContainerGap(161, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Visitor", jPanel7);
@@ -1169,22 +1179,22 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
         jPanel10Layout.setHorizontalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel10Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
+                .addGap(22, 22, 22)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(64, 64, 64)
+                .addGap(66, 66, 66)
                 .addComponent(jLabel26)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton1)
-                .addGap(18, 18, 18))
+                .addGap(42, 42, 42))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel10Layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton2)
+                    .addComponent(jButton1)
                     .addComponent(jLabel26)
-                    .addComponent(jButton1))
+                    .addComponent(jButton2))
                 .addContainerGap(26, Short.MAX_VALUE))
         );
 
@@ -1216,12 +1226,12 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, 437, Short.MAX_VALUE)
+            .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, 445, Short.MAX_VALUE)
+            .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, 445, Short.MAX_VALUE)
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1)
-                .addContainerGap())
-            .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, 437, Short.MAX_VALUE)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1237,11 +1247,13 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, 436, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -1318,35 +1330,6 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
     private void Hours_CompletedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Hours_CompletedActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Hours_CompletedActionPerformed
-
-    private void Submit_CaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Submit_CaseActionPerformed
-        int CaseID = Integer.parseInt(Case_ID.getText());
-        String CaseType = Type.getText();
-        //Check Type = civil or criminal
-        String CaseVerdict = Verdict.getText();
-        String VerdictDate = Verdict_Date.getText();
-        int CourtID = Integer.parseInt(Court_ID_Case.getText());
-        String CaseCharges = Charges.getText();
-        try{
-            Class.forName("java.sql.DriverManager");
-            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
-            Statement stmt = (Statement)con.createStatement();
-            String query = "INSERT INTO CASES VALUES('"+CaseID+"','"+CaseType+"','"+CaseVerdict+"','"+VerdictDate+"','"+CourtID+"');";
-            stmt.executeUpdate(query);
-            String line1 = "Inserted to Case & Charges" + CaseID + ", " + CaseType + ", " + CaseVerdict + ", " + VerdictDate + ", " + CourtID + ", " + CaseCharges; 
-            String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";
-            stmt.executeUpdate(logger);
-            String ChargeArr[] = CaseCharges.split(",");
-            for(String temp: ChargeArr){
-                query = "INSERT INTO CASE_CHARGES VALUES('"+CaseID+"','"+temp.trim()+"');";
-                stmt.executeUpdate(query);
-            }
-        }
-        catch(Exception e){
-            JOptionPane.showMessageDialog(this, e.getMessage());
-        }   
-    // TODO add your handling code here:
-    }//GEN-LAST:event_Submit_CaseActionPerformed
 
     private void Submit_CourtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Submit_CourtActionPerformed
         int CourtID = Integer.parseInt(Court_ID.getText());
@@ -1431,10 +1414,6 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
     // TODO add your handling code here:
     }//GEN-LAST:event_Submit_Job_DescActionPerformed
 
-    private void Verdict_DateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Verdict_DateActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Verdict_DateActionPerformed
-
     private void Submit_JobActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Submit_JobActionPerformed
         int JobID = Integer.parseInt(Job_ID_Feedback.getText());
         int InmateID = Integer.parseInt(Inmate_ID_Feedback.getText());
@@ -1457,18 +1436,6 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
         }        // TODO add your handling code here:
     }//GEN-LAST:event_Submit_JobActionPerformed
 
-    private void Case_IDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Case_IDActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Case_IDActionPerformed
-
-    private void TypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TypeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TypeActionPerformed
-
-    private void ChargesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChargesActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ChargesActionPerformed
-
     private void Submit_PrisonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Submit_PrisonActionPerformed
         int PrisonID = Integer.parseInt(Prison_ID.getText());
         String Location = Prison_Location.getText();
@@ -1488,8 +1455,9 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                 String query = "INSERT INTO PRISON VALUES('"+PrisonID+"','"+Location+"','"+PrisonJurisdiction+"');";
                 stmt.executeUpdate(query);
                 for(int i = 0; i < Block.length; i++){
-                    for(int j = 1; j <= Integer.parseInt(Cells[i]); j++){
-                        query = "INSERT INTO PRISON_BLOCKS VALUES('"+PrisonID+"','"+Block[i]+"','"+j+"');";
+                    for(int j = 1; j <= Integer.parseInt(Cells[i].trim()); j++){
+                        query = "INSERT INTO PRISON_BLOCKS VALUES('"+PrisonID+"','"+Block[i].trim()+"','"+j+"');";
+                        System.out.println(query);
                         stmt.executeUpdate(query);
                     }
                 }
@@ -1584,35 +1552,6 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, e.getMessage());
         }            // TODO add your handling code here:
     }//GEN-LAST:event_Update_CourtActionPerformed
-
-    private void Update_CaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Update_CaseActionPerformed
-        int CaseID = Integer.parseInt(Case_ID.getText());
-        String CaseType = Type.getText();
-        String CaseVerdict = Verdict.getText();
-        String VerdictDate = Verdict_Date.getText();
-        int CourtID = Integer.parseInt(Court_ID_Case.getText());
-        String CaseCharges = Charges.getText();
-        try{
-            Class.forName("java.sql.DriverManager");
-            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
-            Statement stmt = (Statement)con.createStatement();
-            String query = "UPDATE CASES SET Type = '"+CaseType+"', Verdict = '"+CaseVerdict+"', Verdict_Date = '"+VerdictDate+"', Court_ID = '"+CourtID+"' WHERE Case_ID = '"+CaseID+"';";
-            stmt.executeUpdate(query);
-            query = "DELETE FROM CASE_CHARGES WHERE CASE_ID = '"+CaseID+"';";
-            stmt.executeUpdate(query);
-            String line1 = "Updated Case & Charges" + CaseID + ", " + CaseType + ", " + CaseVerdict + ", " + VerdictDate + ", " + CourtID + ", " + CaseCharges; 
-            String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";
-            stmt.executeUpdate(logger);
-            String ChargeArr[] = CaseCharges.split(",");
-            for(String temp: ChargeArr){
-                query = "INSERT INTO CASE_CHARGES VALUES('"+CaseID+"','"+temp.trim()+"');";
-                stmt.executeUpdate(query);
-            }
-        }
-        catch(Exception e){
-            JOptionPane.showMessageDialog(this, e.getMessage());
-        }    // TODO add your handling code here:
-    }//GEN-LAST:event_Update_CaseActionPerformed
 
     private void Update_PrisonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Update_PrisonActionPerformed
         int PrisonID = Integer.parseInt(Prison_ID.getText());
@@ -1782,17 +1721,87 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_No_Of_CellsActionPerformed
 
-    private void Blocks_InmateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Blocks_InmateActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Blocks_InmateActionPerformed
-
-    private void Cells_InmateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cells_InmateActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Cells_InmateActionPerformed
-
     private void Visit_DateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Visit_DateActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Visit_DateActionPerformed
+
+    private void Inmate_NameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Inmate_NameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Inmate_NameActionPerformed
+
+    private void Update_CaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Update_CaseActionPerformed
+        int CaseID = Integer.parseInt(Case_ID.getText());
+        String CaseType = Type.getText();
+        String CaseVerdict = Verdict.getText();
+        String VerdictDate = Verdict_Date.getText();
+        int CourtID = Integer.parseInt(Court_ID_Case.getText());
+        String CaseCharges = Charges.getText();
+        try{
+            Class.forName("java.sql.DriverManager");
+            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
+            Statement stmt = (Statement)con.createStatement();
+            String query = "UPDATE CASES SET Type = '"+CaseType+"', Verdict = '"+CaseVerdict+"', Verdict_Date = '"+VerdictDate+"', Court_ID = '"+CourtID+"' WHERE Case_ID = '"+CaseID+"';";
+            stmt.executeUpdate(query);
+            query = "DELETE FROM CASE_CHARGES WHERE CASE_ID = '"+CaseID+"';";
+            stmt.executeUpdate(query);
+            String line1 = "Updated Case & Charges" + CaseID + ", " + CaseType + ", " + CaseVerdict + ", " + VerdictDate + ", " + CourtID + ", " + CaseCharges;
+            String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";
+            stmt.executeUpdate(logger);
+            String ChargeArr[] = CaseCharges.split(",");
+            for(String temp: ChargeArr){
+                query = "INSERT INTO CASE_CHARGES VALUES('"+CaseID+"','"+temp.trim()+"');";
+                stmt.executeUpdate(query);
+            }
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(this, e.getMessage());
+        }    // TODO add your handling code here:
+    }//GEN-LAST:event_Update_CaseActionPerformed
+
+    private void Case_IDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Case_IDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Case_IDActionPerformed
+
+    private void Submit_CaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Submit_CaseActionPerformed
+        int CaseID = Integer.parseInt(Case_ID.getText());
+        String CaseType = Type.getText();
+        //Check Type = civil or criminal
+        String CaseVerdict = Verdict.getText();
+        String VerdictDate = Verdict_Date.getText();
+        int CourtID = Integer.parseInt(Court_ID_Case.getText());
+        String CaseCharges = Charges.getText();
+        try{
+            Class.forName("java.sql.DriverManager");
+            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
+            Statement stmt = (Statement)con.createStatement();
+            String query = "INSERT INTO CASES VALUES('"+CaseID+"','"+CaseType+"','"+CaseVerdict+"','"+VerdictDate+"','"+CourtID+"');";
+            stmt.executeUpdate(query);
+            String line1 = "Inserted to Case & Charges" + CaseID + ", " + CaseType + ", " + CaseVerdict + ", " + VerdictDate + ", " + CourtID + ", " + CaseCharges;
+            String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";
+            stmt.executeUpdate(logger);
+            String ChargeArr[] = CaseCharges.split(",");
+            for(String temp: ChargeArr){
+                query = "INSERT INTO CASE_CHARGES VALUES('"+CaseID+"','"+temp.trim()+"');";
+                stmt.executeUpdate(query);
+            }
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(this, e.getMessage());
+        }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Submit_CaseActionPerformed
+
+    private void ChargesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChargesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ChargesActionPerformed
+
+    private void Verdict_DateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Verdict_DateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Verdict_DateActionPerformed
+
+    private void TypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TypeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TypeActionPerformed
 
     /**
      * @param args the command line arguments
