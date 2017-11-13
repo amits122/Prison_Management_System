@@ -19,6 +19,12 @@ public class InsertUser extends javax.swing.JFrame {
      */
     public InsertUser() {
         initComponents();
+        if(Login.access == 3){
+            access1.setEnabled(false);
+            access2.setEnabled(false);
+            access3.setEnabled(false);
+        }
+
     }
 
     /**
@@ -237,19 +243,22 @@ public class InsertUser extends javax.swing.JFrame {
         String password = String.valueOf(Pass_word.getPassword());
         String chkpassword = String.valueOf(Pass_word2.getPassword());
         int access = 0;
-        if(access1.isSelected())
-            access = 1;
-        else if(access2.isSelected())
-            access = 2;
-        else if(access3.isSelected())
-            access = 3;          
+        if(Login.access == 3)
+            access = 3;
+        else{
+            if(access1.isSelected())
+                access = 1;
+            else if(access2.isSelected())
+                access = 2;
+            else if(access3.isSelected())
+                access = 3;    
+        }       
         if(newusername.equals("") || password.equals("") || chkpassword.equals("") || access ==  0){
             JOptionPane.showMessageDialog(null, "Please enter username or password or access");
         }
         else{
             if(!password.equals(chkpassword))
                 JOptionPane.showMessageDialog(null, "Passwords do not match");
-            //check for duplicate 
             else{
                 try{
                     Class.forName("java.sql.DriverManager");
@@ -277,9 +286,15 @@ public class InsertUser extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         if(Login.access == 1)
-        new AdministratorHome().setVisible(true);
+            new AdministratorHome().setVisible(true);
         else if(Login.access == 2)
-        new PrisonManagerHome().setVisible(true);
+            new PrisonManagerHome().setVisible(true);
+        else if(Login.access == 3){
+            if(!Login.username.equals(""))
+                new Other().setVisible(true);
+            else
+                new Login().setVisible(true);
+        }
         else{
             JOptionPane.showMessageDialog(null, "Unstable State. Logging out");
             new Login().setVisible(true);
