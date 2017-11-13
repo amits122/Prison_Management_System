@@ -269,6 +269,7 @@ public class InsertUser extends javax.swing.JFrame {
                     String line1 = "Inserted User" + newusername; 
                     String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";
                     stmt.executeUpdate(logger);
+                    JOptionPane.showMessageDialog(this, "Successful Operation");
                 }
                 catch(Exception e){
                     JOptionPane.showMessageDialog(this, e.getMessage());

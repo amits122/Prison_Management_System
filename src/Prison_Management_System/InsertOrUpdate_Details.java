@@ -142,24 +142,6 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         Feedback = new javax.swing.JTextArea();
         Update_Job = new javax.swing.JButton();
-        jPanel7 = new javax.swing.JPanel();
-        jLabel35 = new javax.swing.JLabel();
-        jLabel36 = new javax.swing.JLabel();
-        jLabel37 = new javax.swing.JLabel();
-        jLabel38 = new javax.swing.JLabel();
-        jLabel39 = new javax.swing.JLabel();
-        jLabel40 = new javax.swing.JLabel();
-        Visitor_Name = new javax.swing.JTextField();
-        Contact_Number = new javax.swing.JTextField();
-        Inmate_ID_Visitor = new javax.swing.JTextField();
-        Relationship = new javax.swing.JTextField();
-        Purpose = new javax.swing.JTextField();
-        Entry_Time = new javax.swing.JTextField();
-        Submit_Visitor = new javax.swing.JButton();
-        jLabel46 = new javax.swing.JLabel();
-        Exit_Time = new javax.swing.JTextField();
-        Visit_Date = new javax.swing.JTextField();
-        jLabel52 = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
         jLabel26 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
@@ -1019,156 +1001,6 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Job", jPanel8);
 
-        jPanel7.setBackground(new java.awt.Color(204, 255, 255));
-
-        jLabel35.setText("Name");
-
-        jLabel36.setText("Contact_Number");
-
-        jLabel37.setText("Inmate_ID");
-
-        jLabel38.setText("Relationship");
-
-        jLabel39.setText("Purpose");
-
-        jLabel40.setText("Entry_time");
-
-        Visitor_Name.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Visitor_NameActionPerformed(evt);
-            }
-        });
-
-        Contact_Number.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Contact_NumberActionPerformed(evt);
-            }
-        });
-
-        Inmate_ID_Visitor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Inmate_ID_VisitorActionPerformed(evt);
-            }
-        });
-
-        Relationship.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RelationshipActionPerformed(evt);
-            }
-        });
-
-        Purpose.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PurposeActionPerformed(evt);
-            }
-        });
-
-        Entry_Time.setToolTipText("HH:MM:SS");
-        Entry_Time.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Entry_TimeActionPerformed(evt);
-            }
-        });
-
-        Submit_Visitor.setBackground(new java.awt.Color(255, 255, 255));
-        Submit_Visitor.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        Submit_Visitor.setText("Apply");
-        Submit_Visitor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Submit_VisitorActionPerformed(evt);
-            }
-        });
-
-        jLabel46.setText("Exit_time");
-
-        Exit_Time.setToolTipText("HH:MM:SS");
-        Exit_Time.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Exit_TimeActionPerformed(evt);
-            }
-        });
-
-        Visit_Date.setToolTipText("YYYY-MM-DD");
-        Visit_Date.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Visit_DateActionPerformed(evt);
-            }
-        });
-
-        jLabel52.setText("Date");
-
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(48, 48, 48)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Submit_Visitor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel40)
-                            .addComponent(jLabel39)
-                            .addComponent(jLabel38)
-                            .addComponent(jLabel37)
-                            .addComponent(jLabel36)
-                            .addComponent(jLabel35)
-                            .addComponent(jLabel46)
-                            .addComponent(jLabel52))
-                        .addGap(33, 33, 33)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Exit_Time)
-                            .addComponent(Entry_Time)
-                            .addComponent(Purpose)
-                            .addComponent(Relationship)
-                            .addComponent(Inmate_ID_Visitor)
-                            .addComponent(Contact_Number)
-                            .addComponent(Visitor_Name)
-                            .addComponent(Visit_Date, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(58, Short.MAX_VALUE))
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(140, 140, 140)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel35)
-                    .addComponent(Visitor_Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel36)
-                    .addComponent(Contact_Number, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel37)
-                    .addComponent(Inmate_ID_Visitor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel38)
-                    .addComponent(Relationship, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel39)
-                    .addComponent(Purpose, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel52)
-                    .addComponent(Visit_Date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel40)
-                    .addComponent(Entry_Time, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel46)
-                    .addComponent(Exit_Time, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(Submit_Visitor)
-                .addContainerGap(199, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("Visitor", jPanel7);
-
         jPanel10.setBackground(new java.awt.Color(51, 51, 255));
         jPanel10.setPreferredSize(new java.awt.Dimension(370, 236));
 
@@ -1310,30 +1142,6 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Job_IDActionPerformed
 
-    private void Visitor_NameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Visitor_NameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Visitor_NameActionPerformed
-
-    private void Contact_NumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Contact_NumberActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Contact_NumberActionPerformed
-
-    private void Inmate_ID_VisitorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Inmate_ID_VisitorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Inmate_ID_VisitorActionPerformed
-
-    private void RelationshipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RelationshipActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_RelationshipActionPerformed
-
-    private void PurposeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PurposeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_PurposeActionPerformed
-
-    private void Entry_TimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Entry_TimeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Entry_TimeActionPerformed
-
     private void Job_ID_FeedbackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Job_ID_FeedbackActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Job_ID_FeedbackActionPerformed
@@ -1373,37 +1181,14 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             for(String temp: JuryArr){
                 query = "INSERT INTO COURT_JURY VALUES('"+CourtID+"','"+temp.trim()+"');";
                 stmt.executeUpdate(query);
-            }        
+            }
+            JOptionPane.showMessageDialog(this, "Successful Operation");
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(this, e.getClass().getCanonicalName() +"\n" + e.getMessage());
         }         
     // TODO add your handling code here:
     }//GEN-LAST:event_Submit_CourtActionPerformed
-
-    private void Submit_VisitorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Submit_VisitorActionPerformed
-        String VisitorName = Visitor_Name.getText();
-        String Contact = Contact_Number.getText();
-        int InmateID = Integer.parseInt(Inmate_ID_Visitor.getText());
-        String VisitorRelationship = Relationship.getText();
-        String VisitorPurpose = Purpose.getText();
-        String Date = Visit_Date.getText();
-        String EntryTime = Entry_Time.getText();
-        String ExitTime = Exit_Time.getText();
-        try{
-            Class.forName("java.sql.DriverManager");
-            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
-            Statement stmt = (Statement)con.createStatement();
-            String query = "INSERT INTO VISITOR(Name, Contact_Number,Inmate_ID, Relationship, Date, Entry_time, Exit_Time) VALUES('"+VisitorName+"','"+Contact+"','"+InmateID+"','"+VisitorRelationship+"','"+VisitorPurpose+"','"+Date+"',"+EntryTime+"','"+ExitTime+"');";
-            stmt.executeUpdate(query);
-            String line1 = "Inserted to Visitor" + VisitorName + ", " + Contact + ", " + InmateID + ", " + VisitorRelationship + ", " + VisitorPurpose + ", " + Date + ", " + EntryTime + ", " + ExitTime; 
-            String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";
-            stmt.executeUpdate(logger);
-        }
-        catch(Exception e){
-            JOptionPane.showMessageDialog(this, e.getClass().getCanonicalName() +"\n" + e.getMessage());
-        }        // TODO add your handling code here:
-    }//GEN-LAST:event_Submit_VisitorActionPerformed
 
     private void Start_DateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Start_DateActionPerformed
         // TODO add your handling code here:
@@ -1412,10 +1197,6 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
     private void Staff_NameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Staff_NameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Staff_NameActionPerformed
-
-    private void Exit_TimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Exit_TimeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Exit_TimeActionPerformed
 
     private void Submit_Job_DescActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Submit_Job_DescActionPerformed
         String JobDesc = Job_Description.getText();
@@ -1433,7 +1214,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             String line1 = "Inserted to Job Description" + JobDesc; 
             String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";
             stmt.executeUpdate(logger);
-            
+            JOptionPane.showMessageDialog(this, "Successful Operation");
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(this, e.getClass().getCanonicalName() +"\n" + e.getMessage());
@@ -1459,6 +1240,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             String line1 = "Inserted to Job" + JobID + ", " + InmateID + ", " + WorkShift + ", " + HoursCompleted + ", " + InmateFeedback; 
             String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";
             stmt.executeUpdate(logger);
+            JOptionPane.showMessageDialog(this, "Successful Operation");
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(this, e.getClass().getCanonicalName() +"\n" + e.getMessage());
@@ -1496,6 +1278,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                 String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";
                 stmt.executeUpdate(logger);            
             }    
+            JOptionPane.showMessageDialog(this, "Successful Operation");
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(this, e.getClass().getCanonicalName() +"\n" + e.getMessage());
@@ -1525,6 +1308,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             String line1 = "Inserted to Staff" + StaffName + ", " + StaffDateOfBirth + ", " + StaffAddress + ", " + StaffDesignation + ", " + StaffSalary;
             String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";
             stmt.executeUpdate(logger);
+            JOptionPane.showMessageDialog(this, "Successful Operation");
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(this, e.getClass().getCanonicalName() +"\n" + e.getMessage());
@@ -1559,6 +1343,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                 query = "INSERT INTO INMATE_ALIAS VALUES('"+InmateID+"','"+temp.trim()+"');";
                 stmt.executeUpdate(query);
             }
+            JOptionPane.showMessageDialog(this, "Successful Operation");
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(this, e.getClass().getCanonicalName() +"\n" + e.getMessage());
@@ -1591,6 +1376,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                 query = "INSERT INTO COURT_JURY VALUES('"+CourtID+"','"+temp.trim()+"');";
                 stmt.executeUpdate(query);
             }
+            JOptionPane.showMessageDialog(this, "Successful Operation");
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(this, e.getClass().getCanonicalName() +"\n" + e.getMessage());
@@ -1630,6 +1416,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                 String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";
                 stmt.executeUpdate(logger);
             }
+            JOptionPane.showMessageDialog(this, "Successful Operation");
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(this, e.getClass().getCanonicalName() +"\n" + e.getMessage());
@@ -1657,6 +1444,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             String line1 = "Updated Staff" + StaffID + ", " + StaffName + ", " + StaffDateOfBirth + ", " + StaffAddress + ", " + StaffDesignation + ", " + StaffSalary; 
             String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";
             stmt.executeUpdate(logger);
+            JOptionPane.showMessageDialog(this, "Successful Operation");
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(this, e.getClass().getCanonicalName() +"\n" + e.getMessage());
@@ -1693,6 +1481,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                 query = "INSERT INTO INMATE_ALIAS VALUES('"+InmateID+"','"+temp.trim()+"');";
                 stmt.executeUpdate(query);
             }
+            JOptionPane.showMessageDialog(this, "Successful Operation");
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(this, e.getClass().getCanonicalName() +"\n" + e.getMessage());
@@ -1713,6 +1502,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             String line1 = "Updated Job Description" + JobDesc + "where Job_ID " + JobID; 
             String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";
             stmt.executeUpdate(logger);
+            JOptionPane.showMessageDialog(this, "Successful Operation");
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(this, e.getClass().getCanonicalName() +"\n" + e.getMessage());
@@ -1736,6 +1526,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             String line1 = "Updated Job" + JobID + ", " + InmateID + ", " + WorkShift + ", " + HoursCompleted + ", " + InmateFeedback; 
             String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";
             stmt.executeUpdate(logger);
+            JOptionPane.showMessageDialog(this, "Successful Operation");
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(this, e.getClass().getCanonicalName() +"\n" + e.getMessage());
@@ -1779,10 +1570,6 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_No_Of_CellsActionPerformed
 
-    private void Visit_DateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Visit_DateActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Visit_DateActionPerformed
-
     private void Inmate_NameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Inmate_NameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Inmate_NameActionPerformed
@@ -1814,6 +1601,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                 query = "INSERT INTO CASE_CHARGES VALUES('"+CaseID+"','"+temp.trim()+"');";
                 stmt.executeUpdate(query);
             }
+            JOptionPane.showMessageDialog(this, "Successful Operation");
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(this, e.getClass().getCanonicalName() +"\n" + e.getMessage());
@@ -1849,6 +1637,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                 query = "INSERT INTO CASE_CHARGES VALUES('"+CaseID+"','"+temp.trim()+"');";
                 stmt.executeUpdate(query);
             }
+            JOptionPane.showMessageDialog(this, "Successful Operation");
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(this, e.getClass().getCanonicalName() +"\n" + e.getMessage());
@@ -1918,17 +1707,13 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
     private javax.swing.JTextField Cells_Inmate;
     private javax.swing.JTextField Charges;
     private javax.swing.JTextField Chief_Justice;
-    private javax.swing.JTextField Contact_Number;
     private javax.swing.JTextField Court_ID;
     private javax.swing.JTextField Court_ID_Case;
-    private javax.swing.JTextField Entry_Time;
-    private javax.swing.JTextField Exit_Time;
     private javax.swing.JTextArea Feedback;
     private javax.swing.JTextField Hours_Completed;
     private javax.swing.JTextField Inmate_DoB;
     private javax.swing.JTextField Inmate_ID;
     private javax.swing.JTextField Inmate_ID_Feedback;
-    private javax.swing.JTextField Inmate_ID_Visitor;
     private javax.swing.JTextField Inmate_Name;
     private javax.swing.JTextArea Job_Description;
     private javax.swing.JTextField Job_ID;
@@ -1940,8 +1725,6 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
     private javax.swing.JTextField Prison_ID;
     private javax.swing.JTextField Prison_ID_Inmate;
     private javax.swing.JTextField Prison_Location;
-    private javax.swing.JTextField Purpose;
-    private javax.swing.JTextField Relationship;
     private javax.swing.JTextField Release_Date;
     private javax.swing.JTextField Shift;
     private javax.swing.JTextField Staff_Address;
@@ -1959,7 +1742,6 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
     private javax.swing.JButton Submit_Job_Desc;
     private javax.swing.JButton Submit_Prison;
     private javax.swing.JButton Submit_Staff;
-    private javax.swing.JButton Submit_Visitor;
     private javax.swing.JTextField Supervisor_Staff_ID;
     private javax.swing.JTextField Type;
     private javax.swing.JButton Update_Case;
@@ -1971,8 +1753,6 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
     private javax.swing.JButton Update_Staff;
     private javax.swing.JTextField Verdict;
     private javax.swing.JTextField Verdict_Date;
-    private javax.swing.JTextField Visit_Date;
-    private javax.swing.JTextField Visitor_Name;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel10;
@@ -2002,26 +1782,18 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
-    private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel37;
-    private javax.swing.JLabel jLabel38;
-    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
-    private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel51;
-    private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel53;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -2035,7 +1807,6 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
