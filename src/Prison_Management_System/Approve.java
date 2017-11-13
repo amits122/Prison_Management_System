@@ -17,6 +17,13 @@ public class Approve extends javax.swing.JFrame {
     ResultSet mainRs = null;
     
     public void fetch(){
+        Visitor_Name.setText("");
+        Contact_Number.setText("");
+        Inmate_ID_Visitor.setText("");
+        Relationship.setText("");
+        Purpose.setText("");
+        Entry_Time.setText("");
+        Exit_Time.setText("");
         try{
             Class.forName("java.sql.DriverManager");
             Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
@@ -33,7 +40,6 @@ public class Approve extends javax.swing.JFrame {
             Purpose.setText(mainRs.getString("Purpose"));
             Entry_Time.setText(mainRs.getString("Entry_Time"));
             Exit_Time.setText(mainRs.getString("Exit_Time"));
-            
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(this, e.getMessage());

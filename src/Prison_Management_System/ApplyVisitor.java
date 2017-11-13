@@ -345,20 +345,21 @@ public class ApplyVisitor extends javax.swing.JFrame {
     }//GEN-LAST:event_Entry_TimeActionPerformed
 
     private void Submit_VisitorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Submit_VisitorActionPerformed
-        String VisitorName = Visitor_Name.getText();
-        String Contact = Contact_Number.getText();
-        int InmateID = Integer.parseInt(Inmate_ID_Visitor.getText());
-        String VisitorRelationship = Relationship.getText();
-        String VisitorPurpose = Purpose.getText();
-        String DateX = Date.getText();
-        String EntryTime = Entry_Time.getText();
-        String ExitTime = Exit_Time.getText();
         try{
+            String VisitorName = Visitor_Name.getText();
+            String Contact = Contact_Number.getText();
+            int InmateID = Integer.parseInt(Inmate_ID_Visitor.getText());
+            String VisitorRelationship = Relationship.getText();
+            String VisitorPurpose = Purpose.getText();
+            String DateX = Date.getText();
+            String EntryTime = Entry_Time.getText();
+            String ExitTime = Exit_Time.getText();
+            if(VisitorName.equals("") || Contact.equals("") || VisitorRelationship.equals("") || VisitorPurpose.equals("") || DateX.equals("") || EntryTime.equals("") || ExitTime.equals(""))
+                throw new RuntimeException("Fields Empty");
             Class.forName("java.sql.DriverManager");
             Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
             Statement stmt = (Statement)con.createStatement();
             String query = "INSERT INTO VISITOR(Name, Contact_Number,Inmate_ID, Relationship, Purpose, Date, Entry_Time, Exit_Time) VALUES('"+VisitorName+"','"+Contact+"','"+InmateID+"','"+VisitorRelationship+"','"+VisitorPurpose+"','"+DateX+"','"+EntryTime+"','"+ExitTime+"');";
-            
             System.out.println(query);
             stmt.executeUpdate(query);
             String line1 = "Inserted to Visitor" + VisitorName + ", " + Contact + ", " + InmateID + ", " + VisitorRelationship + ", " + VisitorPurpose + ", " + EntryTime + ", " + ExitTime;

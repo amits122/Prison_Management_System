@@ -93,6 +93,8 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
         Submit_Staff = new javax.swing.JButton();
         Staff_Name = new javax.swing.JTextField();
         Update_Staff = new javax.swing.JButton();
+        Staff_Shift = new javax.swing.JTextField();
+        jLabel53 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
@@ -260,7 +262,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                 .addComponent(Submit_Court)
                 .addGap(18, 18, 18)
                 .addComponent(Update_Court)
-                .addContainerGap(209, Short.MAX_VALUE))
+                .addContainerGap(247, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Court", jPanel2);
@@ -306,7 +308,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             }
         });
 
-        Case_ID.setToolTipText("(Enter multiple values separated by comma.)");
+        Case_ID.setToolTipText("");
         Case_ID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Case_IDActionPerformed(evt);
@@ -329,35 +331,38 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(53, 53, 53)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel5)
-                                .addComponent(jLabel4))
-                            .addGap(44, 44, 44)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(Charges)
-                                .addComponent(Court_ID_Case, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(Submit_Case, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Update_Case, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(Verdict_Date, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel13)
-                                .addComponent(jLabel2)
-                                .addComponent(jLabel3))
-                            .addGap(65, 65, 65)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(Case_ID)
-                                .addComponent(Type)
-                                .addComponent(Verdict, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(45, 45, 45)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel13))
+                                .addGap(52, 52, 52)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(Type, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                                    .addComponent(Case_ID, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                                    .addComponent(Verdict, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                                    .addComponent(Verdict_Date, javax.swing.GroupLayout.Alignment.TRAILING)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(70, 70, 70)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(Charges)
+                                    .addComponent(Court_ID_Case, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Update_Case, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Submit_Case, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(64, 64, 64)
                 .addComponent(jLabel8)
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -395,7 +400,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                 .addComponent(Submit_Case)
                 .addGap(18, 18, 18)
                 .addComponent(Update_Case)
-                .addContainerGap(172, Short.MAX_VALUE))
+                .addContainerGap(210, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Case", jPanel1);
@@ -586,6 +591,14 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             }
         });
 
+        Staff_Shift.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Staff_ShiftActionPerformed(evt);
+            }
+        });
+
+        jLabel53.setText("Shift");
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -600,7 +613,8 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                             .addComponent(jLabel32)
                             .addComponent(jLabel31)
                             .addComponent(jLabel30)
-                            .addComponent(jLabel27))
+                            .addComponent(jLabel27)
+                            .addComponent(jLabel53))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(Staff_Designation, javax.swing.GroupLayout.Alignment.LEADING)
@@ -608,7 +622,8 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                             .addComponent(Staff_DoB, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Staff_Name, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Staff_Salary)
-                            .addComponent(Staff_ID, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(Staff_ID, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Staff_Shift)))
                     .addComponent(Update_Staff, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Submit_Staff, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(82, Short.MAX_VALUE))
@@ -640,6 +655,10 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel32)
                     .addComponent(Staff_Salary, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel53)
+                    .addComponent(Staff_Shift, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(Submit_Staff)
                 .addGap(18, 18, 18)
@@ -875,7 +894,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addComponent(jLabel34)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 469, Short.MAX_VALUE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 507, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(Submit_Job_Desc)
                 .addGap(18, 18, 18)
@@ -965,7 +984,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                             .addComponent(Inmate_ID_Feedback)
                             .addComponent(Job_ID_Feedback)
                             .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(Update_Job, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Update_Job, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(75, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
@@ -995,7 +1014,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                 .addComponent(Submit_Job)
                 .addGap(18, 18, 18)
                 .addComponent(Update_Job)
-                .addContainerGap(102, Short.MAX_VALUE))
+                .addContainerGap(140, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Job", jPanel8);
@@ -1145,7 +1164,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                     .addComponent(Exit_Time, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(Submit_Visitor)
-                .addContainerGap(161, Short.MAX_VALUE))
+                .addContainerGap(199, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Visitor", jPanel7);
@@ -1332,13 +1351,16 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
     }//GEN-LAST:event_Hours_CompletedActionPerformed
 
     private void Submit_CourtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Submit_CourtActionPerformed
-        int CourtID = Integer.parseInt(Court_ID.getText());
-        String CourtAddress = Address.getText();
-        String ChiefJustice = Chief_Justice.getText();
-        String CourtLevel = Level.getText();
-        //Check level constraint here
-        String JuryMembers = Jury.getText();
         try{
+            int CourtID = Integer.parseInt(Court_ID.getText());
+            String CourtAddress = Address.getText();
+            String ChiefJustice = Chief_Justice.getText();
+            String CourtLevel = Level.getText().trim();
+            String JuryMembers = Jury.getText();
+            if(CourtAddress.equals("") || ChiefJustice.equals("") || CourtLevel.equals("") || JuryMembers.equals(""))
+                throw new RuntimeException("Fields Empty");
+            if(!CourtLevel.toLowerCase().equals("supreme") && !CourtLevel.toLowerCase().equals("high") && !CourtLevel.toLowerCase().equals("tribunal") && !CourtLevel.toLowerCase().equals("district") && !CourtLevel.toLowerCase().equals("sessions"))          
+                throw new RuntimeException("Court Level Wrong");
             Class.forName("java.sql.DriverManager");
             Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
             Statement stmt = (Statement)con.createStatement();
@@ -1351,10 +1373,10 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             for(String temp: JuryArr){
                 query = "INSERT INTO COURT_JURY VALUES('"+CourtID+"','"+temp.trim()+"');";
                 stmt.executeUpdate(query);
-            }
+            }        
         }
         catch(Exception e){
-            JOptionPane.showMessageDialog(this, e.getMessage());
+            JOptionPane.showMessageDialog(this, e.getClass().getCanonicalName() +"\n" + e.getMessage());
         }         
     // TODO add your handling code here:
     }//GEN-LAST:event_Submit_CourtActionPerformed
@@ -1379,7 +1401,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             stmt.executeUpdate(logger);
         }
         catch(Exception e){
-            JOptionPane.showMessageDialog(this, e.getMessage());
+            JOptionPane.showMessageDialog(this, e.getClass().getCanonicalName() +"\n" + e.getMessage());
         }        // TODO add your handling code here:
     }//GEN-LAST:event_Submit_VisitorActionPerformed
 
@@ -1397,7 +1419,12 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
 
     private void Submit_Job_DescActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Submit_Job_DescActionPerformed
         String JobDesc = Job_Description.getText();
+        String JobID = Job_ID.getText();
         try{
+            if(JobDesc.equals(""))
+                throw new RuntimeException("Fields Empty");
+            if(!JobID.equals(""))
+                throw new RuntimeException("Do not enter Job ID");                
             Class.forName("java.sql.DriverManager");
             Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
             Statement stmt = (Statement)con.createStatement();
@@ -1409,19 +1436,21 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             
         }
         catch(Exception e){
-            JOptionPane.showMessageDialog(this, e.getMessage());
+            JOptionPane.showMessageDialog(this, e.getClass().getCanonicalName() +"\n" + e.getMessage());
         }
     // TODO add your handling code here:
     }//GEN-LAST:event_Submit_Job_DescActionPerformed
 
     private void Submit_JobActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Submit_JobActionPerformed
-        int JobID = Integer.parseInt(Job_ID_Feedback.getText());
-        int InmateID = Integer.parseInt(Inmate_ID_Feedback.getText());
-        String WorkShift = Shift.getText();
-        //CHECK(Shift = 'morning' OR Shift = 'afternoon' OR Shift = 'evening' OR Shift = 'night')
-        int HoursCompleted = Integer.parseInt(Hours_Completed.getText());
-        String InmateFeedback = Feedback.getText();
         try{
+            int JobID = Integer.parseInt(Job_ID_Feedback.getText());
+            int InmateID = Integer.parseInt(Inmate_ID_Feedback.getText());
+            String WorkShift = Shift.getText();
+            int HoursCompleted = Integer.parseInt(Hours_Completed.getText());
+            String InmateFeedback = Feedback.getText();
+            
+            if(!WorkShift.toLowerCase().equals("morning") && !WorkShift.toLowerCase().equals("noon") && !WorkShift.toLowerCase().equals("evening") && !WorkShift.toLowerCase().equals("night"))
+                throw new RuntimeException("Shift is wrong");
             Class.forName("java.sql.DriverManager");
             Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
             Statement stmt = (Statement)con.createStatement();
@@ -1432,22 +1461,24 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             stmt.executeUpdate(logger);
         }
         catch(Exception e){
-            JOptionPane.showMessageDialog(this, e.getMessage());
+            JOptionPane.showMessageDialog(this, e.getClass().getCanonicalName() +"\n" + e.getMessage());
         }        // TODO add your handling code here:
     }//GEN-LAST:event_Submit_JobActionPerformed
 
     private void Submit_PrisonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Submit_PrisonActionPerformed
-        int PrisonID = Integer.parseInt(Prison_ID.getText());
-        String Location = Prison_Location.getText();
-        String PrisonJurisdiction = Jurisdiction.getText();
-        String BlocksX = Blocks.getText();
-        String NoOfCells = No_Of_Cells.getText();     
         try{
+            int PrisonID = Integer.parseInt(Prison_ID.getText());
+            String Location = Prison_Location.getText();
+            String PrisonJurisdiction = Jurisdiction.getText();
+            String BlocksX = Blocks.getText();
+            String NoOfCells = No_Of_Cells.getText(); 
+            String Block[] = BlocksX.split(",");
+            String Cells[] = NoOfCells.split(",");
+            if(Location.equals("") || PrisonJurisdiction.equals("") || BlocksX.equals("") || NoOfCells.equals(""))
+                throw new RuntimeException("Fields Empty");
             Class.forName("java.sql.DriverManager");
             Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
             Statement stmt = (Statement)con.createStatement();
-            String Block[] = BlocksX.split(",");
-            String Cells[] = NoOfCells.split(",");
             if(Block.length != Cells.length){
                 JOptionPane.showMessageDialog(null, "Blocks do not correspont to cell size");
             }
@@ -1467,45 +1498,54 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             }    
         }
         catch(Exception e){
-            JOptionPane.showMessageDialog(this, e.getMessage());
+            JOptionPane.showMessageDialog(this, e.getClass().getCanonicalName() +"\n" + e.getMessage());
         }        // TODO add your handling code here:
     }//GEN-LAST:event_Submit_PrisonActionPerformed
 
     private void Submit_StaffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Submit_StaffActionPerformed
-        String StaffName = Staff_Name.getText();
-        String StaffDateOfBirth = Staff_DoB.getText();
-        String StaffAddress = Staff_Address.getText();
-        String StaffDesignation = Staff_Designation.getText();
-        int StaffSalary = Integer.parseInt(Staff_Salary.getText());
         try{
+            String StaffID = Staff_ID.getText();
+            String StaffName = Staff_Name.getText();
+            String StaffDateOfBirth = Staff_DoB.getText();
+            String StaffAddress = Staff_Address.getText();
+            String StaffDesignation = Staff_Designation.getText();
+            String StaffShift = Staff_Shift.getText();
+            int StaffSalary = Integer.parseInt(Staff_Salary.getText());
+            if(StaffName.equals("") || StaffDateOfBirth.equals("") || StaffAddress.equals("") || StaffDesignation.equals("") || StaffShift.equals(""))
+                throw new RuntimeException("Fields Empty");
+            if(!StaffID.equals(""))
+                throw new RuntimeException("Do not enter Staff ID");  
+            if(!StaffShift.toLowerCase().equals("morning") && !StaffShift.toLowerCase().equals("noon") && !StaffShift.toLowerCase().equals("evening") && !StaffShift.toLowerCase().equals("night"))
+                throw new RuntimeException("Shift is wrong");
             Class.forName("java.sql.DriverManager");
             Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
             Statement stmt = (Statement)con.createStatement();
-            String query = "INSERT INTO STAFF (Name, Date_Of_Birth, Address, Designation, Salary) VALUES('"+StaffName+"','"+StaffDateOfBirth+"','"+StaffAddress+"','"+StaffDesignation+"','"+StaffSalary+"');";
+            String query = "INSERT INTO STAFF (Name, Date_Of_Birth, Address, Designation, Shift, Salary) VALUES('"+StaffName+"','"+StaffDateOfBirth+"','"+StaffAddress+"','"+StaffDesignation+"','"+StaffShift+"','"+StaffSalary+"');";
             stmt.executeUpdate(query);
             String line1 = "Inserted to Staff" + StaffName + ", " + StaffDateOfBirth + ", " + StaffAddress + ", " + StaffDesignation + ", " + StaffSalary;
             String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";
             stmt.executeUpdate(logger);
-            
         }
         catch(Exception e){
-            JOptionPane.showMessageDialog(this, e.getMessage());
+            JOptionPane.showMessageDialog(this, e.getClass().getCanonicalName() +"\n" + e.getMessage());
         }        // TODO add your handling code here:
     }//GEN-LAST:event_Submit_StaffActionPerformed
 
     private void Submit_InmateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Submit_InmateActionPerformed
-        int InmateID = Integer.parseInt(Inmate_ID.getText());
-        String InmateName = Inmate_Name.getText();
-        String InmateAlias = Alias.getText();
-        String InmateDateOfBirth = Inmate_DoB.getText();
-        String StartDate = Start_Date.getText();
-        String ReleaseDate = Release_Date.getText();
-        int InmateCaseID = Integer.parseInt(Case_ID_Inmate.getText());
-        int InmatePrisonID = Integer.parseInt(Prison_ID_Inmate.getText());
-        String Block = Blocks_Inmate.getText();
-        int CellNo = Integer.parseInt(Cells_Inmate.getText());
-        int InmateSupervisorID = Integer.parseInt(Supervisor_Staff_ID.getText());
         try{
+            int InmateID = Integer.parseInt(Inmate_ID.getText());
+            String InmateName = Inmate_Name.getText();
+            String InmateAlias = Alias.getText();
+            String InmateDateOfBirth = Inmate_DoB.getText();
+            String StartDate = Start_Date.getText();
+            String ReleaseDate = Release_Date.getText();
+            int InmateCaseID = Integer.parseInt(Case_ID_Inmate.getText());
+            int InmatePrisonID = Integer.parseInt(Prison_ID_Inmate.getText());
+            String Block = Blocks_Inmate.getText();
+            int CellNo = Integer.parseInt(Cells_Inmate.getText());
+            int InmateSupervisorID = Integer.parseInt(Supervisor_Staff_ID.getText());
+            if(InmateName.equals("") || InmateDateOfBirth.equals("") || InmateAlias.equals("") || StartDate.equals("") || ReleaseDate.equals(""))
+                throw new RuntimeException("Fields Empty");
             Class.forName("java.sql.DriverManager");
             Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
             Statement stmt = (Statement)con.createStatement();
@@ -1521,17 +1561,21 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             }
         }
         catch(Exception e){
-            JOptionPane.showMessageDialog(this, e.getMessage());
+            JOptionPane.showMessageDialog(this, e.getClass().getCanonicalName() +"\n" + e.getMessage());
         }    // TODO add your handling code here:
     }//GEN-LAST:event_Submit_InmateActionPerformed
 
     private void Update_CourtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Update_CourtActionPerformed
-        int CourtID = Integer.parseInt(Court_ID.getText());
-        String CourtAddress = Address.getText();
-        String ChiefJustice = Chief_Justice.getText();
-        String CourtLevel = Level.getText();
-        String JuryMembers = Jury.getText();
         try{
+            int CourtID = Integer.parseInt(Court_ID.getText());
+            String CourtAddress = Address.getText();
+            String ChiefJustice = Chief_Justice.getText();
+            String CourtLevel = Level.getText();
+            String JuryMembers = Jury.getText();
+            if(CourtAddress.equals("") || ChiefJustice.equals("") || CourtLevel.equals("") || JuryMembers.equals(""))
+                throw new RuntimeException("Fields Empty");
+            if(!CourtLevel.toLowerCase().equals("supreme") && !CourtLevel.toLowerCase().equals("high") && !CourtLevel.toLowerCase().equals("tribunal") && !CourtLevel.toLowerCase().equals("district") && !CourtLevel.toLowerCase().equals("sessions"))          
+                throw new RuntimeException("Court Level Wrong");
             Class.forName("java.sql.DriverManager");
             Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
             Statement stmt = (Statement)con.createStatement();
@@ -1549,19 +1593,21 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             }
         }
         catch(Exception e){
-            JOptionPane.showMessageDialog(this, e.getMessage());
+            JOptionPane.showMessageDialog(this, e.getClass().getCanonicalName() +"\n" + e.getMessage());
         }            // TODO add your handling code here:
     }//GEN-LAST:event_Update_CourtActionPerformed
 
     private void Update_PrisonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Update_PrisonActionPerformed
-        int PrisonID = Integer.parseInt(Prison_ID.getText());
-        String Location = Prison_Location.getText();
-        String PrisonJurisdiction = Jurisdiction.getText();
-        String BlocksX = Blocks.getText();
-        String NoOfCells = No_Of_Cells.getText();
-        String Block[] = BlocksX.split(",");
-        String Cells[] = NoOfCells.split(",");
         try{
+            int PrisonID = Integer.parseInt(Prison_ID.getText());
+            String Location = Prison_Location.getText();
+            String PrisonJurisdiction = Jurisdiction.getText();
+            String BlocksX = Blocks.getText();
+            String NoOfCells = No_Of_Cells.getText();  
+            String Block[] = BlocksX.split(",");
+            String Cells[] = NoOfCells.split(",");
+            if(Location.equals("") || PrisonJurisdiction.equals("") || BlocksX.equals("") || NoOfCells.equals(""))
+                throw new RuntimeException("Fields Empty");
             Class.forName("java.sql.DriverManager");
             Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
             Statement stmt = (Statement)con.createStatement();
@@ -1574,8 +1620,9 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                 query = "DELETE FROM PRISON_BLOCKS WHERE Prison_ID = '"+PrisonID+"';";
                 stmt.executeUpdate(query);
                 for(int i = 0; i < Block.length; i++){
-                    for(int j = 1; j <= Integer.parseInt(Cells[i]); j++){
-                        query = "INSERT INTO PRISON_BLOCKS VALUES('"+PrisonID+"','"+Block[i]+"','"+j+"');";
+                    for(int j = 1; j <= Integer.parseInt(Cells[i].trim()); j++){
+                        query = "INSERT INTO PRISON_BLOCKS VALUES('"+PrisonID+"','"+Block[i].trim()+"','"+j+"');";
+                        System.out.println(query);
                         stmt.executeUpdate(query);
                     }
                 }
@@ -1585,18 +1632,23 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             }
         }
         catch(Exception e){
-            JOptionPane.showMessageDialog(this, e.getMessage());
+            JOptionPane.showMessageDialog(this, e.getClass().getCanonicalName() +"\n" + e.getMessage());
         }        // TODO add your handling code here:
     }//GEN-LAST:event_Update_PrisonActionPerformed
 
     private void Update_StaffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Update_StaffActionPerformed
-        int StaffID = Integer.parseInt(Staff_ID.getText());
-        String StaffName = Staff_Name.getText();
-        String StaffDateOfBirth = Staff_DoB.getText();
-        String StaffAddress = Staff_Address.getText();
-        String StaffDesignation = Staff_Designation.getText();
-        int StaffSalary = Integer.parseInt(Staff_Salary.getText());
         try{
+            int StaffID = Integer.parseInt(Staff_ID.getText());
+            String StaffName = Staff_Name.getText();
+            String StaffDateOfBirth = Staff_DoB.getText();
+            String StaffAddress = Staff_Address.getText();
+            String StaffDesignation = Staff_Designation.getText();
+            String StaffShift = Staff_Shift.getText();
+            int StaffSalary = Integer.parseInt(Staff_Salary.getText());
+            if(StaffName.equals("") || StaffDateOfBirth.equals("") || StaffAddress.equals("") || StaffDesignation.equals("") || StaffShift.equals(""))
+                throw new RuntimeException("Fields Empty");
+            if(!StaffShift.toLowerCase().equals("morning") && !StaffShift.toLowerCase().equals("noon") && !StaffShift.toLowerCase().equals("evening") && !StaffShift.toLowerCase().equals("night"))
+                throw new RuntimeException("Shift is wrong");
             Class.forName("java.sql.DriverManager");
             Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
             Statement stmt = (Statement)con.createStatement();
@@ -1607,23 +1659,25 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             stmt.executeUpdate(logger);
         }
         catch(Exception e){
-            JOptionPane.showMessageDialog(this, e.getMessage());
+            JOptionPane.showMessageDialog(this, e.getClass().getCanonicalName() +"\n" + e.getMessage());
         }        // TODO add your handling code here:
     }//GEN-LAST:event_Update_StaffActionPerformed
 
     private void Update_InmateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Update_InmateActionPerformed
-        int InmateID = Integer.parseInt(Inmate_ID.getText());
-        String InmateName = Inmate_Name.getText();
-        String InmateAlias = Alias.getText();
-        String InmateDateOfBirth = Inmate_DoB.getText();
-        String StartDate = Start_Date.getText();
-        String ReleaseDate = Release_Date.getText();
-        int InmateCaseID = Integer.parseInt(Case_ID_Inmate.getText());
-        int InmatePrisonID = Integer.parseInt(Prison_ID_Inmate.getText());
-        String Block = Blocks_Inmate.getText();
-        int CellNo = Integer.parseInt(Cells_Inmate.getText());
-        int InmateSupervisorID = Integer.parseInt(Supervisor_Staff_ID.getText());
         try{
+            int InmateID = Integer.parseInt(Inmate_ID.getText());
+            String InmateName = Inmate_Name.getText();
+            String InmateAlias = Alias.getText();
+            String InmateDateOfBirth = Inmate_DoB.getText();
+            String StartDate = Start_Date.getText();
+            String ReleaseDate = Release_Date.getText();
+            int InmateCaseID = Integer.parseInt(Case_ID_Inmate.getText());
+            int InmatePrisonID = Integer.parseInt(Prison_ID_Inmate.getText());
+            String Block = Blocks_Inmate.getText();
+            int CellNo = Integer.parseInt(Cells_Inmate.getText());
+            int InmateSupervisorID = Integer.parseInt(Supervisor_Staff_ID.getText());
+            if(InmateName.equals("") || InmateDateOfBirth.equals("") || InmateAlias.equals("") || StartDate.equals("") || ReleaseDate.equals(""))
+                throw new RuntimeException("Fields Empty");
             Class.forName("java.sql.DriverManager");
             Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
             Statement stmt = (Statement)con.createStatement();
@@ -1641,14 +1695,16 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             }
         }
         catch(Exception e){
-            JOptionPane.showMessageDialog(this, e.getMessage());
+            JOptionPane.showMessageDialog(this, e.getClass().getCanonicalName() +"\n" + e.getMessage());
         }        // TODO add your handling code here:
     }//GEN-LAST:event_Update_InmateActionPerformed
 
     private void Update_Job_InfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Update_Job_InfoActionPerformed
-        int JobID = Integer.parseInt(Job_ID.getText());
-        String JobDesc = Job_Description.getText();
         try{
+            int JobID = Integer.parseInt(Job_ID.getText());
+            String JobDesc = Job_Description.getText();
+            if(JobDesc.equals(""))
+                throw new RuntimeException("Fields Empty");
             Class.forName("java.sql.DriverManager");
             Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
             Statement stmt = (Statement)con.createStatement();
@@ -1659,7 +1715,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             stmt.executeUpdate(logger);
         }
         catch(Exception e){
-            JOptionPane.showMessageDialog(this, e.getMessage());
+            JOptionPane.showMessageDialog(this, e.getClass().getCanonicalName() +"\n" + e.getMessage());
         }        // TODO add your handling code here:
     }//GEN-LAST:event_Update_Job_InfoActionPerformed
 
@@ -1670,6 +1726,8 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
         int HoursCompleted = Integer.parseInt(Hours_Completed.getText());
         String InmateFeedback = Feedback.getText();
         try{
+            if(!WorkShift.toLowerCase().equals("morning") && !WorkShift.toLowerCase().equals("noon") && !WorkShift.toLowerCase().equals("evening") && !WorkShift.toLowerCase().equals("night"))
+                throw new RuntimeException("Shift is wrong");
             Class.forName("java.sql.DriverManager");
             Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
             Statement stmt = (Statement)con.createStatement();
@@ -1680,7 +1738,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             stmt.executeUpdate(logger);
         }
         catch(Exception e){
-            JOptionPane.showMessageDialog(this, e.getMessage());
+            JOptionPane.showMessageDialog(this, e.getClass().getCanonicalName() +"\n" + e.getMessage());
         }        // TODO add your handling code here:
     }//GEN-LAST:event_Update_JobActionPerformed
 
@@ -1730,13 +1788,17 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
     }//GEN-LAST:event_Inmate_NameActionPerformed
 
     private void Update_CaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Update_CaseActionPerformed
-        int CaseID = Integer.parseInt(Case_ID.getText());
-        String CaseType = Type.getText();
-        String CaseVerdict = Verdict.getText();
-        String VerdictDate = Verdict_Date.getText();
-        int CourtID = Integer.parseInt(Court_ID_Case.getText());
-        String CaseCharges = Charges.getText();
         try{
+            int CaseID = Integer.parseInt(Case_ID.getText());
+            String CaseType = Type.getText();
+            String CaseVerdict = Verdict.getText();
+            String VerdictDate = Verdict_Date.getText();
+            int CourtID = Integer.parseInt(Court_ID_Case.getText());
+            String CaseCharges = Charges.getText();
+            if(CaseType.equals("") || CaseVerdict.equals("") || VerdictDate.equals("") || CaseCharges.equals(""))
+                throw new RuntimeException("Fields Empty");
+            if(!CaseType.toLowerCase().equals("criminal") && !CaseType.toLowerCase().equals("civil"))
+                throw new RuntimeException("Case Type is wrong");
             Class.forName("java.sql.DriverManager");
             Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
             Statement stmt = (Statement)con.createStatement();
@@ -1754,7 +1816,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             }
         }
         catch(Exception e){
-            JOptionPane.showMessageDialog(this, e.getMessage());
+            JOptionPane.showMessageDialog(this, e.getClass().getCanonicalName() +"\n" + e.getMessage());
         }    // TODO add your handling code here:
     }//GEN-LAST:event_Update_CaseActionPerformed
 
@@ -1763,14 +1825,17 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
     }//GEN-LAST:event_Case_IDActionPerformed
 
     private void Submit_CaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Submit_CaseActionPerformed
-        int CaseID = Integer.parseInt(Case_ID.getText());
-        String CaseType = Type.getText();
-        //Check Type = civil or criminal
-        String CaseVerdict = Verdict.getText();
-        String VerdictDate = Verdict_Date.getText();
-        int CourtID = Integer.parseInt(Court_ID_Case.getText());
-        String CaseCharges = Charges.getText();
         try{
+            int CaseID = Integer.parseInt(Case_ID.getText());
+            String CaseType = Type.getText();
+            String CaseVerdict = Verdict.getText();
+            String VerdictDate = Verdict_Date.getText();
+            int CourtID = Integer.parseInt(Court_ID_Case.getText());
+            String CaseCharges = Charges.getText();
+            if(CaseType.equals("") || CaseVerdict.equals("") || VerdictDate.equals("") || CaseCharges.equals(""))
+                throw new RuntimeException("Fields Empty");
+            if(!CaseType.toLowerCase().equals("criminal") && !CaseType.toLowerCase().equals("civil"))
+                throw new RuntimeException("Case Type is wrong");
             Class.forName("java.sql.DriverManager");
             Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
             Statement stmt = (Statement)con.createStatement();
@@ -1786,7 +1851,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             }
         }
         catch(Exception e){
-            JOptionPane.showMessageDialog(this, e.getMessage());
+            JOptionPane.showMessageDialog(this, e.getClass().getCanonicalName() +"\n" + e.getMessage());
         }
         // TODO add your handling code here:
     }//GEN-LAST:event_Submit_CaseActionPerformed
@@ -1802,6 +1867,10 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
     private void TypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TypeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TypeActionPerformed
+
+    private void Staff_ShiftActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Staff_ShiftActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Staff_ShiftActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1881,6 +1950,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
     private javax.swing.JTextField Staff_ID;
     private javax.swing.JTextField Staff_Name;
     private javax.swing.JTextField Staff_Salary;
+    private javax.swing.JTextField Staff_Shift;
     private javax.swing.JTextField Start_Date;
     private javax.swing.JButton Submit_Case;
     private javax.swing.JButton Submit_Court;
@@ -1952,6 +2022,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel53;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;

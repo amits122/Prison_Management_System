@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
  */
 public class Login extends javax.swing.JFrame {
     public static int access;
-    public static String username;
+    public static String username = "";
 
     /**
      * Creates new form Example1
@@ -53,8 +53,8 @@ public class Login extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(204, 255, 255));
 
         Exit.setBackground(new java.awt.Color(255, 255, 255));
-        Exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Prison_Management_System/Images/cancel.png"))); // NOI18N
-        Exit.setText("Exit");
+        Exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Prison_Management_System/Images/add_user.png"))); // NOI18N
+        Exit.setText("Create");
         Exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ExitActionPerformed(evt);
@@ -172,7 +172,7 @@ public class Login extends javax.swing.JFrame {
                         .addComponent(Reset)
                         .addGap(6, 6, 6)
                         .addComponent(Exit)))
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -271,7 +271,10 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_ResetActionPerformed
 
     private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
-        System.exit(0);        // TODO add your handling code here:
+        access = 3;
+        new InsertUser().setVisible(true);
+        this.dispose();        
+// TODO add your handling code here:
     }//GEN-LAST:event_ExitActionPerformed
 
     private void usr_nameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_usr_nameFocusGained
