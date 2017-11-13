@@ -249,6 +249,8 @@ public class Search extends javax.swing.JFrame {
         new AdministratorHome().setVisible(true);
         else if(Login.access == 2)
         new PrisonManagerHome().setVisible(true);
+        else if(Login.access == 3)
+        new Other().setVisible(true);
         else{
             JOptionPane.showMessageDialog(null, "Unstable State. Logging out");
             new Login().setVisible(true);

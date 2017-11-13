@@ -287,18 +287,8 @@ public class InsertUser extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         if(Login.access == 1)
             new AdministratorHome().setVisible(true);
-        else if(Login.access == 2)
-            new PrisonManagerHome().setVisible(true);
-        else if(Login.access == 3){
-            if(!Login.username.equals(""))
-                new Other().setVisible(true);
-            else
+        else if(Login.access == 3)
                 new Login().setVisible(true);
-        }
-        else{
-            JOptionPane.showMessageDialog(null, "Unstable State. Logging out");
-            new Login().setVisible(true);
-        }
         this.dispose();
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
