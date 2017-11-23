@@ -417,7 +417,7 @@ public class Approve extends javax.swing.JFrame {
         Statement stmt = (Statement)con.createStatement();
         String query = "UPDATE VISITOR SET Accept = 1 , Comment = '"+Comment.getText()+"'WHERE Name = '"+Visitor_Name.getText() + "'AND Contact_Number = '" + Contact_Number.getText() + "';";
         stmt.executeUpdate(query);
-        String line1 = "Approved Visitor" + Visitor_Name.getText() + ", " + Contact_Number.getText() + ", " + Inmate_ID_Visitor.getText() + ", " + Relationship.getText() + ", " + Purpose.getText() + ", " + Entry_Time.getText() + ", " + Exit_Time.getText(); 
+        String line1 = "Approved Visitor " + Visitor_Name.getText() + ", " + Contact_Number.getText() + ", " + Inmate_ID_Visitor.getText() + ", " + Relationship.getText() + ", " + Purpose.getText() + ", " + Entry_Time.getText() + ", " + Exit_Time.getText(); 
         String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";
         stmt.executeUpdate(logger);
         fetch();
@@ -435,7 +435,7 @@ public class Approve extends javax.swing.JFrame {
         Statement stmt = (Statement)con.createStatement();
         String query = "UPDATE VISITOR SET Accept = 0 , Comment = '"+Comment.getText()+"'WHERE Name = '"+Visitor_Name.getText() + "'AND Contact_Number = '" + Contact_Number.getText() + "';";
         stmt.executeUpdate(query);
-        String line1 = "Rejected Visitor" + Visitor_Name.getText() + ", " + Contact_Number.getText() + ", " + Inmate_ID_Visitor.getText() + ", " + Relationship.getText() + ", " + Purpose.getText() + ", " + Entry_Time.getText() + ", " + Exit_Time.getText(); 
+        String line1 = "Rejected Visitor " + Visitor_Name.getText() + ", " + Contact_Number.getText() + ", " + Inmate_ID_Visitor.getText() + ", " + Relationship.getText() + ", " + Purpose.getText() + ", " + Entry_Time.getText() + ", " + Exit_Time.getText(); 
         String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";
         stmt.executeUpdate(logger);
         fetch();

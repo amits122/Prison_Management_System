@@ -362,7 +362,7 @@ public class ApplyVisitor extends javax.swing.JFrame {
             String query = "INSERT INTO VISITOR(Name, Contact_Number,Inmate_ID, Relationship, Purpose, Date, Entry_Time, Exit_Time) VALUES('"+VisitorName+"','"+Contact+"','"+InmateID+"','"+VisitorRelationship+"','"+VisitorPurpose+"','"+DateX+"','"+EntryTime+"','"+ExitTime+"');";
             System.out.println(query);
             stmt.executeUpdate(query);
-            String line1 = "Inserted to Visitor" + VisitorName + ", " + Contact + ", " + InmateID + ", " + VisitorRelationship + ", " + VisitorPurpose + ", " + EntryTime + ", " + ExitTime;
+            String line1 = "Inserted to Visitor " + VisitorName + ", " + Contact + ", " + InmateID + ", " + VisitorRelationship + ", " + VisitorPurpose + ", " + EntryTime + ", " + ExitTime;
             String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";
             stmt.executeUpdate(logger);
             JOptionPane.showMessageDialog(this, "Successful Operation");

@@ -1174,7 +1174,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             Statement stmt = (Statement)con.createStatement();
             String query = "INSERT INTO COURT VALUES('"+CourtID+"','"+CourtAddress+"','"+ChiefJustice+"','"+CourtLevel+"');";
             stmt.executeUpdate(query);
-            String line1 = "Inserted to Court & Jury" + CourtID + ", " + CourtAddress + ", " + ChiefJustice + ", " + CourtLevel + ", " + JuryMembers; 
+            String line1 = "Inserted to Court & Jury " + CourtID + ", " + CourtAddress + ", " + ChiefJustice + ", " + CourtLevel + ", " + JuryMembers; 
             String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";
             stmt.executeUpdate(logger);
             String JuryArr[] = JuryMembers.split(",");
@@ -1211,7 +1211,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             Statement stmt = (Statement)con.createStatement();
             String query = "INSERT INTO JOB_DESC (Description) VALUES('"+JobDesc+"');";
             stmt.executeUpdate(query);
-            String line1 = "Inserted to Job Description" + JobDesc; 
+            String line1 = "Inserted to Job Description " + JobDesc; 
             String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";
             stmt.executeUpdate(logger);
             JOptionPane.showMessageDialog(this, "Successful Operation");
@@ -1237,7 +1237,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             Statement stmt = (Statement)con.createStatement();
             String query = "INSERT INTO JOB VALUES('"+JobID+"','"+InmateID+"','"+WorkShift+"','"+HoursCompleted+"','"+InmateFeedback+"');";
             stmt.executeUpdate(query);
-            String line1 = "Inserted to Job" + JobID + ", " + InmateID + ", " + WorkShift + ", " + HoursCompleted + ", " + InmateFeedback; 
+            String line1 = "Inserted to Job " + JobID + ", " + InmateID + ", " + WorkShift + ", " + HoursCompleted + ", " + InmateFeedback; 
             String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";
             stmt.executeUpdate(logger);
             JOptionPane.showMessageDialog(this, "Successful Operation");
@@ -1274,7 +1274,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                         stmt.executeUpdate(query);
                     }
                 }
-                String line1 = "Inserted to Prison" + PrisonID + ", " + Location + ", " + PrisonJurisdiction+ ", " + BlocksX+ ", " + NoOfCells;
+                String line1 = "Inserted to Prison " + PrisonID + ", " + Location + ", " + PrisonJurisdiction+ ", " + BlocksX+ ", " + NoOfCells;
                 String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";
                 stmt.executeUpdate(logger);            
             }    
@@ -1305,7 +1305,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             Statement stmt = (Statement)con.createStatement();
             String query = "INSERT INTO STAFF (Name, Date_Of_Birth, Address, Designation, Shift, Salary) VALUES('"+StaffName+"','"+StaffDateOfBirth+"','"+StaffAddress+"','"+StaffDesignation+"','"+StaffShift+"','"+StaffSalary+"');";
             stmt.executeUpdate(query);
-            String line1 = "Inserted to Staff" + StaffName + ", " + StaffDateOfBirth + ", " + StaffAddress + ", " + StaffDesignation + ", " + StaffSalary;
+            String line1 = "Inserted to Staff " + StaffName + ", " + StaffDateOfBirth + ", " + StaffAddress + ", " + StaffDesignation + ", " + StaffSalary;
             String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";
             stmt.executeUpdate(logger);
             JOptionPane.showMessageDialog(this, "Successful Operation");
@@ -1335,7 +1335,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             Statement stmt = (Statement)con.createStatement();
             String query = "INSERT INTO INMATE VALUES('"+InmateID+"','"+InmateName+"','"+InmateDateOfBirth+"','"+StartDate+"','"+ReleaseDate+"','"+InmateCaseID+"','"+InmatePrisonID+"','"+Block+"','"+CellNo+"','"+InmateSupervisorID+"');";
             stmt.executeUpdate(query);
-            String line1 = "Inserted to Inmate" + InmateID + ", " + InmateName + ", " + InmateAlias + ", " + InmateDateOfBirth + ", " + StartDate + ", " + ReleaseDate + ", " + InmateCaseID + ", " + InmatePrisonID + ", " + Block + ", " + CellNo + ", " + InmateSupervisorID;
+            String line1 = "Inserted to Inmate " + InmateID + ", " + InmateName + ", " + InmateAlias + ", " + InmateDateOfBirth + ", " + StartDate + ", " + ReleaseDate + ", " + InmateCaseID + ", " + InmatePrisonID + ", " + Block + ", " + CellNo + ", " + InmateSupervisorID;
             String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";
             stmt.executeUpdate(logger);
             String Aliases[] = InmateAlias.split(",");
@@ -1368,7 +1368,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             stmt.executeUpdate(query);
             query = "DELETE FROM COURT_JURY WHERE Court_ID = '"+CourtID+"';";
             stmt.executeUpdate(query);
-            String line1 = "Updated Court & Jury" + CourtID + ", " + CourtAddress + ", " + ChiefJustice + ", " + CourtLevel + ", " + JuryMembers; 
+            String line1 = "Updated Court & Jury " + CourtID + ", " + CourtAddress + ", " + ChiefJustice + ", " + CourtLevel + ", " + JuryMembers; 
             String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";
             stmt.executeUpdate(logger);
             String JuryArr[] = JuryMembers.split(",");
@@ -1412,7 +1412,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                         stmt.executeUpdate(query);
                     }
                 }
-                String line1 = "Updated Prison" + PrisonID + ", " + Location + ", " + PrisonJurisdiction+ ", " + BlocksX+ ", " + NoOfCells; 
+                String line1 = "Updated Prison " + PrisonID + ", " + Location + ", " + PrisonJurisdiction+ ", " + BlocksX+ ", " + NoOfCells; 
                 String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";
                 stmt.executeUpdate(logger);
             }
@@ -1441,7 +1441,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             Statement stmt = (Statement)con.createStatement();
             String query = "UPDATE STAFF SET Name = '"+StaffName+"', Date_Of_Birth = '"+StaffDateOfBirth+"', Address = '"+StaffAddress+"', Designation = '"+StaffDesignation+"', Salary = '"+StaffSalary+"' WHERE Staff_ID = '"+StaffID+"';";
             stmt.executeUpdate(query);
-            String line1 = "Updated Staff" + StaffID + ", " + StaffName + ", " + StaffDateOfBirth + ", " + StaffAddress + ", " + StaffDesignation + ", " + StaffSalary; 
+            String line1 = "Updated Staff " + StaffID + ", " + StaffName + ", " + StaffDateOfBirth + ", " + StaffAddress + ", " + StaffDesignation + ", " + StaffSalary; 
             String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";
             stmt.executeUpdate(logger);
             JOptionPane.showMessageDialog(this, "Successful Operation");
@@ -1471,7 +1471,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             Statement stmt = (Statement)con.createStatement();
             String query = "UPDATE INMATE SET Name = '"+InmateName+"', Date_Of_Birth = '"+InmateDateOfBirth+"', Start_Date = '"+StartDate+"', Release_Date = '"+ReleaseDate+"', Case_ID = '"+InmateCaseID+"', Prison_ID = '"+InmatePrisonID+"',Block = '"+Block+"', Cell_Num = '"+CellNo+"', Supervisor_Staff_ID = '"+InmateSupervisorID+"' WHERE Inmate_ID = '"+InmateID+"';";
             stmt.executeUpdate(query);
-            String line1 = "Updated Inmate" + InmateID + ", " + InmateName + ", " + InmateAlias + ", " + InmateDateOfBirth + ", " + StartDate + ", " + ReleaseDate + ", " + InmateCaseID + ", " + InmatePrisonID + ", " + Block + ", " + CellNo + ", " + InmateSupervisorID; 
+            String line1 = "Updated Inmate " + InmateID + ", " + InmateName + ", " + InmateAlias + ", " + InmateDateOfBirth + ", " + StartDate + ", " + ReleaseDate + ", " + InmateCaseID + ", " + InmatePrisonID + ", " + Block + ", " + CellNo + ", " + InmateSupervisorID; 
             String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";
             stmt.executeUpdate(logger);
             query = "DELETE FROM INMATE_ALIAS WHERE INMATE_ID = '"+InmateID+"';";
@@ -1499,7 +1499,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             Statement stmt = (Statement)con.createStatement();
             String query = "UPDATE JOB_DESC SET Description = '"+JobDesc+"' WHERE Job_ID = '"+JobID+"';";
             stmt.executeUpdate(query);
-            String line1 = "Updated Job Description" + JobDesc + "where Job_ID " + JobID; 
+            String line1 = "Updated Job Description " + JobDesc + "where Job_ID " + JobID; 
             String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";
             stmt.executeUpdate(logger);
             JOptionPane.showMessageDialog(this, "Successful Operation");
@@ -1523,7 +1523,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             Statement stmt = (Statement)con.createStatement();
             String query = "UPDATE JOB SET Shift = '"+WorkShift+"', Hours_Completed = '"+HoursCompleted+"', Feedback = '"+InmateFeedback+"' WHERE Job_ID = '"+JobID+"' AND Inmate_ID = '"+InmateID+"';";
             stmt.executeUpdate(query);
-            String line1 = "Updated Job" + JobID + ", " + InmateID + ", " + WorkShift + ", " + HoursCompleted + ", " + InmateFeedback; 
+            String line1 = "Updated Job " + JobID + ", " + InmateID + ", " + WorkShift + ", " + HoursCompleted + ", " + InmateFeedback; 
             String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";
             stmt.executeUpdate(logger);
             JOptionPane.showMessageDialog(this, "Successful Operation");
@@ -1593,7 +1593,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             stmt.executeUpdate(query);
             query = "DELETE FROM CASE_CHARGES WHERE CASE_ID = '"+CaseID+"';";
             stmt.executeUpdate(query);
-            String line1 = "Updated Case & Charges" + CaseID + ", " + CaseType + ", " + CaseVerdict + ", " + VerdictDate + ", " + CourtID + ", " + CaseCharges;
+            String line1 = "Updated Case & Charges " + CaseID + ", " + CaseType + ", " + CaseVerdict + ", " + VerdictDate + ", " + CourtID + ", " + CaseCharges;
             String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";
             stmt.executeUpdate(logger);
             String ChargeArr[] = CaseCharges.split(",");
@@ -1629,7 +1629,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             Statement stmt = (Statement)con.createStatement();
             String query = "INSERT INTO CASES VALUES('"+CaseID+"','"+CaseType+"','"+CaseVerdict+"','"+VerdictDate+"','"+CourtID+"');";
             stmt.executeUpdate(query);
-            String line1 = "Inserted to Case & Charges" + CaseID + ", " + CaseType + ", " + CaseVerdict + ", " + VerdictDate + ", " + CourtID + ", " + CaseCharges;
+            String line1 = "Inserted to Case & Charges " + CaseID + ", " + CaseType + ", " + CaseVerdict + ", " + VerdictDate + ", " + CourtID + ", " + CaseCharges;
             String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";
             stmt.executeUpdate(logger);
             String ChargeArr[] = CaseCharges.split(",");

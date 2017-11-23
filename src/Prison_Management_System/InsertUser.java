@@ -266,7 +266,7 @@ public class InsertUser extends javax.swing.JFrame {
                     Statement stmt = (Statement)con.createStatement();
                     String query = "INSERT INTO USERS VALUES('"+newusername+"','"+password+"','"+access+"');";
                     stmt.executeUpdate(query);
-                    String line1 = "Inserted User" + newusername; 
+                    String line1 = "Inserted User " + newusername; 
                     String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";
                     stmt.executeUpdate(logger);
                     JOptionPane.showMessageDialog(this, "Successful Operation");
