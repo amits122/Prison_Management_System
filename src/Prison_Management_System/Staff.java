@@ -16,11 +16,40 @@ import javax.swing.JOptionPane;
  */
 public class Staff extends javax.swing.JFrame {
 
+    void refresh(){
+        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+        int rows = model.getRowCount();
+        if(rows > 0){
+            for (int i = 0; i < rows; i++)
+            model.removeRow(0);
+        }
+        try{
+            Class.forName("java.sql.DriverManager");
+            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
+            Statement mainStmt = (Statement)con.createStatement();
+            String mainQuery = "SELECT * FROM STAFF;";
+            ResultSet mainRs = mainStmt.executeQuery(mainQuery);
+            while(mainRs.next()){
+                String SID = mainRs.getString("Staff_ID");
+                String Name = mainRs.getString("Name");
+                String DOB = mainRs.getString("Date_Of_Birth");
+                String Addr = mainRs.getString("Address");
+                String Designation = mainRs.getString("Designation");
+                String Shift = mainRs.getString("Shift");
+                String Salary = mainRs.getString("Salary");
+                model.addRow(new Object[] {SID, Name, DOB, Addr, Designation, Shift, Salary});
+            }
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(this, e.getMessage());
+        }
+    }
     /**
      * Creates new form Staff
      */
     public Staff() {
         initComponents();
+        refresh();
     }
 
     /**
@@ -89,6 +118,7 @@ public class Staff extends javax.swing.JFrame {
                 "Staff_ID", "Name", "DateOfBirth", "Address", "Designation", "Shift", "Salary"
             }
         ));
+        jTable1.setEnabled(false);
         jScrollPane1.setViewportView(jTable1);
 
         jPanel12.setBackground(new java.awt.Color(51, 51, 255));
@@ -180,32 +210,7 @@ public class Staff extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
-        int rows = model.getRowCount();
-        if(rows > 0){
-            for (int i = 0; i < rows; i++)
-            model.removeRow(0);
-        }
-        try{
-            Class.forName("java.sql.DriverManager");
-            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
-            Statement mainStmt = (Statement)con.createStatement();
-            String mainQuery = "SELECT * FROM STAFF;";
-            ResultSet mainRs = mainStmt.executeQuery(mainQuery);
-            while(mainRs.next()){
-                String SID = mainRs.getString("Staff_ID");
-                String Name = mainRs.getString("Name");
-                String DOB = mainRs.getString("Date_Of_Birth");
-                String Addr = mainRs.getString("Address");
-                String Designation = mainRs.getString("Designation");
-                String Shift = mainRs.getString("Shift");
-                String Salary = mainRs.getString("Salary");
-                model.addRow(new Object[] {SID, Name, DOB, Addr, Designation, Shift, Salary});
-            }
-        }
-        catch(Exception e){
-            JOptionPane.showMessageDialog(this, e.getMessage());
-        }        // TODO add your handling code here:
+        refresh();        // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed

@@ -14,12 +14,43 @@ import javax.swing.JOptionPane;
  * @author amits
  */
 public class Visitor extends javax.swing.JFrame {
-
+    void refresh(){
+        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+        int rows = model.getRowCount();
+        if(rows > 0){
+            for (int i = 0; i < rows; i++)
+            model.removeRow(0);
+        }
+        try{
+            Class.forName("java.sql.DriverManager");
+            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
+            Statement mainStmt = (Statement)con.createStatement();
+            String mainQuery = "SELECT * FROM VISITOR;";
+            ResultSet mainRs = mainStmt.executeQuery(mainQuery);
+            while(mainRs.next()){
+                String Name = mainRs.getString("Name");
+                String Contact_Number = mainRs.getString("Contact_Number");
+                String IID = mainRs.getString("Inmate_ID");
+                String Relationship = mainRs.getString("Relationship");
+                String Purpose = mainRs.getString("Purpose");
+                String Date = mainRs.getString("Date");
+                String Entry_Time = mainRs.getString("Entry_Time");
+                String Exit_Time = mainRs.getString("Exit_Time");
+                String Accept = mainRs.getString("Exit_Time");
+                String Comment = mainRs.getString("Comment");
+                model.addRow(new Object[] {Name, Contact_Number, IID, Relationship, Purpose, Date, Entry_Time, Exit_Time, Accept, Comment });
+            }
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(this, e.getMessage());
+        }
+    }
     /**
      * Creates new form Visitor
      */
     public Visitor() {
         initComponents();
+        refresh();
     }
 
     /**
@@ -88,6 +119,7 @@ public class Visitor extends javax.swing.JFrame {
                 "Name", "Contact", "InmateID", "Relationship", "Purpose", "Date", "EntryTime", "ExitTime", "Approved", "Comment"
             }
         ));
+        jTable1.setEnabled(false);
         jScrollPane1.setViewportView(jTable1);
 
         jPanel12.setBackground(new java.awt.Color(51, 51, 255));
@@ -179,35 +211,7 @@ public class Visitor extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
-        int rows = model.getRowCount();
-        if(rows > 0){
-            for (int i = 0; i < rows; i++)
-            model.removeRow(0);
-        }
-        try{
-            Class.forName("java.sql.DriverManager");
-            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
-            Statement mainStmt = (Statement)con.createStatement();
-            String mainQuery = "SELECT * FROM VISITOR;";
-            ResultSet mainRs = mainStmt.executeQuery(mainQuery);
-            while(mainRs.next()){
-                String Name = mainRs.getString("Name");
-                String Contact_Number = mainRs.getString("Contact_Number");
-                String IID = mainRs.getString("Inmate_ID");
-                String Relationship = mainRs.getString("Relationship");
-                String Purpose = mainRs.getString("Purpose");
-                String Date = mainRs.getString("Date");
-                String Entry_Time = mainRs.getString("Entry_Time");
-                String Exit_Time = mainRs.getString("Exit_Time");
-                String Accept = mainRs.getString("Exit_Time");
-                String Comment = mainRs.getString("Comment");
-                model.addRow(new Object[] {Name, Contact_Number, IID, Relationship, Purpose, Date, Entry_Time, Exit_Time, Accept, Comment });
-            }
-        }
-        catch(Exception e){
-            JOptionPane.showMessageDialog(this, e.getMessage());
-        }        // TODO add your handling code here:
+        refresh();        // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed

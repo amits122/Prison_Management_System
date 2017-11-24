@@ -20,6 +20,10 @@ public class Search extends javax.swing.JFrame {
      */
     public Search() {
         initComponents();
+        if(Login.access == 3){
+            jButton6.setEnabled(false);
+            jButton11.setEnabled(false);
+        }
     }
 
     /**

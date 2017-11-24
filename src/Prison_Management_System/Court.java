@@ -15,11 +15,49 @@ import javax.swing.JOptionPane;
  */
 public class Court extends javax.swing.JFrame {
 
+    void refresh(){
+        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+        int rows = model.getRowCount();
+        if(rows > 0){
+            for (int i = 0; i < rows; i++)
+                model.removeRow(0);
+        }
+        try{
+            Class.forName("java.sql.DriverManager");
+            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
+            Statement mainStmt = (Statement)con.createStatement();
+            Statement subStmt = (Statement)con.createStatement();
+            String mainQuery = "SELECT * FROM COURT;";
+            ResultSet mainRs = mainStmt.executeQuery(mainQuery);
+            while(mainRs.next()){
+                String CID = mainRs.getString("Court_ID");
+                String Addr = mainRs.getString("Address");
+                String CJ = mainRs.getString("Chief_Justice");
+                String Level = mainRs.getString("Level");
+                String Jury = "";
+                String subQuery = "SELECT * FROM COURT_JURY WHERE COURT_ID = " + CID + ";";
+                ResultSet subRs = subStmt.executeQuery(subQuery);
+                while(subRs.next()){
+                    if(Jury.equals(""))
+                        Jury = subRs.getString("Jury_Member");
+                    else
+                        Jury = Jury + ", " + subRs.getString("Jury_Member");
+                }
+                model.addRow(new Object[] {CID, Addr, CJ, Level, Jury});
+            }
+            
+            
+        }
+        catch(Exception e){
+             JOptionPane.showMessageDialog(this, e.getMessage());
+        }
+    }
     /**
      * Creates new form Court
      */
     public Court() {
         initComponents();
+        refresh();
     }
 
     /**
@@ -88,6 +126,7 @@ public class Court extends javax.swing.JFrame {
                 "Court_ID", "Address", "Chief Justice", "Level", "Jury"
             }
         ));
+        jTable1.setEnabled(false);
         jScrollPane1.setViewportView(jTable1);
 
         jPanel12.setBackground(new java.awt.Color(51, 51, 255));
@@ -201,41 +240,8 @@ public class Court extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
-        int rows = model.getRowCount();
-        if(rows > 0){
-            for (int i = 0; i < rows; i++)
-                model.removeRow(0);
-        }
-        try{
-            Class.forName("java.sql.DriverManager");
-            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
-            Statement mainStmt = (Statement)con.createStatement();
-            Statement subStmt = (Statement)con.createStatement();
-            String mainQuery = "SELECT * FROM COURT;";
-            ResultSet mainRs = mainStmt.executeQuery(mainQuery);
-            while(mainRs.next()){
-                String CID = mainRs.getString("Court_ID");
-                String Addr = mainRs.getString("Address");
-                String CJ = mainRs.getString("Chief_Justice");
-                String Level = mainRs.getString("Level");
-                String Jury = "";
-                String subQuery = "SELECT * FROM COURT_JURY WHERE COURT_ID = " + CID + ";";
-                ResultSet subRs = subStmt.executeQuery(subQuery);
-                while(subRs.next()){
-                    if(Jury.equals(""))
-                        Jury = subRs.getString("Jury_Member");
-                    else
-                        Jury = Jury + ", " + subRs.getString("Jury_Member");
-                }
-                model.addRow(new Object[] {CID, Addr, CJ, Level, Jury});
-            }
-            
-            
-        }
-        catch(Exception e){
-             JOptionPane.showMessageDialog(this, e.getMessage());
-        }        // TODO add your handling code here:
+    refresh();
+        // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

@@ -15,11 +15,39 @@ import javax.swing.JOptionPane;
  */
 public class Jobs extends javax.swing.JFrame {
 
+    void refresh(){
+        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+        int rows = model.getRowCount();
+        if(rows > 0){
+            for (int i = 0; i < rows; i++)
+            model.removeRow(0);
+        }
+        try{
+            Class.forName("java.sql.DriverManager");
+            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
+            Statement mainStmt = (Statement)con.createStatement();
+            String mainQuery = "SELECT * FROM JOB_DESC NATURAL JOIN JOB;";
+            ResultSet mainRs = mainStmt.executeQuery(mainQuery);
+            while(mainRs.next()){
+                String JID = mainRs.getString("Job_ID");
+                String Description = mainRs.getString("Description");
+                String IID = mainRs.getString("Inmate_ID");
+                String Shift = mainRs.getString("Shift");
+                String Hours = mainRs.getString("Hours_Completed");
+                String Feedback = mainRs.getString("Feedback");
+                model.addRow(new Object[] {JID, Description, IID, Shift, Hours, Feedback});
+            }
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(this, e.getMessage());
+        }    
+    }
     /**
      * Creates new form Jobs
      */
     public Jobs() {
         initComponents();
+        refresh();
     }
 
     /**
@@ -88,6 +116,7 @@ public class Jobs extends javax.swing.JFrame {
                 "Job_ID", "Description", "Inmate_ID", "Shift", "Hours", "Feedback"
             }
         ));
+        jTable1.setEnabled(false);
         jScrollPane1.setViewportView(jTable1);
 
         jPanel12.setBackground(new java.awt.Color(51, 51, 255));
@@ -179,31 +208,7 @@ public class Jobs extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
-        int rows = model.getRowCount();
-        if(rows > 0){
-            for (int i = 0; i < rows; i++)
-            model.removeRow(0);
-        }
-        try{
-            Class.forName("java.sql.DriverManager");
-            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
-            Statement mainStmt = (Statement)con.createStatement();
-            String mainQuery = "SELECT * FROM JOB_DESC NATURAL JOIN JOB;";
-            ResultSet mainRs = mainStmt.executeQuery(mainQuery);
-            while(mainRs.next()){
-                String JID = mainRs.getString("Job_ID");
-                String Description = mainRs.getString("Description");
-                String IID = mainRs.getString("Inmate_ID");
-                String Shift = mainRs.getString("Shift");
-                String Hours = mainRs.getString("Hours_Completed");
-                String Feedback = mainRs.getString("Feedback");
-                model.addRow(new Object[] {JID, Description, IID, Shift, Hours, Feedback});
-            }
-        }
-        catch(Exception e){
-            JOptionPane.showMessageDialog(this, e.getMessage());
-        }        // TODO add your handling code here:
+        refresh();        // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed

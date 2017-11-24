@@ -15,11 +15,53 @@ import javax.swing.JOptionPane;
  */
 public class Inmate extends javax.swing.JFrame {
 
+    void refresh(){
+        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+        int rows = model.getRowCount();
+        if(rows > 0){
+            for (int i = 0; i < rows; i++)
+            model.removeRow(0);
+        }
+        try{
+            Class.forName("java.sql.DriverManager");
+            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
+            Statement mainStmt = (Statement)con.createStatement();
+            Statement subStmt = (Statement)con.createStatement();
+            String mainQuery = "SELECT * FROM INMATE;";
+            ResultSet mainRs = mainStmt.executeQuery(mainQuery);
+            while(mainRs.next()){
+                String IID = mainRs.getString("Inmate_ID");
+                String Name = mainRs.getString("Name");
+                String DOB = mainRs.getString("Date_Of_Birth");
+                String Start = mainRs.getString("Start_Date");
+                String Release = mainRs.getString("Release_Date");
+                String Case = mainRs.getString("Case_ID");
+                String Prison = mainRs.getString("Prison_ID");
+                String Block = mainRs.getString("Block");
+                String Cell = mainRs.getString("Cell_Num");
+                String Supervisor = mainRs.getString("Supervisor_Staff_ID");
+                String Alias = "";
+                String subQuery = "SELECT * FROM INMATE_ALIAS WHERE INMATE_ID = " + IID + ";";
+                ResultSet subRs = subStmt.executeQuery(subQuery);
+                while(subRs.next()){
+                    if(Alias.equals(""))
+                        Alias = subRs.getString("Alias");
+                    else
+                        Alias = Alias + ", " + subRs.getString("Alias");
+                }
+                model.addRow(new Object[] {IID, Name, Alias, DOB, Start, Release, Case, Prison, Block, Cell, Supervisor});
+            }
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(this, e.getMessage());
+        }
+    }
     /**
      * Creates new form Inmate
      */
     public Inmate() {
         initComponents();
+        refresh();
     }
 
     /**
@@ -88,6 +130,7 @@ public class Inmate extends javax.swing.JFrame {
                 "Inmate_ID", "Name", "Alias", "DateOfBirth", "Start", "Release", "Case_ID", "Prison_ID", "Block", "Cell", "Supervisor_Staff_ID"
             }
         ));
+        jTable1.setEnabled(false);
         jScrollPane1.setViewportView(jTable1);
 
         jPanel12.setBackground(new java.awt.Color(51, 51, 255));
@@ -179,45 +222,7 @@ public class Inmate extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
-        int rows = model.getRowCount();
-        if(rows > 0){
-            for (int i = 0; i < rows; i++)
-            model.removeRow(0);
-        }
-        try{
-            Class.forName("java.sql.DriverManager");
-            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
-            Statement mainStmt = (Statement)con.createStatement();
-            Statement subStmt = (Statement)con.createStatement();
-            String mainQuery = "SELECT * FROM INMATE;";
-            ResultSet mainRs = mainStmt.executeQuery(mainQuery);
-            while(mainRs.next()){
-                String IID = mainRs.getString("Inmate_ID");
-                String Name = mainRs.getString("Name");
-                String DOB = mainRs.getString("Date_Of_Birth");
-                String Start = mainRs.getString("Start_Date");
-                String Release = mainRs.getString("Release_Date");
-                String Case = mainRs.getString("Case_ID");
-                String Prison = mainRs.getString("Prison_ID");
-                String Block = mainRs.getString("Block");
-                String Cell = mainRs.getString("Cell_Num");
-                String Supervisor = mainRs.getString("Supervisor_Staff_ID");
-                String Alias = "";
-                String subQuery = "SELECT * FROM INMATE_ALIAS WHERE INMATE_ID = " + IID + ";";
-                ResultSet subRs = subStmt.executeQuery(subQuery);
-                while(subRs.next()){
-                    if(Alias.equals(""))
-                        Alias = subRs.getString("Alias");
-                    else
-                        Alias = Alias + ", " + subRs.getString("Alias");
-                }
-                model.addRow(new Object[] {IID, Name, Alias, DOB, Start, Release, Case, Prison, Block, Cell, Supervisor});
-            }
-        }
-        catch(Exception e){
-            JOptionPane.showMessageDialog(this, e.getMessage());
-        }        // TODO add your handling code here:
+        refresh();        // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
