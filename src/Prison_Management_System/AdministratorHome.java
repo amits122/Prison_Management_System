@@ -5,6 +5,11 @@
  */
 package Prison_Management_System;
 
+import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.Statement;
+import java.sql.DriverManager;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author amits
@@ -190,8 +195,18 @@ public class AdministratorHome extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        new Login().setVisible(true);
-        this.dispose();
+        try{
+            Class.forName("java.sql.DriverManager");
+            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
+            Statement stmt = (Statement)con.createStatement();
+            String logger = "INSERT INTO LOG (User, Operation) VALUES('"+Login.username+"',' Logout');";
+            stmt.executeUpdate(logger);
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(this, e.getMessage());
+        }
+        new Report().setVisible(true);
+        this.dispose(); 
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 

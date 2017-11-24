@@ -1538,14 +1538,14 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             Class.forName("java.sql.DriverManager");
             Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
             Statement stmt = (Statement)con.createStatement();
-            String logger = "INSERT INTO LOG (User, Operation) VALUES('"+username+"',' Logout');";
+            String logger = "INSERT INTO LOG (User, Operation) VALUES('"+Login.username+"',' Logout');";
             stmt.executeUpdate(logger);
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(this, e.getMessage());
         }
-        new Login().setVisible(true);
-        this.dispose();
+        new Report().setVisible(true);
+        this.dispose(); 
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 

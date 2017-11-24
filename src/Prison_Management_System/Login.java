@@ -235,7 +235,7 @@ public class Login extends javax.swing.JFrame {
                         if(dbpassword.equals(password)){
                             flag = 2;
                             Statement stmt = (Statement)con.createStatement();
-                            String query = "INSERT INTO LOG (User, Operation) VALUES('"+username+"',' Login');";
+                            String query = "INSERT INTO LOG (User, Operation) VALUES('"+username+"','Login');";
                             stmt.executeUpdate(query);
                         }
                         else
