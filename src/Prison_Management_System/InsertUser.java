@@ -262,7 +262,7 @@ public class InsertUser extends javax.swing.JFrame {
             else{
                 try{
                     Class.forName("java.sql.DriverManager");
-                    Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
+                    Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", Login.dbUsername, Login.dbPassword);
                     Statement stmt = (Statement)con.createStatement();
                     String query = "INSERT INTO USERS VALUES('"+newusername+"','"+password+"','"+access+"');";
                     stmt.executeUpdate(query);
@@ -282,7 +282,7 @@ public class InsertUser extends javax.swing.JFrame {
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         try{
             Class.forName("java.sql.DriverManager");
-            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
+            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", Login.dbUsername, Login.dbPassword);
             Statement stmt = (Statement)con.createStatement();
             String logger = "INSERT INTO LOG (User, Operation) VALUES('"+Login.username+"',' Logout');";
             stmt.executeUpdate(logger);
