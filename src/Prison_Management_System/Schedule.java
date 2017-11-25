@@ -265,7 +265,7 @@ public class Schedule extends javax.swing.JFrame {
             if(WorkShift.equals(""))
                 throw new RuntimeException("Please select atleast one shift");
             Class.forName("java.sql.DriverManager");
-            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
+            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", Login.dbUsername, Login.dbPassword);
             Statement stmt = (Statement)con.createStatement();
             String query = "INSERT INTO JOB(Job_ID, Inmate_ID, Shift, Hours_Completed) VALUES('"+JobID+"','"+InmateID+"','"+WorkShift+"','"+Hours+"');";
             stmt.executeUpdate(query);
@@ -282,7 +282,7 @@ public class Schedule extends javax.swing.JFrame {
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         try{
             Class.forName("java.sql.DriverManager");
-            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
+            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", Login.dbUsername, Login.dbPassword);
             Statement stmt = (Statement)con.createStatement();
             String logger = "INSERT INTO LOG (User, Operation) VALUES('"+Login.username+"',' Logout');";
             stmt.executeUpdate(logger);

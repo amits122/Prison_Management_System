@@ -1025,7 +1025,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             if(!CourtLevel.toLowerCase().equals("supreme") && !CourtLevel.toLowerCase().equals("high") && !CourtLevel.toLowerCase().equals("tribunal") && !CourtLevel.toLowerCase().equals("district") && !CourtLevel.toLowerCase().equals("sessions"))          
                 throw new RuntimeException("Court Level Wrong");
             Class.forName("java.sql.DriverManager");
-            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
+            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", Login.dbUsername, Login.dbPassword);
             Statement stmt = (Statement)con.createStatement();
             String query = "INSERT INTO COURT VALUES('"+CourtID+"','"+CourtAddress+"','"+ChiefJustice+"','"+CourtLevel+"');";
             stmt.executeUpdate(query);
@@ -1062,7 +1062,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             if(!JobID.equals(""))
                 throw new RuntimeException("Do not enter Job ID");                
             Class.forName("java.sql.DriverManager");
-            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
+            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", Login.dbUsername, Login.dbPassword);
             Statement stmt = (Statement)con.createStatement();
             String query = "INSERT INTO JOB_DESC (Description) VALUES('"+JobDesc+"');";
             stmt.executeUpdate(query);
@@ -1089,7 +1089,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             if(Location.equals("") || PrisonJurisdiction.equals("") || BlocksX.equals("") || NoOfCells.equals(""))
                 throw new RuntimeException("Fields Empty");
             Class.forName("java.sql.DriverManager");
-            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
+            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", Login.dbUsername, Login.dbPassword);
             Statement stmt = (Statement)con.createStatement();
             if(Block.length != Cells.length){
                 JOptionPane.showMessageDialog(null, "Blocks do not correspont to cell size");
@@ -1131,7 +1131,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             if(!StaffShift.toLowerCase().equals("morning") && !StaffShift.toLowerCase().equals("noon") && !StaffShift.toLowerCase().equals("evening") && !StaffShift.toLowerCase().equals("night"))
                 throw new RuntimeException("Shift is wrong");
             Class.forName("java.sql.DriverManager");
-            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
+            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", Login.dbUsername, Login.dbPassword);
             Statement stmt = (Statement)con.createStatement();
             String query = "INSERT INTO STAFF (Name, Date_Of_Birth, Address, Designation, Shift, Salary) VALUES('"+StaffName+"','"+StaffDateOfBirth+"','"+StaffAddress+"','"+StaffDesignation+"','"+StaffShift+"','"+StaffSalary+"');";
             stmt.executeUpdate(query);
@@ -1161,7 +1161,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             if(InmateName.equals("") || InmateDateOfBirth.equals("") || InmateAlias.equals("") || StartDate.equals("") || ReleaseDate.equals(""))
                 throw new RuntimeException("Fields Empty");
             Class.forName("java.sql.DriverManager");
-            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
+            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", Login.dbUsername, Login.dbPassword);
             Statement stmt = (Statement)con.createStatement();
             String query = "INSERT INTO INMATE VALUES('"+InmateID+"','"+InmateName+"','"+InmateDateOfBirth+"','"+StartDate+"','"+ReleaseDate+"','"+InmateCaseID+"','"+InmatePrisonID+"','"+Block+"','"+CellNo+"','"+InmateSupervisorID+"');";
             stmt.executeUpdate(query);
@@ -1192,7 +1192,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             if(!CourtLevel.toLowerCase().equals("supreme") && !CourtLevel.toLowerCase().equals("high") && !CourtLevel.toLowerCase().equals("tribunal") && !CourtLevel.toLowerCase().equals("district") && !CourtLevel.toLowerCase().equals("sessions"))          
                 throw new RuntimeException("Court Level Wrong");
             Class.forName("java.sql.DriverManager");
-            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
+            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", Login.dbUsername, Login.dbPassword);
             Statement stmt = (Statement)con.createStatement();
             String query = "UPDATE COURT SET Address = '"+CourtAddress+"',Chief_Justice = '"+ChiefJustice+"',Level = '"+CourtLevel+"' WHERE Court_ID = '"+CourtID+"';";
             stmt.executeUpdate(query);
@@ -1225,7 +1225,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             if(Location.equals("") || PrisonJurisdiction.equals("") || BlocksX.equals("") || NoOfCells.equals(""))
                 throw new RuntimeException("Fields Empty");
             Class.forName("java.sql.DriverManager");
-            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
+            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", Login.dbUsername, Login.dbPassword);
             Statement stmt = (Statement)con.createStatement();
             if(Block.length != Cells.length){
                 JOptionPane.showMessageDialog(null, "Blocks do not correspont to cell size");
@@ -1267,7 +1267,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             if(!StaffShift.toLowerCase().equals("morning") && !StaffShift.toLowerCase().equals("noon") && !StaffShift.toLowerCase().equals("evening") && !StaffShift.toLowerCase().equals("night"))
                 throw new RuntimeException("Shift is wrong");
             Class.forName("java.sql.DriverManager");
-            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
+            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", Login.dbUsername, Login.dbPassword);
             Statement stmt = (Statement)con.createStatement();
             String query = "UPDATE STAFF SET Name = '"+StaffName+"', Date_Of_Birth = '"+StaffDateOfBirth+"', Address = '"+StaffAddress+"', Designation = '"+StaffDesignation+"', Salary = '"+StaffSalary+"' WHERE Staff_ID = '"+StaffID+"';";
             stmt.executeUpdate(query);
@@ -1297,7 +1297,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             if(InmateName.equals("") || InmateDateOfBirth.equals("") || InmateAlias.equals("") || StartDate.equals("") || ReleaseDate.equals(""))
                 throw new RuntimeException("Fields Empty");
             Class.forName("java.sql.DriverManager");
-            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
+            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", Login.dbUsername, Login.dbPassword);
             Statement stmt = (Statement)con.createStatement();
             String query = "UPDATE INMATE SET Name = '"+InmateName+"', Date_Of_Birth = '"+InmateDateOfBirth+"', Start_Date = '"+StartDate+"', Release_Date = '"+ReleaseDate+"', Case_ID = '"+InmateCaseID+"', Prison_ID = '"+InmatePrisonID+"',Block = '"+Block+"', Cell_Num = '"+CellNo+"', Supervisor_Staff_ID = '"+InmateSupervisorID+"' WHERE Inmate_ID = '"+InmateID+"';";
             stmt.executeUpdate(query);
@@ -1325,7 +1325,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             if(JobDesc.equals(""))
                 throw new RuntimeException("Fields Empty");
             Class.forName("java.sql.DriverManager");
-            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
+            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", Login.dbUsername, Login.dbPassword);
             Statement stmt = (Statement)con.createStatement();
             String query = "UPDATE JOB_DESC SET Description = '"+JobDesc+"' WHERE Job_ID = '"+JobID+"';";
             stmt.executeUpdate(query);
@@ -1342,7 +1342,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try{
             Class.forName("java.sql.DriverManager");
-            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
+            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", Login.dbUsername, Login.dbPassword);
             Statement stmt = (Statement)con.createStatement();
             String logger = "INSERT INTO LOG (User, Operation) VALUES('"+Login.username+"',' Logout');";
             stmt.executeUpdate(logger);
@@ -1389,7 +1389,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             if(!CaseType.toLowerCase().equals("criminal") && !CaseType.toLowerCase().equals("civil"))
                 throw new RuntimeException("Case Type is wrong");
             Class.forName("java.sql.DriverManager");
-            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
+            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", Login.dbUsername, Login.dbPassword);
             Statement stmt = (Statement)con.createStatement();
             String query = "UPDATE CASES SET Type = '"+CaseType+"', Verdict = '"+CaseVerdict+"', Verdict_Date = '"+VerdictDate+"', Court_ID = '"+CourtID+"' WHERE Case_ID = '"+CaseID+"';";
             stmt.executeUpdate(query);
@@ -1427,7 +1427,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             if(!CaseType.toLowerCase().equals("criminal") && !CaseType.toLowerCase().equals("civil"))
                 throw new RuntimeException("Case Type is wrong");
             Class.forName("java.sql.DriverManager");
-            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
+            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", Login.dbUsername, Login.dbPassword);
             Statement stmt = (Statement)con.createStatement();
             String query = "INSERT INTO CASES VALUES('"+CaseID+"','"+CaseType+"','"+CaseVerdict+"','"+VerdictDate+"','"+CourtID+"');";
             stmt.executeUpdate(query);

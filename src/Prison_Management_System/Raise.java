@@ -19,7 +19,7 @@ public class Raise extends javax.swing.JFrame {
         DefaultComboBoxModel IDModel = (DefaultComboBoxModel)Selected_ID.getModel();
         try{
             Class.forName("java.sql.DriverManager");
-            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
+            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", Login.dbUsername, Login.dbPassword);
             Statement mainStmt = (Statement)con.createStatement();
             String mainQuery = "SELECT Staff_ID FROM STAFF;";
             ResultSet mainRs = mainStmt.executeQuery(mainQuery);
@@ -35,7 +35,7 @@ public class Raise extends javax.swing.JFrame {
     void refresh(){
         try{
             Class.forName("java.sql.DriverManager");
-            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
+            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", Login.dbUsername, Login.dbPassword);
             Statement mainStmt = (Statement)con.createStatement();
             String mainQuery = "SELECT Staff_ID, Name, Salary FROM STAFF;";
             ResultSet mainRs = mainStmt.executeQuery(mainQuery);
@@ -276,7 +276,7 @@ public class Raise extends javax.swing.JFrame {
             else if(Index == 3)
                 query = "UPDATE STAFF SET Salary = Salary * 1.20 WHERE Staff_ID = '"+StaffID+"';";
             Class.forName("java.sql.DriverManager");
-            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
+            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", Login.dbUsername, Login.dbPassword);
             Statement stmt = (Statement)con.createStatement();
             stmt.executeUpdate(query);
             String line1 = "Raised Salary of" + StaffID; 
@@ -293,7 +293,7 @@ public class Raise extends javax.swing.JFrame {
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         try{
             Class.forName("java.sql.DriverManager");
-            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
+            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", Login.dbUsername, Login.dbPassword);
             Statement stmt = (Statement)con.createStatement();
             String logger = "INSERT INTO LOG (User, Operation) VALUES('"+Login.username+"',' Logout');";
             stmt.executeUpdate(logger);

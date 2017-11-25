@@ -19,7 +19,7 @@ public class Feedback extends javax.swing.JFrame {
         DefaultComboBoxModel JIDModel = (DefaultComboBoxModel)Job_ID_Feedback.getModel();
         try{
             Class.forName("java.sql.DriverManager");
-            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
+            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", Login.dbUsername, Login.dbPassword);
             Statement mainStmt = (Statement)con.createStatement();
             String mainQuery = "SELECT DISTINCT(Job_ID) from JOB;";
             ResultSet mainRs = mainStmt.executeQuery(mainQuery);
@@ -36,7 +36,7 @@ public class Feedback extends javax.swing.JFrame {
         DefaultComboBoxModel IIDModel = (DefaultComboBoxModel)Inmate_ID_Feedback.getModel();
         try{
             Class.forName("java.sql.DriverManager");
-            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
+            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", Login.dbUsername, Login.dbPassword);
             Statement mainStmt = (Statement)con.createStatement();
             int JobID = Integer.parseInt((String)Job_ID_Feedback.getSelectedItem());
             String mainQuery = "SELECT Inmate_ID FROM JOB WHERE Job_ID = '"+JobID+"';";
@@ -53,7 +53,7 @@ public class Feedback extends javax.swing.JFrame {
     void refresh(){
         try{
             Class.forName("java.sql.DriverManager");
-            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
+            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", Login.dbUsername, Login.dbPassword);
             Statement mainStmt = (Statement)con.createStatement();
             int InmateID = Integer.parseInt((String)Inmate_ID_Feedback.getSelectedItem());
             String mainQuery = "SELECT Name FROM INMATE WHERE Inmate_ID = '"+InmateID+"';";
@@ -308,7 +308,7 @@ public class Feedback extends javax.swing.JFrame {
             int InmateID = Integer.parseInt((String)Inmate_ID_Feedback.getSelectedItem());
             String InmateFeedback = Feedback.getText();
             Class.forName("java.sql.DriverManager");
-            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
+            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", Login.dbUsername, Login.dbPassword);
             Statement stmt = (Statement)con.createStatement();
             String query = "UPDATE JOB SET Feedback = '"+InmateFeedback+"'WHERE Inmate_ID = '"+InmateID+"' AND Job_ID = '"+JobID+"');";
             stmt.executeUpdate(query);
@@ -325,7 +325,7 @@ public class Feedback extends javax.swing.JFrame {
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         try{
             Class.forName("java.sql.DriverManager");
-            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
+            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", Login.dbUsername, Login.dbPassword);
             Statement stmt = (Statement)con.createStatement();
             String logger = "INSERT INTO LOG (User, Operation) VALUES('"+Login.username+"',' Logout');";
             stmt.executeUpdate(logger);

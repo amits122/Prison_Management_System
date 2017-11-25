@@ -24,7 +24,7 @@ public class Court extends javax.swing.JFrame {
         }
         try{
             Class.forName("java.sql.DriverManager");
-            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
+            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", Login.dbUsername, Login.dbPassword);
             Statement mainStmt = (Statement)con.createStatement();
             Statement subStmt = (Statement)con.createStatement();
             String mainQuery = "SELECT * FROM COURT;";
@@ -220,7 +220,7 @@ public class Court extends javax.swing.JFrame {
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         try{
             Class.forName("java.sql.DriverManager");
-            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
+            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", Login.dbUsername, Login.dbPassword);
             Statement stmt = (Statement)con.createStatement();
             String logger = "INSERT INTO LOG (User, Operation) VALUES('"+Login.username+"',' Logout');";
             stmt.executeUpdate(logger);

@@ -307,7 +307,7 @@ public class ApplyVisitor extends javax.swing.JFrame {
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         try{
             Class.forName("java.sql.DriverManager");
-            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
+            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", Login.dbUsername, Login.dbPassword);
             Statement stmt = (Statement)con.createStatement();
             String logger = "INSERT INTO LOG (User, Operation) VALUES('"+Login.username+"',' Logout');";
             stmt.executeUpdate(logger);
@@ -367,7 +367,7 @@ public class ApplyVisitor extends javax.swing.JFrame {
             if(VisitorName.equals("") || Contact.equals("") || VisitorRelationship.equals("") || VisitorPurpose.equals("") || DateX.equals("") || EntryTime.equals("") || ExitTime.equals(""))
                 throw new RuntimeException("Fields Empty");
             Class.forName("java.sql.DriverManager");
-            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
+            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", Login.dbUsername, Login.dbPassword);
             Statement stmt = (Statement)con.createStatement();
             String query = "INSERT INTO VISITOR(Name, Contact_Number,Inmate_ID, Relationship, Purpose, Date, Entry_Time, Exit_Time) VALUES('"+VisitorName+"','"+Contact+"','"+InmateID+"','"+VisitorRelationship+"','"+VisitorPurpose+"','"+DateX+"','"+EntryTime+"','"+ExitTime+"');";
             System.out.println(query);

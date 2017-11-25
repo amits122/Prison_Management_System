@@ -160,7 +160,7 @@ public class Report extends javax.swing.JFrame {
             int i = 1;
             PrintWriter writer = new PrintWriter("src\\Prison_Management_System\\Reports\\reciept.txt", "UTF-8");
             Class.forName("java.sql.DriverManager");
-            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
+            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", Login.dbUsername, Login.dbPassword);
             Statement mainStmt = (Statement)con.createStatement();
             String mainQuery = "SELECT * FROM LOG;";
             ResultSet mainRs = mainStmt.executeQuery(mainQuery);

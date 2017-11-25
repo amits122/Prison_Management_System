@@ -16,7 +16,8 @@ import javax.swing.JOptionPane;
 public class Login extends javax.swing.JFrame {
     public static int access;
     public static String username = "";
-
+    public static String dbUsername = "root";
+    public static String dbPassword = "26111996";
     /**
      * Creates new form Example1
      */
@@ -223,7 +224,7 @@ public class Login extends javax.swing.JFrame {
         else{
             try{
                 Class.forName("java.sql.DriverManager");
-                Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", "root", "26111996");
+                Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", dbUsername, dbPassword);
                 PreparedStatement pstmt = con.prepareStatement("SELECT * FROM USERS");
                 ResultSet rs = pstmt.executeQuery();
                 while(rs.next()){
