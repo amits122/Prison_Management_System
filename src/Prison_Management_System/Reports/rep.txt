@@ -1,0 +1,74 @@
+0) Inserted Userjhamb
+1) Inserted Userabcd
+2) Inserted to Court & Jury1, Karnataka, Mr. X, Supreme, Mr. A, Mr. B, Mr. C 
+3) Inserted to Court & Jury2, Kerala, Mr. Y, High, Mr. D, Mr. E, Mr. F 
+4) Inserted to Court & Jury3, Uttar Pradesh, Mr. Z, High, Mr. P, Mr. Q, Mr. R 
+5) Inserted to Case & Charges1, Criminal, Death, 2011-11-11, 1, Murder, Murder, Assault
+6) Inserted to Case & Charges2, Criminal, Life Imprisonment, 2011-11-11, 2, Manslaughter, Assault, Dacoitry
+7) Inserted to Case & Charges3, Civil, 20 years, 2011-11-16, 3, Embezzlement, Abuse of Insider Knowledge
+8) Inserted to Prison1, Chennao, Tamil Nadu, 1, 1A, 2A, 2B, 3, 4, 5, 10, 6, 3
+9) Inserted to Prison2, Hyderabad, Telangana, 1, 1A, 2A, 2B, 3, 3, 6, 10, 7, 8
+10) Inserted to StaffAmit, 1996-11-26, Jayanagar, Chief Operating Officer, 99999
+11) Inserted to StaffJhamb, 1997-06-01, Jayanagar, Superintendant, 88999
+12) Inserted to Inmate1, Allbright, Aallu, Brightu, Mangalore Macchu, 1997-10-10, 2017-11-07, 2117-11-07, 2, 2, 2B, 1, 1
+13) Inserted to Inmate2, Allbert, Aallu, Bertie, Bernie, Mr.Burns, 1997-01-10, 2017-11-07, 2037-11-07, 3, 2, 2A, 1, 2
+14) Inserted to Job DescriptionCleaning the premises 
+of the prison including the toilets
+and bathrooms. Should ideally take 
+an hour for the job.
+15) Updated Job DescriptionCleaning the premises 
+of the prison including the toilets
+and bathrooms. Should ideally take 
+an hour for the job. Hmmwhere Job_ID 1
+16) Updated Job DescriptionCleaning the premises 
+of the prison including the toilets
+and bathrooms. Should ideally take 
+an hour for the job. where Job_ID 1
+17) Inserted to Job DescriptionCooking food. 
+Monday to Friday- Veg
+Saturday to Sunday - Non Veg
+Cooks for the entire day in the morning.
+Ideally for an hour
+18) Inserted to Job DescriptionCooking food. 
+Monday to Friday- Veg
+Saturday to Sunday - Non Veg
+Cooks for the entire day in the morning.
+Ideally for an hour
+19) Inserted to Job DescriptionCooking food. 
+Monday to Friday- Veg
+Saturday to Sunday - Non Veg
+Cooks for the entire day in the morning.
+Ideally for an hour
+20) Inserted to Job DescriptionCooking food. 
+Monday to Friday- Veg
+Saturday to Sunday - Non Veg
+Cooks for the entire day in the morning.
+Ideally for an hour
+21) Inserted to Job DescriptionCooking food. 
+Monday to Friday- Veg
+Saturday to Sunday - Non Veg
+Cooks for the entire day in the morning.
+Ideally for an hour
+22) Inserted to Job DescriptionCooking food. 
+Monday to Friday- Veg
+Saturday to Sunday - Non Veg
+Cooks for the entire day in the morning.
+Ideally for an hour
+23) Inserted to Job DescriptionCooking food. 
+Monday to Friday- Veg
+Saturday to Sunday - Non Veg
+Cooks for the entire day in the morning.
+Ideally for an hour
+24) Inserted to Job DescriptionCooking food. 
+Monday to Friday- Veg
+Saturday to Sunday - Non Veg
+Cooks for the entire day in the morning.
+Ideally for an hour
+25) Inserted to Job DescriptionCooking food. 
+Monday to Friday- Veg
+Saturday to Sunday - Non Veg
+Cooks for the entire day in the morning.
+Ideally for an hour
+26) Inserted to Job1, 1, morning, 20, Works Bad. Poor productivity
+27) Inserted to Job2, 2, morning, 100, Great Job. works Heard.Deserving of parole.
+28) Updated Job2, 2, morning, 100, Great Job. works Heard.Deserving of parole.Can be motivated to work better
