@@ -16,8 +16,8 @@ import javax.swing.JOptionPane;
 public class Feedback extends javax.swing.JFrame {
     
         void initX(){
-        DefaultComboBoxModel JIDModel = (DefaultComboBoxModel)Job_ID_Feedback.getModel();
         try{
+            DefaultComboBoxModel JIDModel = (DefaultComboBoxModel)Job_ID_Feedback.getModel();
             Class.forName("java.sql.DriverManager");
             Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", Login.dbUsername, Login.dbPassword);
             Statement mainStmt = (Statement)con.createStatement();
@@ -33,8 +33,8 @@ public class Feedback extends javax.swing.JFrame {
     }
     
     void initY(){
-        DefaultComboBoxModel IIDModel = (DefaultComboBoxModel)Inmate_ID_Feedback.getModel();
         try{
+            DefaultComboBoxModel IIDModel = (DefaultComboBoxModel)Inmate_ID_Feedback.getModel();
             Class.forName("java.sql.DriverManager");
             Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", Login.dbUsername, Login.dbPassword);
             Statement mainStmt = (Statement)con.createStatement();
@@ -42,7 +42,7 @@ public class Feedback extends javax.swing.JFrame {
             String mainQuery = "SELECT Inmate_ID FROM JOB WHERE Job_ID = '"+JobID+"';";
             ResultSet mainRs = mainStmt.executeQuery(mainQuery);
             while(mainRs.next()){
-                IIDModel.addElement(mainRs.getString("Job_ID")); 
+                IIDModel.addElement(mainRs.getString("Inmate_ID")); 
             }
         }
         catch(Exception e){
@@ -310,7 +310,7 @@ public class Feedback extends javax.swing.JFrame {
             Class.forName("java.sql.DriverManager");
             Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", Login.dbUsername, Login.dbPassword);
             Statement stmt = (Statement)con.createStatement();
-            String query = "UPDATE JOB SET Feedback = '"+InmateFeedback+"'WHERE Inmate_ID = '"+InmateID+"' AND Job_ID = '"+JobID+"');";
+            String query = "UPDATE JOB SET Feedback = '"+InmateFeedback+"' WHERE Inmate_ID = "+InmateID+" AND Job_ID = "+JobID+";";
             stmt.executeUpdate(query);
             String line1 = "Inserted to Job Feedback " + JobID + ", " + InmateID + ", " + InmateFeedback;
             String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";

@@ -1090,15 +1090,15 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             String JuryMembers = Jury.getText();
             String CourtLevel = "";
             if(Supreme.isSelected())
-                CourtLevel = "supreme";
+                CourtLevel = "Supreme";
             else if(High.isSelected())
-                CourtLevel = "high";
+                CourtLevel = "High";
             else if(Tribunal.isSelected())
-                CourtLevel = "tribunal";
+                CourtLevel = "Tribunal";
             else if(District.isSelected())
-                CourtLevel = "district";
+                CourtLevel = "District";
             else if(Sessions.isSelected())
-                CourtLevel = "sessions";
+                CourtLevel = "Sessions";
             if(CourtAddress.equals("") || ChiefJustice.equals("") || JuryMembers.equals(""))
                 throw new RuntimeException("Fields Empty");
             if(CourtLevel.equals(""))          
@@ -1241,15 +1241,15 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             String JuryMembers = Jury.getText();
             String CourtLevel = "";
             if(Supreme.isSelected())
-                CourtLevel = "supreme";
+                CourtLevel = "Supreme";
             else if(High.isSelected())
                 CourtLevel = "high";
             else if(Tribunal.isSelected())
-                CourtLevel = "tribunal";
+                CourtLevel = "Tribunal";
             else if(District.isSelected())
-                CourtLevel = "district";
+                CourtLevel = "District";
             else if(Sessions.isSelected())
-                CourtLevel = "sessions";
+                CourtLevel = "Sessions";
             if(CourtAddress.equals("") || ChiefJustice.equals("") || JuryMembers.equals(""))
                 throw new RuntimeException("Fields Empty");
             if(CourtLevel.equals(""))          
@@ -1442,9 +1442,9 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             int CourtID = Integer.parseInt(Court_ID_Case.getText());
             String CaseCharges = Charges.getText();
             if(CivilButton.isSelected())
-                CaseType = "civil";
+                CaseType = "Civil";
             else if(CriminalButton.isSelected())
-                CaseType = "criminal";
+                CaseType = "Criminal";
             if(CaseVerdict.equals("") || VerdictDate.equals("") || CaseCharges.equals(""))
                 throw new RuntimeException("Fields Empty");
             if(CaseType.equals(""))
@@ -1484,9 +1484,9 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             int CourtID = Integer.parseInt(Court_ID_Case.getText());
             String CaseCharges = Charges.getText();
             if(CivilButton.isSelected())
-                CaseType = "civil";
+                CaseType = "Civil";
             else if(CriminalButton.isSelected())
-                CaseType = "criminal";
+                CaseType = "Criminal";
             if(CaseVerdict.equals("") || VerdictDate.equals("") || CaseCharges.equals(""))
                 throw new RuntimeException("Fields Empty");
             if(CaseType.equals(""))
