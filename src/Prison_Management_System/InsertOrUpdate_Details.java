@@ -80,12 +80,12 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
         Prison_ID = new javax.swing.JTextField();
         Prison_Location = new javax.swing.JTextField();
         Jurisdiction = new javax.swing.JTextField();
-        Submit_Prison = new javax.swing.JButton();
         Update_Prison = new javax.swing.JButton();
         Blocks = new javax.swing.JTextField();
         jLabel48 = new javax.swing.JLabel();
         jLabel49 = new javax.swing.JLabel();
         No_Of_Cells = new javax.swing.JTextField();
+        Update_Prison1 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jLabel27 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
@@ -376,13 +376,16 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(CriminalButton))))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(70, 70, 70)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(Charges)
-                                    .addComponent(Court_ID_Case, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel5)
+                                        .addGap(70, 70, 70))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGap(52, 52, 52)))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(Court_ID_Case, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                                    .addComponent(Charges)))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -450,15 +453,6 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             }
         });
 
-        Submit_Prison.setBackground(new java.awt.Color(255, 255, 255));
-        Submit_Prison.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        Submit_Prison.setText("Insert");
-        Submit_Prison.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Submit_PrisonActionPerformed(evt);
-            }
-        });
-
         Update_Prison.setBackground(new java.awt.Color(255, 255, 255));
         Update_Prison.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Update_Prison.setText("Update");
@@ -483,6 +477,15 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
         No_Of_Cells.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 No_Of_CellsActionPerformed(evt);
+            }
+        });
+
+        Update_Prison1.setBackground(new java.awt.Color(255, 255, 255));
+        Update_Prison1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Update_Prison1.setText("Insert");
+        Update_Prison1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Update_Prison1ActionPerformed(evt);
             }
         });
 
@@ -512,7 +515,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                             .addComponent(Prison_Location, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
                             .addComponent(Prison_ID)))
                     .addComponent(Update_Prison, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Submit_Prison, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Update_Prison1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(74, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -539,10 +542,10 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                     .addComponent(jLabel49)
                     .addComponent(No_Of_Cells))
                 .addGap(18, 18, 18)
-                .addComponent(Submit_Prison)
+                .addComponent(Update_Prison1)
                 .addGap(18, 18, 18)
                 .addComponent(Update_Prison)
-                .addGap(224, 224, 224))
+                .addGap(275, 275, 275))
         );
 
         Prison_Location.getAccessibleContext().setAccessibleDescription("");
@@ -1163,44 +1166,6 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
     // TODO add your handling code here:
     }//GEN-LAST:event_Submit_Job_DescActionPerformed
 
-    private void Submit_PrisonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Submit_PrisonActionPerformed
-        try{
-            int PrisonID = Integer.parseInt(Prison_ID.getText());
-            String Location = Prison_Location.getText();
-            String PrisonJurisdiction = Jurisdiction.getText();
-            String BlocksX = Blocks.getText();
-            String NoOfCells = No_Of_Cells.getText(); 
-            String Block[] = BlocksX.split(",");
-            String Cells[] = NoOfCells.split(",");
-            if(Location.equals("") || PrisonJurisdiction.equals("") || BlocksX.equals("") || NoOfCells.equals(""))
-                throw new RuntimeException("Fields Empty");
-            Class.forName("java.sql.DriverManager");
-            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", Login.dbUsername, Login.dbPassword);
-            Statement stmt = (Statement)con.createStatement();
-            if(Block.length != Cells.length){
-                JOptionPane.showMessageDialog(null, "Blocks do not correspont to cell size");
-            }
-            else{
-                String query = "INSERT INTO PRISON VALUES('"+PrisonID+"','"+Location+"','"+PrisonJurisdiction+"');";
-                stmt.executeUpdate(query);
-                for(int i = 0; i < Block.length; i++){
-                    for(int j = 1; j <= Integer.parseInt(Cells[i].trim()); j++){
-                        query = "INSERT INTO PRISON_BLOCKS VALUES('"+PrisonID+"','"+Block[i].trim()+"','"+j+"');";
-                        System.out.println(query);
-                        stmt.executeUpdate(query);
-                    }
-                }
-                String line1 = "Inserted to Prison " + PrisonID + ", " + Location + ", " + PrisonJurisdiction+ ", " + BlocksX+ ", " + NoOfCells;
-                String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";
-                stmt.executeUpdate(logger);            
-            }    
-            JOptionPane.showMessageDialog(this, "Successful Operation");
-        }
-        catch(Exception e){
-            JOptionPane.showMessageDialog(this, e.getClass().getCanonicalName() +"\n" + e.getMessage());
-        }        // TODO add your handling code here:
-    }//GEN-LAST:event_Submit_PrisonActionPerformed
-
     private void Submit_StaffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Submit_StaffActionPerformed
         try{
             String StaffID = Staff_ID.getText();
@@ -1595,6 +1560,44 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_CivilButtonActionPerformed
 
+    private void Update_Prison1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Update_Prison1ActionPerformed
+        try{
+            int PrisonID = Integer.parseInt(Prison_ID.getText());
+            String Location = Prison_Location.getText();
+            String PrisonJurisdiction = Jurisdiction.getText();
+            String BlocksX = Blocks.getText();
+            String NoOfCells = No_Of_Cells.getText(); 
+            String Block[] = BlocksX.split(",");
+            String Cells[] = NoOfCells.split(",");
+            if(Location.equals("") || PrisonJurisdiction.equals("") || BlocksX.equals("") || NoOfCells.equals(""))
+                throw new RuntimeException("Fields Empty");
+            Class.forName("java.sql.DriverManager");
+            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", Login.dbUsername, Login.dbPassword);
+            Statement stmt = (Statement)con.createStatement();
+            if(Block.length != Cells.length){
+                JOptionPane.showMessageDialog(null, "Blocks do not correspont to cell size");
+            }
+            else{
+                String query = "INSERT INTO PRISON VALUES('"+PrisonID+"','"+Location+"','"+PrisonJurisdiction+"');";
+                stmt.executeUpdate(query);
+                for(int i = 0; i < Block.length; i++){
+                    for(int j = 1; j <= Integer.parseInt(Cells[i].trim()); j++){
+                        query = "INSERT INTO PRISON_BLOCKS VALUES('"+PrisonID+"','"+Block[i].trim()+"','"+j+"');";
+                        System.out.println(query);
+                        stmt.executeUpdate(query);
+                    }
+                }
+                String line1 = "Inserted to Prison " + PrisonID + ", " + Location + ", " + PrisonJurisdiction+ ", " + BlocksX+ ", " + NoOfCells;
+                String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";
+                stmt.executeUpdate(logger);            
+            }    
+            JOptionPane.showMessageDialog(this, "Successful Operation");
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(this, e.getClass().getCanonicalName() +"\n" + e.getMessage());
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_Update_Prison1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1675,7 +1678,6 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
     private javax.swing.JButton Submit_Court;
     private javax.swing.JButton Submit_Inmate;
     private javax.swing.JButton Submit_Job_Desc;
-    private javax.swing.JButton Submit_Prison;
     private javax.swing.JButton Submit_Staff;
     private javax.swing.JTextField Supervisor_Staff_ID;
     private javax.swing.JRadioButton Supreme;
@@ -1685,6 +1687,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
     private javax.swing.JButton Update_Inmate;
     private javax.swing.JButton Update_Job_Info;
     private javax.swing.JButton Update_Prison;
+    private javax.swing.JButton Update_Prison1;
     private javax.swing.JButton Update_Staff;
     private javax.swing.JTextField Verdict;
     private javax.swing.JTextField Verdict_Date;

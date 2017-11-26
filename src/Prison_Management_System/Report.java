@@ -162,7 +162,7 @@ public class Report extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         try{
             int i = 1;
-            PrintWriter writer = new PrintWriter(extExecPrint, "UTF-8");
+            PrintWriter writer = new PrintWriter(intExecPrint, "UTF-8");
             Class.forName("java.sql.DriverManager");
             Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", Login.dbUsername, Login.dbPassword);
             Statement mainStmt = (Statement)con.createStatement();
@@ -178,7 +178,7 @@ public class Report extends javax.swing.JFrame {
                 i++;
             }
             writer.close();
-            ProcessBuilder builder = new ProcessBuilder("cmd.exe", "/c", extExecProcess);
+            ProcessBuilder builder = new ProcessBuilder("cmd.exe", "/c", intExecProcess);
             Process p = builder.start();
             new Login().setVisible(true);
             this.dispose(); 
