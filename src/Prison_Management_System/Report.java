@@ -171,6 +171,7 @@ public class Report extends javax.swing.JFrame {
             mainRs.last();
             while(mainRs.previous() && !mainRs.getString("Operation").trim().equals("Login"));
             String user = mainRs.getString("User");
+            mainRs.previous();
             while(mainRs.next()){
                 String operation = mainRs.getString("Operation");
                 writer.println(i+") "+operation);
