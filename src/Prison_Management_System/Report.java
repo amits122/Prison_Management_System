@@ -18,8 +18,10 @@ import java.sql.ResultSet;
  */
 public class Report extends javax.swing.JFrame {
 
-    String test1 = "cd && cd \"src\\Prison_Management_System\\Reports\" && notepad /p reciept.txt";
-    String test2 = "cd && cd \"Reports\" && notepad /p reciept.txt";
+    String intExecProcess = "cd \"src\\Prison_Management_System\\Reports\" && notepad /p reciept.txt";
+    String extExecProcess = "cd \"Reports\" && notepad /p reciept.txt";
+    String intExecPrint = "src\\Prison_Management_System\\Reports\\reciept.txt";
+    String extExecPrint = "Reports\\reciept.txt";
     /**
      * Creates new form Report
      */
@@ -160,7 +162,7 @@ public class Report extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         try{
             int i = 1;
-            PrintWriter writer = new PrintWriter("src\\Prison_Management_System\\Reports\\reciept.txt", "UTF-8");
+            PrintWriter writer = new PrintWriter(extExecPrint, "UTF-8");
             Class.forName("java.sql.DriverManager");
             Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", Login.dbUsername, Login.dbPassword);
             Statement mainStmt = (Statement)con.createStatement();
@@ -175,7 +177,7 @@ public class Report extends javax.swing.JFrame {
                 i++;
             }
             writer.close();
-            ProcessBuilder builder = new ProcessBuilder("cmd.exe", "/c", test2);
+            ProcessBuilder builder = new ProcessBuilder("cmd.exe", "/c", extExecProcess);
             Process p = builder.start(); 
             BufferedReader r = new BufferedReader(new InputStreamReader(p.getInputStream()));
             String line;
