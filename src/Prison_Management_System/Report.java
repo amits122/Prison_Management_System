@@ -18,6 +18,8 @@ import java.sql.ResultSet;
  */
 public class Report extends javax.swing.JFrame {
 
+    String test1 = "cd && cd \"src\\Prison_Management_System\\Reports\" && notepad /p reciept.txt";
+    String test2 = "cd && cd \"Reports\" && notepad /p reciept.txt";
     /**
      * Creates new form Report
      */
@@ -173,8 +175,15 @@ public class Report extends javax.swing.JFrame {
                 i++;
             }
             writer.close();
-            ProcessBuilder builder = new ProcessBuilder("cmd.exe", "/c", "cd \"C:\\Users\\amits\\Documents\\NetBeansProjects\\Prison_Management_System\\src\\Prison_Management_System\\Reports\" && notepad /p reciept.txt");
-            Process p = builder.start();      
+            ProcessBuilder builder = new ProcessBuilder("cmd.exe", "/c", test2);
+            Process p = builder.start(); 
+            BufferedReader r = new BufferedReader(new InputStreamReader(p.getInputStream()));
+            String line;
+            while (true) {
+                line = r.readLine();
+                if (line == null) { break; }
+                System.out.println(line);
+            }
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(this, e.getMessage());
