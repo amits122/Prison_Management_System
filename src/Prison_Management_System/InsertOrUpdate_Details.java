@@ -35,6 +35,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jComboBox1 = new javax.swing.JComboBox<>();
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel9 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
@@ -47,9 +48,13 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
         Address = new javax.swing.JTextField();
         Chief_Justice = new javax.swing.JTextField();
         Jury = new javax.swing.JTextField();
-        Level = new javax.swing.JTextField();
         Submit_Court = new javax.swing.JButton();
         Update_Court = new javax.swing.JButton();
+        Supreme = new javax.swing.JRadioButton();
+        High = new javax.swing.JRadioButton();
+        Tribunal = new javax.swing.JRadioButton();
+        District = new javax.swing.JRadioButton();
+        Sessions = new javax.swing.JRadioButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -94,8 +99,11 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
         Submit_Staff = new javax.swing.JButton();
         Staff_Name = new javax.swing.JTextField();
         Update_Staff = new javax.swing.JButton();
-        Staff_Shift = new javax.swing.JTextField();
-        jLabel53 = new javax.swing.JLabel();
+        jLabel43 = new javax.swing.JLabel();
+        Morning_Box = new javax.swing.JCheckBox();
+        Evening_Box = new javax.swing.JCheckBox();
+        Noon_Box = new javax.swing.JCheckBox();
+        Night_Box = new javax.swing.JCheckBox();
         jPanel3 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
@@ -160,8 +168,11 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
         jLabel12.setText("Jury_Members");
 
         Jury.setToolTipText("(Enter multiple values separated by comma.)");
-
-        Level.setToolTipText("Supreme/High/District/Sessions/Tribunal");
+        Jury.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JuryActionPerformed(evt);
+            }
+        });
 
         Submit_Court.setBackground(new java.awt.Color(255, 255, 255));
         Submit_Court.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -181,6 +192,26 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             }
         });
 
+        buttonGroup1.add(Supreme);
+        Supreme.setText("Supreme");
+
+        buttonGroup1.add(High);
+        High.setText("High");
+        High.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HighActionPerformed(evt);
+            }
+        });
+
+        buttonGroup1.add(Tribunal);
+        Tribunal.setText("Tribunal");
+
+        buttonGroup1.add(District);
+        District.setText("District");
+
+        buttonGroup1.add(Sessions);
+        Sessions.setText("Sessions");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -188,6 +219,8 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(64, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Submit_Court, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Update_Court, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel6)
@@ -196,14 +229,21 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                             .addComponent(jLabel11)
                             .addComponent(jLabel10))
                         .addGap(32, 32, 32)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Chief_Justice, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                            .addComponent(Level, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                            .addComponent(Court_ID, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                            .addComponent(Address, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                            .addComponent(Jury, javax.swing.GroupLayout.Alignment.TRAILING)))
-                    .addComponent(Submit_Court, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Update_Court, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Sessions)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addComponent(Tribunal)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(District))
+                                .addComponent(Chief_Justice, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                                .addComponent(Court_ID, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                                .addComponent(Address, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                                .addComponent(Jury, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addComponent(Supreme)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(High))))))
                 .addGap(54, 54, 54))
         );
         jPanel2Layout.setVerticalGroup(
@@ -224,8 +264,15 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
-                    .addComponent(Level, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Supreme)
+                    .addComponent(High))
                 .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Tribunal)
+                    .addComponent(District))
+                .addGap(18, 18, 18)
+                .addComponent(Sessions)
+                .addGap(15, 15, 15)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
                     .addComponent(Jury, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -233,7 +280,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                 .addComponent(Submit_Court)
                 .addGap(18, 18, 18)
                 .addComponent(Update_Court)
-                .addContainerGap(247, Short.MAX_VALUE))
+                .addContainerGap(169, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Court", jPanel2);
@@ -371,7 +418,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                 .addComponent(Submit_Case)
                 .addGap(18, 18, 18)
                 .addComponent(Update_Case)
-                .addContainerGap(210, Short.MAX_VALUE))
+                .addContainerGap(214, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Case", jPanel1);
@@ -562,13 +609,15 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             }
         });
 
-        Staff_Shift.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Staff_ShiftActionPerformed(evt);
-            }
-        });
+        jLabel43.setText("Shift");
 
-        jLabel53.setText("Shift");
+        Morning_Box.setText("Morning");
+
+        Evening_Box.setText("Evening");
+
+        Noon_Box.setText("Noon");
+
+        Night_Box.setText("Night");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -576,27 +625,38 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(51, 51, 51)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel28)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel29)
-                            .addComponent(jLabel32)
-                            .addComponent(jLabel31)
-                            .addComponent(jLabel30)
-                            .addComponent(jLabel27)
-                            .addComponent(jLabel53))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(Staff_Designation, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Staff_Address, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Staff_DoB, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Staff_Name, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Staff_Salary)
-                            .addComponent(Staff_ID, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Staff_Shift)))
-                    .addComponent(Update_Staff, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Submit_Staff, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel43)
+                        .addGap(65, 65, 65)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(Morning_Box)
+                                .addGap(18, 18, 18)
+                                .addComponent(Noon_Box))
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(Evening_Box)
+                                .addGap(18, 18, 18)
+                                .addComponent(Night_Box))))
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel28)
+                        .addGroup(jPanel5Layout.createSequentialGroup()
+                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel29)
+                                .addComponent(jLabel32)
+                                .addComponent(jLabel31)
+                                .addComponent(jLabel30)
+                                .addComponent(jLabel27))
+                            .addGap(18, 18, 18)
+                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(Staff_Designation, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(Staff_Address, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(Staff_DoB, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(Staff_Name, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(Staff_Salary)
+                                .addComponent(Staff_ID, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(Update_Staff, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Submit_Staff, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(82, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
@@ -628,13 +688,18 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                     .addComponent(Staff_Salary, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel53)
-                    .addComponent(Staff_Shift, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel43)
+                    .addComponent(Morning_Box)
+                    .addComponent(Noon_Box))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Evening_Box)
+                    .addComponent(Night_Box))
                 .addGap(18, 18, 18)
                 .addComponent(Submit_Staff)
                 .addGap(18, 18, 18)
                 .addComponent(Update_Staff)
-                .addContainerGap(190, Short.MAX_VALUE))
+                .addContainerGap(150, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Staff", jPanel5);
@@ -868,7 +933,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                 .addComponent(Submit_Job_Desc)
                 .addGap(18, 18, 18)
                 .addComponent(Update_Job_Info)
-                .addContainerGap(158, Short.MAX_VALUE))
+                .addContainerGap(162, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Job_Info", jPanel6);
@@ -1018,12 +1083,22 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             int CourtID = Integer.parseInt(Court_ID.getText());
             String CourtAddress = Address.getText();
             String ChiefJustice = Chief_Justice.getText();
-            String CourtLevel = Level.getText().trim();
             String JuryMembers = Jury.getText();
-            if(CourtAddress.equals("") || ChiefJustice.equals("") || CourtLevel.equals("") || JuryMembers.equals(""))
+            String CourtLevel = "";
+            if(Supreme.isSelected())
+                CourtLevel = "supreme";
+            else if(High.isSelected())
+                CourtLevel = "high";
+            else if(Tribunal.isSelected())
+                CourtLevel = "tribunal";
+            else if(District.isSelected())
+                CourtLevel = "district";
+            else if(Sessions.isSelected())
+                CourtLevel = "sessions";
+            if(CourtAddress.equals("") || ChiefJustice.equals("") || JuryMembers.equals(""))
                 throw new RuntimeException("Fields Empty");
-            if(!CourtLevel.toLowerCase().equals("supreme") && !CourtLevel.toLowerCase().equals("high") && !CourtLevel.toLowerCase().equals("tribunal") && !CourtLevel.toLowerCase().equals("district") && !CourtLevel.toLowerCase().equals("sessions"))          
-                throw new RuntimeException("Court Level Wrong");
+            if(CourtLevel.equals(""))          
+                throw new RuntimeException("Enter Court Level");
             Class.forName("java.sql.DriverManager");
             Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", Login.dbUsername, Login.dbPassword);
             Statement stmt = (Statement)con.createStatement();
@@ -1122,14 +1197,26 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             String StaffDateOfBirth = Staff_DoB.getText();
             String StaffAddress = Staff_Address.getText();
             String StaffDesignation = Staff_Designation.getText();
-            String StaffShift = Staff_Shift.getText();
+            String StaffShift = "";
             int StaffSalary = Integer.parseInt(Staff_Salary.getText());
+            if(Morning_Box.isSelected()){
+                StaffShift += "morning ";
+            }
+            if(Noon_Box.isSelected()){
+                StaffShift += "noon ";
+            }
+            if(Evening_Box.isSelected()){
+                StaffShift += "evening ";
+            }
+            if(Night_Box.isSelected()){
+                StaffShift += "night ";
+            }
+            if(StaffShift.equals(""))
+                throw new RuntimeException("Please select atleast one shift");
             if(StaffName.equals("") || StaffDateOfBirth.equals("") || StaffAddress.equals("") || StaffDesignation.equals("") || StaffShift.equals(""))
                 throw new RuntimeException("Fields Empty");
             if(!StaffID.equals(""))
-                throw new RuntimeException("Do not enter Staff ID");  
-            if(!StaffShift.toLowerCase().equals("morning") && !StaffShift.toLowerCase().equals("noon") && !StaffShift.toLowerCase().equals("evening") && !StaffShift.toLowerCase().equals("night"))
-                throw new RuntimeException("Shift is wrong");
+                throw new RuntimeException("Do not enter Staff ID");
             Class.forName("java.sql.DriverManager");
             Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", Login.dbUsername, Login.dbPassword);
             Statement stmt = (Statement)con.createStatement();
@@ -1185,12 +1272,22 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             int CourtID = Integer.parseInt(Court_ID.getText());
             String CourtAddress = Address.getText();
             String ChiefJustice = Chief_Justice.getText();
-            String CourtLevel = Level.getText();
             String JuryMembers = Jury.getText();
-            if(CourtAddress.equals("") || ChiefJustice.equals("") || CourtLevel.equals("") || JuryMembers.equals(""))
+            String CourtLevel = "";
+            if(Supreme.isSelected())
+                CourtLevel = "supreme";
+            else if(High.isSelected())
+                CourtLevel = "high";
+            else if(Tribunal.isSelected())
+                CourtLevel = "tribunal";
+            else if(District.isSelected())
+                CourtLevel = "district";
+            else if(Sessions.isSelected())
+                CourtLevel = "sessions";
+            if(CourtAddress.equals("") || ChiefJustice.equals("") || JuryMembers.equals(""))
                 throw new RuntimeException("Fields Empty");
-            if(!CourtLevel.toLowerCase().equals("supreme") && !CourtLevel.toLowerCase().equals("high") && !CourtLevel.toLowerCase().equals("tribunal") && !CourtLevel.toLowerCase().equals("district") && !CourtLevel.toLowerCase().equals("sessions"))          
-                throw new RuntimeException("Court Level Wrong");
+            if(CourtLevel.equals(""))          
+                throw new RuntimeException("Enter Court Level");
             Class.forName("java.sql.DriverManager");
             Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", Login.dbUsername, Login.dbPassword);
             Statement stmt = (Statement)con.createStatement();
@@ -1260,12 +1357,24 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             String StaffDateOfBirth = Staff_DoB.getText();
             String StaffAddress = Staff_Address.getText();
             String StaffDesignation = Staff_Designation.getText();
-            String StaffShift = Staff_Shift.getText();
+            String StaffShift = "";
             int StaffSalary = Integer.parseInt(Staff_Salary.getText());
+            if(Morning_Box.isSelected()){
+                StaffShift += "morning ";
+            }
+            if(Noon_Box.isSelected()){
+                StaffShift += "noon ";
+            }
+            if(Evening_Box.isSelected()){
+                StaffShift += "evening ";
+            }
+            if(Night_Box.isSelected()){
+                StaffShift += "night ";
+            }
+            if(StaffShift.equals(""))
+                throw new RuntimeException("Please select atleast one shift");
             if(StaffName.equals("") || StaffDateOfBirth.equals("") || StaffAddress.equals("") || StaffDesignation.equals("") || StaffShift.equals(""))
                 throw new RuntimeException("Fields Empty");
-            if(!StaffShift.toLowerCase().equals("morning") && !StaffShift.toLowerCase().equals("noon") && !StaffShift.toLowerCase().equals("evening") && !StaffShift.toLowerCase().equals("night"))
-                throw new RuntimeException("Shift is wrong");
             Class.forName("java.sql.DriverManager");
             Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", Login.dbUsername, Login.dbPassword);
             Statement stmt = (Statement)con.createStatement();
@@ -1459,9 +1568,13 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_TypeActionPerformed
 
-    private void Staff_ShiftActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Staff_ShiftActionPerformed
+    private void JuryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JuryActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Staff_ShiftActionPerformed
+    }//GEN-LAST:event_JuryActionPerformed
+
+    private void HighActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HighActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_HighActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1511,6 +1624,9 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
     private javax.swing.JTextField Chief_Justice;
     private javax.swing.JTextField Court_ID;
     private javax.swing.JTextField Court_ID_Case;
+    private javax.swing.JRadioButton District;
+    private javax.swing.JCheckBox Evening_Box;
+    private javax.swing.JRadioButton High;
     private javax.swing.JTextField Inmate_DoB;
     private javax.swing.JTextField Inmate_ID;
     private javax.swing.JTextField Inmate_Name;
@@ -1518,19 +1634,21 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
     private javax.swing.JTextField Job_ID;
     private javax.swing.JTextField Jurisdiction;
     private javax.swing.JTextField Jury;
-    private javax.swing.JTextField Level;
+    private javax.swing.JCheckBox Morning_Box;
+    private javax.swing.JCheckBox Night_Box;
     private javax.swing.JTextField No_Of_Cells;
+    private javax.swing.JCheckBox Noon_Box;
     private javax.swing.JTextField Prison_ID;
     private javax.swing.JTextField Prison_ID_Inmate;
     private javax.swing.JTextField Prison_Location;
     private javax.swing.JTextField Release_Date;
+    private javax.swing.JRadioButton Sessions;
     private javax.swing.JTextField Staff_Address;
     private javax.swing.JTextField Staff_Designation;
     private javax.swing.JTextField Staff_DoB;
     private javax.swing.JTextField Staff_ID;
     private javax.swing.JTextField Staff_Name;
     private javax.swing.JTextField Staff_Salary;
-    private javax.swing.JTextField Staff_Shift;
     private javax.swing.JTextField Start_Date;
     private javax.swing.JButton Submit_Case;
     private javax.swing.JButton Submit_Court;
@@ -1539,6 +1657,8 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
     private javax.swing.JButton Submit_Prison;
     private javax.swing.JButton Submit_Staff;
     private javax.swing.JTextField Supervisor_Staff_ID;
+    private javax.swing.JRadioButton Supreme;
+    private javax.swing.JRadioButton Tribunal;
     private javax.swing.JTextField Type;
     private javax.swing.JButton Update_Case;
     private javax.swing.JButton Update_Court;
@@ -1548,6 +1668,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
     private javax.swing.JButton Update_Staff;
     private javax.swing.JTextField Verdict;
     private javax.swing.JTextField Verdict_Date;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox1;
@@ -1579,13 +1700,13 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel51;
-    private javax.swing.JLabel jLabel53;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;

@@ -244,7 +244,6 @@ public class Schedule extends javax.swing.JFrame {
             int JobID = Integer.parseInt(Job_ID_Schedule.getText());
             int InmateID = Integer.parseInt(Inmate_ID_Schedule.getText());
             String WorkShift = "";
-            String InmateFeedback = "";
             int Hours = 0;
             if(Morning_Box.isSelected()){
                 Hours++;
