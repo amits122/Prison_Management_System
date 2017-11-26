@@ -50,6 +50,7 @@ public class Approve extends javax.swing.JFrame {
      */
     public Approve() {
         initComponents();
+        fetch();
     }
 
     /**

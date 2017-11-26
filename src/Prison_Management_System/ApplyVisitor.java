@@ -334,10 +334,6 @@ public class ApplyVisitor extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Contact_NumberActionPerformed
 
-    private void Inmate_ID_VisitorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Inmate_ID_VisitorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Inmate_ID_VisitorActionPerformed
-
     private void RelationshipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RelationshipActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_RelationshipActionPerformed
@@ -385,6 +381,10 @@ public class ApplyVisitor extends javax.swing.JFrame {
     private void Exit_TimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Exit_TimeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Exit_TimeActionPerformed
+
+    private void Inmate_ID_VisitorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Inmate_ID_VisitorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Inmate_ID_VisitorActionPerformed
 
     /**
      * @param args the command line arguments

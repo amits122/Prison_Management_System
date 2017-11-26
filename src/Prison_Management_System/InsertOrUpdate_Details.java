@@ -138,7 +138,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         Job_Description = new javax.swing.JTextArea();
         Submit_Job_Desc = new javax.swing.JButton();
-        Update_Job_Info = new javax.swing.JButton();
+        Submit_Job_Desc1 = new javax.swing.JButton();
         jPanel10 = new javax.swing.JPanel();
         jLabel26 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
@@ -282,7 +282,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                 .addComponent(Submit_Court)
                 .addGap(18, 18, 18)
                 .addComponent(Update_Court)
-                .addContainerGap(178, Short.MAX_VALUE))
+                .addContainerGap(231, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Court", jPanel2);
@@ -356,42 +356,32 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(49, 49, 49)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Submit_Case, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(45, 45, 45)
+                        .addComponent(jLabel13)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Case_ID, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(52, 52, 52)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel13))
-                                .addGap(52, 52, 52)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(Case_ID, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                                    .addComponent(Verdict, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                                    .addComponent(Verdict_Date, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(CivilButton)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(CriminalButton))))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel5)
-                                        .addGap(70, 70, 70))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGap(52, 52, 52)))
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(Court_ID_Case, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                                    .addComponent(Charges)))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Update_Case, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Submit_Case, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(64, 64, 64)
+                                .addComponent(CivilButton)
+                                .addGap(92, 92, 92)
+                                .addComponent(CriminalButton))
+                            .addComponent(Verdict)
+                            .addComponent(Court_ID_Case)
+                            .addComponent(Verdict_Date, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(Charges)))
+                    .addComponent(Update_Case, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(60, 60, 60)
                 .addComponent(jLabel8)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -432,7 +422,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                 .addComponent(Submit_Case)
                 .addGap(18, 18, 18)
                 .addComponent(Update_Case)
-                .addContainerGap(220, Short.MAX_VALUE))
+                .addContainerGap(273, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Case", jPanel1);
@@ -713,7 +703,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                 .addComponent(Submit_Staff)
                 .addGap(18, 18, 18)
                 .addComponent(Update_Staff)
-                .addContainerGap(159, Short.MAX_VALUE))
+                .addContainerGap(212, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Staff", jPanel5);
@@ -904,12 +894,12 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             }
         });
 
-        Update_Job_Info.setBackground(new java.awt.Color(255, 255, 255));
-        Update_Job_Info.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        Update_Job_Info.setText("Update");
-        Update_Job_Info.addActionListener(new java.awt.event.ActionListener() {
+        Submit_Job_Desc1.setBackground(new java.awt.Color(255, 255, 255));
+        Submit_Job_Desc1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Submit_Job_Desc1.setText("Update");
+        Submit_Job_Desc1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Update_Job_InfoActionPerformed(evt);
+                Submit_Job_Desc1ActionPerformed(evt);
             }
         });
 
@@ -929,7 +919,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                             .addComponent(Job_ID)
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(Submit_Job_Desc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Update_Job_Info, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Submit_Job_Desc1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(68, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
@@ -946,8 +936,8 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addComponent(Submit_Job_Desc)
                 .addGap(18, 18, 18)
-                .addComponent(Update_Job_Info)
-                .addContainerGap(171, Short.MAX_VALUE))
+                .addComponent(Submit_Job_Desc1)
+                .addContainerGap(224, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Job_Info", jPanel6);
@@ -985,7 +975,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(66, 66, 66)
                 .addComponent(jLabel26)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addGap(42, 42, 42))
         );
@@ -1028,8 +1018,8 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, 436, Short.MAX_VALUE)
-            .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, 436, Short.MAX_VALUE)
+            .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, 425, Short.MAX_VALUE)
+            .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, 425, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1328,13 +1318,18 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
 
     private void Update_StaffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Update_StaffActionPerformed
         try{
-            int StaffID = Integer.parseInt(Staff_ID.getText());
+            
             String StaffName = Staff_Name.getText();
             String StaffDateOfBirth = Staff_DoB.getText();
             String StaffAddress = Staff_Address.getText();
             String StaffDesignation = Staff_Designation.getText();
             String StaffShift = "";
+            if(Staff_ID.getText().equals("") || Staff_Salary.getText().equals("") || StaffName.equals("") || StaffDateOfBirth.equals("") || StaffAddress.equals("") || StaffDesignation.equals("") || StaffShift.equals(""))
+                throw new RuntimeException("Fields Empty");
             int StaffSalary = Integer.parseInt(Staff_Salary.getText());
+            if(StaffSalary <= 0)
+                throw new RuntimeException("Salary is less than zero");
+            int StaffID = Integer.parseInt(Staff_ID.getText());
             if(Morning_Box.isSelected()){
                 StaffShift += "morning ";
             }
@@ -1349,8 +1344,6 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             }
             if(StaffShift.equals(""))
                 throw new RuntimeException("Please select atleast one shift");
-            if(StaffName.equals("") || StaffDateOfBirth.equals("") || StaffAddress.equals("") || StaffDesignation.equals("") || StaffShift.equals(""))
-                throw new RuntimeException("Fields Empty");
             Class.forName("java.sql.DriverManager");
             Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", Login.dbUsername, Login.dbPassword);
             Statement stmt = (Statement)con.createStatement();
@@ -1402,27 +1395,6 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, e.getClass().getCanonicalName() +"\n" + e.getMessage());
         }        // TODO add your handling code here:
     }//GEN-LAST:event_Update_InmateActionPerformed
-
-    private void Update_Job_InfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Update_Job_InfoActionPerformed
-        try{
-            int JobID = Integer.parseInt(Job_ID.getText());
-            String JobDesc = Job_Description.getText();
-            if(JobDesc.equals(""))
-                throw new RuntimeException("Fields Empty");
-            Class.forName("java.sql.DriverManager");
-            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", Login.dbUsername, Login.dbPassword);
-            Statement stmt = (Statement)con.createStatement();
-            String query = "UPDATE JOB_DESC SET Description = '"+JobDesc+"' WHERE Job_ID = '"+JobID+"';";
-            stmt.executeUpdate(query);
-            String line1 = "Updated Job Description " + JobDesc + "where Job_ID " + JobID; 
-            String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";
-            stmt.executeUpdate(logger);
-            JOptionPane.showMessageDialog(this, "Successful Operation");
-        }
-        catch(Exception e){
-            JOptionPane.showMessageDialog(this, e.getClass().getCanonicalName() +"\n" + e.getMessage());
-        }        // TODO add your handling code here:
-    }//GEN-LAST:event_Update_Job_InfoActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try{
@@ -1598,6 +1570,27 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
         }        // TODO add your handling code here:
     }//GEN-LAST:event_Update_Prison1ActionPerformed
 
+    private void Submit_Job_Desc1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Submit_Job_Desc1ActionPerformed
+        try{
+            int JobID = Integer.parseInt(Job_ID.getText());
+            String JobDesc = Job_Description.getText();
+            if(JobDesc.equals(""))
+                throw new RuntimeException("Fields Empty");
+            Class.forName("java.sql.DriverManager");
+            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", Login.dbUsername, Login.dbPassword);
+            Statement stmt = (Statement)con.createStatement();
+            String query = "UPDATE JOB_DESC SET Description = '"+JobDesc+"' WHERE Job_ID = '"+JobID+"';";
+            stmt.executeUpdate(query);
+            String line1 = "Updated Job Description " + JobDesc + "where Job_ID " + JobID; 
+            String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";
+            stmt.executeUpdate(logger);
+            JOptionPane.showMessageDialog(this, "Successful Operation");
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(this, e.getClass().getCanonicalName() +"\n" + e.getMessage());
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_Submit_Job_Desc1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1678,6 +1671,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
     private javax.swing.JButton Submit_Court;
     private javax.swing.JButton Submit_Inmate;
     private javax.swing.JButton Submit_Job_Desc;
+    private javax.swing.JButton Submit_Job_Desc1;
     private javax.swing.JButton Submit_Staff;
     private javax.swing.JTextField Supervisor_Staff_ID;
     private javax.swing.JRadioButton Supreme;
@@ -1685,7 +1679,6 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
     private javax.swing.JButton Update_Case;
     private javax.swing.JButton Update_Court;
     private javax.swing.JButton Update_Inmate;
-    private javax.swing.JButton Update_Job_Info;
     private javax.swing.JButton Update_Prison;
     private javax.swing.JButton Update_Prison1;
     private javax.swing.JButton Update_Staff;
