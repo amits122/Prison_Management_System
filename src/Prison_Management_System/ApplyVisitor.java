@@ -353,15 +353,29 @@ public class ApplyVisitor extends javax.swing.JFrame {
     private void Submit_VisitorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Submit_VisitorActionPerformed
         try{
             String VisitorName = Visitor_Name.getText();
+            if(VisitorName.equals(""))
+                throw new RuntimeException("Name Field Empty");
             String Contact = Contact_Number.getText();
+            if(Contact.equals(""))
+                throw new RuntimeException("Contact Field Empty");
+            if(Inmate_ID_Visitor.getText().equals(""))
+                throw new RuntimeException("InmateID Empty");
             int InmateID = Integer.parseInt(Inmate_ID_Visitor.getText());
             String VisitorRelationship = Relationship.getText();
+            if(VisitorRelationship.equals(""))
+                throw new RuntimeException("Relationship Field Empty");
             String VisitorPurpose = Purpose.getText();
+            if(VisitorPurpose.equals(""))
+                throw new RuntimeException("Purpose Field Empty");
             String DateX = Date.getText();
+            if(VisitorRelationship.equals(""))
+                throw new RuntimeException("Relationship Field Empty");
             String EntryTime = Entry_Time.getText();
+            if(EntryTime.equals(""))
+                throw new RuntimeException("Entry Time Field Empty");
             String ExitTime = Exit_Time.getText();
-            if(VisitorName.equals("") || Contact.equals("") || VisitorRelationship.equals("") || VisitorPurpose.equals("") || DateX.equals("") || EntryTime.equals("") || ExitTime.equals(""))
-                throw new RuntimeException("Fields Empty");
+            if(ExitTime.equals(""))
+                throw new RuntimeException("Exit Time Field Empty");
             Class.forName("java.sql.DriverManager");
             Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", Login.dbUsername, Login.dbPassword);
             Statement stmt = (Statement)con.createStatement();

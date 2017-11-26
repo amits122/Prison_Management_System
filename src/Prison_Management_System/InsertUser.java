@@ -239,42 +239,43 @@ public class InsertUser extends javax.swing.JFrame {
     }//GEN-LAST:event_access3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String newusername = User_name.getText();
-        String password = String.valueOf(Pass_word.getPassword());
-        String chkpassword = String.valueOf(Pass_word2.getPassword());
-        int access = 0;
-        if(Login.access == 3)
-            access = 3;
-        else{
-            if(access1.isSelected())
-                access = 1;
-            else if(access2.isSelected())
-                access = 2;
-            else if(access3.isSelected())
-                access = 3;    
-        }       
-        if(newusername.equals("") || password.equals("") || chkpassword.equals("") || access ==  0){
-            JOptionPane.showMessageDialog(null, "Please enter username or password or access");
-        }
-        else{
-            if(!password.equals(chkpassword))
-                JOptionPane.showMessageDialog(null, "Passwords do not match");
+        try{
+            String newusername = User_name.getText();
+            if(newusername.equals(""))
+                throw new RuntimeException("Username Field Empty");
+            String password = String.valueOf(Pass_word.getPassword());
+            if(password.equals(""))
+                throw new RuntimeException("Password Field1 Empty");
+            String chkpassword = String.valueOf(Pass_word2.getPassword());
+            if(chkpassword.equals(""))
+                throw new RuntimeException("Password Field2 Empty");
+            int access = 0;
+            if(Login.access == 3)
+                access = 3;
             else{
-                try{
-                    Class.forName("java.sql.DriverManager");
-                    Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", Login.dbUsername, Login.dbPassword);
-                    Statement stmt = (Statement)con.createStatement();
-                    String query = "INSERT INTO USERS VALUES('"+newusername+"','"+password+"','"+access+"');";
-                    stmt.executeUpdate(query);
-                    String line1 = "Inserted User " + newusername; 
-                    String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";
-                    stmt.executeUpdate(logger);
-                    JOptionPane.showMessageDialog(this, "Successful Operation");
-                }
-                catch(Exception e){
-                    JOptionPane.showMessageDialog(this, e.getMessage());
-                }
-            }
+                if(access1.isSelected())
+                    access = 1;
+                else if(access2.isSelected())
+                    access = 2;
+                else if(access3.isSelected())
+                    access = 3;    
+            }       
+            if(access ==  0)
+                throw new RuntimeException("Accces is not specified");
+            if(!password.equals(chkpassword))
+                throw new RuntimeException("Passwords do not match");
+            Class.forName("java.sql.DriverManager");
+            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", Login.dbUsername, Login.dbPassword);
+            Statement stmt = (Statement)con.createStatement();
+            String query = "INSERT INTO USERS VALUES('"+newusername+"','"+password+"','"+access+"');";
+            stmt.executeUpdate(query);
+            String line1 = "Inserted User " + newusername; 
+            String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";
+            stmt.executeUpdate(logger);
+            JOptionPane.showMessageDialog(this, "Successful Operation");
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(this, e.getMessage());
         }
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
