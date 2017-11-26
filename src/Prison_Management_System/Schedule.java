@@ -283,7 +283,7 @@ public class Schedule extends javax.swing.JFrame {
             Class.forName("java.sql.DriverManager");
             Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", Login.dbUsername, Login.dbPassword);
             Statement stmt = (Statement)con.createStatement();
-            String logger = "INSERT INTO LOG (User, Operation) VALUES('"+Login.username+"',' Logout');";
+            String logger = "INSERT INTO LOG (User, Operation) VALUES('"+Login.username+"','Logout');";
             stmt.executeUpdate(logger);
         }
         catch(Exception e){
