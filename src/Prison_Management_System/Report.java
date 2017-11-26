@@ -19,7 +19,7 @@ import java.sql.ResultSet;
 public class Report extends javax.swing.JFrame {
 
     String intExecProcess = "cd \"src\\Prison_Management_System\\Reports\" && notepad /p reciept.txt";
-    String extExecProcess = "cd \"Reports\" && notepad /p reciept.txt";
+    String extExecProcess = "cd \"Reports\" && notepad /p reciept.txt && exit";
     String intExecPrint = "src\\Prison_Management_System\\Reports\\reciept.txt";
     String extExecPrint = "Reports\\reciept.txt";
     /**
@@ -87,8 +87,8 @@ public class Report extends javax.swing.JFrame {
 
         jButton3.setBackground(new java.awt.Color(255, 255, 255));
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Prison_Management_System/Images/search.png"))); // NOI18N
-        jButton3.setText("Exit without Printing");
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Prison_Management_System/Images/cancel.png"))); // NOI18N
+        jButton3.setText("Exit");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -179,20 +179,14 @@ public class Report extends javax.swing.JFrame {
             }
             writer.close();
             ProcessBuilder builder = new ProcessBuilder("cmd.exe", "/c", extExecProcess);
-            Process p = builder.start(); 
-            BufferedReader r = new BufferedReader(new InputStreamReader(p.getInputStream()));
-            String line;
-            while (true) {
-                line = r.readLine();
-                if (line == null) { break; }
-                System.out.println(line);
-            }
+            Process p = builder.start();
+            new Login().setVisible(true);
+            this.dispose(); 
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(this, e.getMessage());
         }
-        new Report().setVisible(true);
-        this.dispose();        
+       
 // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 

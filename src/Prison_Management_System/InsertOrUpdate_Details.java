@@ -36,6 +36,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
         jTextArea1 = new javax.swing.JTextArea();
         jComboBox1 = new javax.swing.JComboBox<>();
         buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonGroup2 = new javax.swing.ButtonGroup();
         jPanel9 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
@@ -60,7 +61,6 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        Type = new javax.swing.JTextField();
         Court_ID_Case = new javax.swing.JTextField();
         Verdict = new javax.swing.JTextField();
         Verdict_Date = new javax.swing.JTextField();
@@ -71,6 +71,8 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
         Case_ID = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         Update_Case = new javax.swing.JButton();
+        CivilButton = new javax.swing.JRadioButton();
+        CriminalButton = new javax.swing.JRadioButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
@@ -280,7 +282,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                 .addComponent(Submit_Court)
                 .addGap(18, 18, 18)
                 .addComponent(Update_Court)
-                .addContainerGap(169, Short.MAX_VALUE))
+                .addContainerGap(178, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Court", jPanel2);
@@ -294,12 +296,6 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
         jLabel4.setText("Verdict_Date");
 
         jLabel5.setText("Court_ID");
-
-        Type.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TypeActionPerformed(evt);
-            }
-        });
 
         Verdict_Date.setToolTipText("YYYY-MM-DD");
         Verdict_Date.addActionListener(new java.awt.event.ActionListener() {
@@ -344,6 +340,17 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
             }
         });
 
+        buttonGroup2.add(CivilButton);
+        CivilButton.setText("Civil");
+        CivilButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CivilButtonActionPerformed(evt);
+            }
+        });
+
+        buttonGroup2.add(CriminalButton);
+        CriminalButton.setText("Criminal");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -361,10 +368,13 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                                     .addComponent(jLabel13))
                                 .addGap(52, 52, 52)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(Type, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
                                     .addComponent(Case_ID, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
                                     .addComponent(Verdict, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                                    .addComponent(Verdict_Date, javax.swing.GroupLayout.Alignment.TRAILING)))
+                                    .addComponent(Verdict_Date, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(CivilButton)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(CriminalButton))))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel5)
@@ -397,7 +407,8 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
-                            .addComponent(Type, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(CivilButton)
+                            .addComponent(CriminalButton))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
@@ -418,7 +429,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                 .addComponent(Submit_Case)
                 .addGap(18, 18, 18)
                 .addComponent(Update_Case)
-                .addContainerGap(214, Short.MAX_VALUE))
+                .addContainerGap(220, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Case", jPanel1);
@@ -699,7 +710,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                 .addComponent(Submit_Staff)
                 .addGap(18, 18, 18)
                 .addComponent(Update_Staff)
-                .addContainerGap(150, Short.MAX_VALUE))
+                .addContainerGap(159, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Staff", jPanel5);
@@ -933,7 +944,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
                 .addComponent(Submit_Job_Desc)
                 .addGap(18, 18, 18)
                 .addComponent(Update_Job_Info)
-                .addContainerGap(162, Short.MAX_VALUE))
+                .addContainerGap(171, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Job_Info", jPanel6);
@@ -1488,15 +1499,19 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
     private void Update_CaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Update_CaseActionPerformed
         try{
             int CaseID = Integer.parseInt(Case_ID.getText());
-            String CaseType = Type.getText();
+            String CaseType = "";
             String CaseVerdict = Verdict.getText();
             String VerdictDate = Verdict_Date.getText();
             int CourtID = Integer.parseInt(Court_ID_Case.getText());
             String CaseCharges = Charges.getText();
-            if(CaseType.equals("") || CaseVerdict.equals("") || VerdictDate.equals("") || CaseCharges.equals(""))
+            if(CivilButton.isSelected())
+                CaseType = "civil";
+            else if(CriminalButton.isSelected())
+                CaseType = "criminal";
+            if(CaseVerdict.equals("") || VerdictDate.equals("") || CaseCharges.equals(""))
                 throw new RuntimeException("Fields Empty");
-            if(!CaseType.toLowerCase().equals("criminal") && !CaseType.toLowerCase().equals("civil"))
-                throw new RuntimeException("Case Type is wrong");
+            if(CaseType.equals(""))
+                throw new RuntimeException("Case Type is not selected");
             Class.forName("java.sql.DriverManager");
             Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", Login.dbUsername, Login.dbPassword);
             Statement stmt = (Statement)con.createStatement();
@@ -1526,14 +1541,18 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
     private void Submit_CaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Submit_CaseActionPerformed
         try{
             int CaseID = Integer.parseInt(Case_ID.getText());
-            String CaseType = Type.getText();
+            String CaseType = "";
             String CaseVerdict = Verdict.getText();
             String VerdictDate = Verdict_Date.getText();
             int CourtID = Integer.parseInt(Court_ID_Case.getText());
             String CaseCharges = Charges.getText();
-            if(CaseType.equals("") || CaseVerdict.equals("") || VerdictDate.equals("") || CaseCharges.equals(""))
+            if(CivilButton.isSelected())
+                CaseType = "civil";
+            else if(CriminalButton.isSelected())
+                CaseType = "criminal";
+            if(CaseVerdict.equals("") || VerdictDate.equals("") || CaseCharges.equals(""))
                 throw new RuntimeException("Fields Empty");
-            if(!CaseType.toLowerCase().equals("criminal") && !CaseType.toLowerCase().equals("civil"))
+            if(CaseType.equals(""))
                 throw new RuntimeException("Case Type is wrong");
             Class.forName("java.sql.DriverManager");
             Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", Login.dbUsername, Login.dbPassword);
@@ -1564,10 +1583,6 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Verdict_DateActionPerformed
 
-    private void TypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TypeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TypeActionPerformed
-
     private void JuryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JuryActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JuryActionPerformed
@@ -1575,6 +1590,10 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
     private void HighActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HighActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_HighActionPerformed
+
+    private void CivilButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CivilButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CivilButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1622,8 +1641,10 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
     private javax.swing.JTextField Cells_Inmate;
     private javax.swing.JTextField Charges;
     private javax.swing.JTextField Chief_Justice;
+    private javax.swing.JRadioButton CivilButton;
     private javax.swing.JTextField Court_ID;
     private javax.swing.JTextField Court_ID_Case;
+    private javax.swing.JRadioButton CriminalButton;
     private javax.swing.JRadioButton District;
     private javax.swing.JCheckBox Evening_Box;
     private javax.swing.JRadioButton High;
@@ -1659,7 +1680,6 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
     private javax.swing.JTextField Supervisor_Staff_ID;
     private javax.swing.JRadioButton Supreme;
     private javax.swing.JRadioButton Tribunal;
-    private javax.swing.JTextField Type;
     private javax.swing.JButton Update_Case;
     private javax.swing.JButton Update_Court;
     private javax.swing.JButton Update_Inmate;
@@ -1669,6 +1689,7 @@ public class InsertOrUpdate_Details extends javax.swing.JFrame {
     private javax.swing.JTextField Verdict;
     private javax.swing.JTextField Verdict_Date;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox1;
