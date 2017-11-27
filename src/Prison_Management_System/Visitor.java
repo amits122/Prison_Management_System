@@ -36,7 +36,7 @@ public class Visitor extends javax.swing.JFrame {
                 String Date = mainRs.getString("Date");
                 String Entry_Time = mainRs.getString("Entry_Time");
                 String Exit_Time = mainRs.getString("Exit_Time");
-                String Accept = mainRs.getString("Exit_Time");
+                String Accept = mainRs.getString("Accept");
                 String Comment = mainRs.getString("Comment");
                 model.addRow(new Object[] {Name, Contact_Number, IID, Relationship, Purpose, Date, Entry_Time, Exit_Time, Accept, Comment });
             }

@@ -15,9 +15,13 @@ import javax.swing.JOptionPane;
  */
 public class Feedback extends javax.swing.JFrame {
     
-        void initX(){
+    int count = 0;
+    
+    void initX(){
         try{
+            //JOptionPane.showMessageDialog(this, "first start");
             DefaultComboBoxModel JIDModel = (DefaultComboBoxModel)Job_ID_Feedback.getModel();
+            JIDModel.removeAllElements();
             Class.forName("java.sql.DriverManager");
             Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", Login.dbUsername, Login.dbPassword);
             Statement mainStmt = (Statement)con.createStatement();
@@ -26,6 +30,7 @@ public class Feedback extends javax.swing.JFrame {
             while(mainRs.next()){
                 JIDModel.addElement(mainRs.getString("Job_ID"));               
             }
+            //JOptionPane.showMessageDialog(this, "first end");
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(this, e.getMessage());
@@ -34,8 +39,10 @@ public class Feedback extends javax.swing.JFrame {
     
     void initY(){
         try{
+            //JOptionPane.showMessageDialog(this, "2 start");
             DefaultComboBoxModel IIDModel = (DefaultComboBoxModel)Inmate_ID_Feedback.getModel();
             Class.forName("java.sql.DriverManager");
+            IIDModel.removeAllElements();
             Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", Login.dbUsername, Login.dbPassword);
             Statement mainStmt = (Statement)con.createStatement();
             int JobID = Integer.parseInt((String)Job_ID_Feedback.getSelectedItem());
@@ -44,6 +51,7 @@ public class Feedback extends javax.swing.JFrame {
             while(mainRs.next()){
                 IIDModel.addElement(mainRs.getString("Inmate_ID")); 
             }
+            //JOptionPane.showMessageDialog(this, "2 end");
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(this, e.getMessage());
@@ -56,13 +64,23 @@ public class Feedback extends javax.swing.JFrame {
             Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", Login.dbUsername, Login.dbPassword);
             Statement mainStmt = (Statement)con.createStatement();
             int InmateID = Integer.parseInt((String)Inmate_ID_Feedback.getSelectedItem());
+            int JobID =  Integer.parseInt((String)Job_ID_Feedback.getSelectedItem());
             String mainQuery = "SELECT Name FROM INMATE WHERE Inmate_ID = '"+InmateID+"';";
             ResultSet mainRs = mainStmt.executeQuery(mainQuery);
             mainRs.first();
             Inmate_Name_Feedback.setText(mainRs.getString("Name"));
+            mainQuery = "SELECT Shift FROM JOB WHERE Job_ID = '"+JobID+"' AND Inmate_ID = '"+InmateID+"';";
+            mainRs = mainStmt.executeQuery(mainQuery);
+            mainRs.first();
+            Shift_Feedback.setText(mainRs.getString("Shift"));
+            String SplitArr[] = mainRs.getString("Shift").split(" ");
+            count = 0;
+            for(String temp: SplitArr){
+                count++;
+            }
         }
         catch(Exception e){
-            JOptionPane.showMessageDialog(this, e.getMessage());
+            //JOptionPane.showMessageDialog(this, e.getMessage());
         }  
     }
     /**
@@ -103,6 +121,9 @@ public class Feedback extends javax.swing.JFrame {
         Inmate_Name_Feedback = new javax.swing.JLabel();
         Job_ID_Feedback = new javax.swing.JComboBox<>();
         Inmate_ID_Feedback = new javax.swing.JComboBox<>();
+        Submit_Job1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        Shift_Feedback = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -216,51 +237,62 @@ public class Feedback extends javax.swing.JFrame {
 
         Inmate_Name_Feedback.setText(" ");
 
-        Job_ID_Feedback.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                Job_ID_FeedbackItemStateChanged(evt);
+        Job_ID_Feedback.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Job_ID_FeedbackActionPerformed(evt);
             }
         });
 
-        Inmate_ID_Feedback.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                Inmate_ID_FeedbackItemStateChanged(evt);
+        Inmate_ID_Feedback.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Inmate_ID_FeedbackActionPerformed(evt);
             }
         });
+
+        Submit_Job1.setBackground(new java.awt.Color(255, 255, 255));
+        Submit_Job1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Submit_Job1.setText("Reschedule +1");
+        Submit_Job1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Submit_Job1ActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setText("Shifts :");
+
+        Shift_Feedback.setText(" ");
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
-            .addComponent(jPanel13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addGap(34, 34, 34)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel42)
-                                    .addComponent(jLabel41))
-                                .addGap(60, 60, 60))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(40, 40, 40)))
-                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(Inmate_Name_Feedback, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Job_ID_Feedback, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(50, Short.MAX_VALUE))
-                    .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(Submit_Job, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel43)
+                    .addComponent(jLabel2)
+                    .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(jPanel8Layout.createSequentialGroup()
-                            .addComponent(jLabel43)
-                            .addGap(65, 65, 65)
                             .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jScrollPane1)
-                                .addGroup(jPanel8Layout.createSequentialGroup()
-                                    .addComponent(Inmate_ID_Feedback, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(0, 0, Short.MAX_VALUE)))))))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                                    .addComponent(jLabel41)
+                                    .addGap(77, 77, 77))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                                    .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel1)
+                                        .addComponent(jLabel42))
+                                    .addGap(40, 40, 40)))
+                            .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(Job_ID_Feedback, javax.swing.GroupLayout.Alignment.LEADING, 0, 205, Short.MAX_VALUE)
+                                .addComponent(Inmate_Name_Feedback, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Shift_Feedback, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE)
+                                .addComponent(Inmate_ID_Feedback, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(Submit_Job, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Submit_Job1, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(50, Short.MAX_VALUE))
+            .addComponent(jPanel13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -279,9 +311,15 @@ public class Feedback extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(Inmate_Name_Feedback))
                 .addGap(18, 18, 18)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(Shift_Feedback))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel43)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(Submit_Job1)
                 .addGap(18, 18, 18)
                 .addComponent(Submit_Job)
                 .addGap(18, 18, 18)
@@ -296,7 +334,7 @@ public class Feedback extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -344,16 +382,35 @@ public class Feedback extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void Job_ID_FeedbackItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Job_ID_FeedbackItemStateChanged
+    private void Job_ID_FeedbackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Job_ID_FeedbackActionPerformed
         initY();
         refresh();
         // TODO add your handling code here:
-    }//GEN-LAST:event_Job_ID_FeedbackItemStateChanged
+    }//GEN-LAST:event_Job_ID_FeedbackActionPerformed
 
-    private void Inmate_ID_FeedbackItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Inmate_ID_FeedbackItemStateChanged
+    private void Inmate_ID_FeedbackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Inmate_ID_FeedbackActionPerformed
         refresh();
         // TODO add your handling code here:
-    }//GEN-LAST:event_Inmate_ID_FeedbackItemStateChanged
+    }//GEN-LAST:event_Inmate_ID_FeedbackActionPerformed
+
+    private void Submit_Job1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Submit_Job1ActionPerformed
+        try{
+            int JobID = Integer.parseInt((String)Job_ID_Feedback.getSelectedItem());
+            int InmateID = Integer.parseInt((String)Inmate_ID_Feedback.getSelectedItem());
+            Class.forName("java.sql.DriverManager");
+            Connection con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/pms", Login.dbUsername, Login.dbPassword);
+            Statement stmt = (Statement)con.createStatement();
+            String query = "UPDATE JOB SET Hours_Completed = Hours_Completed + '"+count+"' WHERE Inmate_ID = "+InmateID+" AND Job_ID = "+JobID+";";
+            stmt.executeUpdate(query);
+            String line1 = "Rescheduled Job " + JobID + ", " + InmateID;
+            String logger = "INSERT INTO LOG(User, Operation) VALUES('"+Login.username+"','"+line1+"');";
+            stmt.executeUpdate(logger);
+            JOptionPane.showMessageDialog(this, "Successful Operation");
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(this, e.getClass().getCanonicalName() +"\n" + e.getMessage());
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_Submit_Job1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -395,11 +452,14 @@ public class Feedback extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> Inmate_ID_Feedback;
     private javax.swing.JLabel Inmate_Name_Feedback;
     private javax.swing.JComboBox<String> Job_ID_Feedback;
+    private javax.swing.JLabel Shift_Feedback;
     private javax.swing.JButton Submit_Job;
+    private javax.swing.JButton Submit_Job1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton8;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
